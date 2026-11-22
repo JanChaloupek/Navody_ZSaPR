@@ -99,6 +99,8 @@ V této části najdete přehled vyzkoušených úprav:
 4. **Uchycení dvojitého serva – návrh 3D součástky**
 5. **Znakový LCD displej přes I²C (zobrazování odometrie a křižovatek)**
 6. **Rozšíření hlavního konektoru JoyCaru pro 3pinové periferie**
+7. **Robustní motory s kovovou osou a integrovaným enkodérem**
+8. **Záchrana robota: Kompletní náhrada motorového H-můstku (PCA9685 + L298N)**
 
 ---
 
@@ -299,6 +301,86 @@ Když na robota přidáte přídavné senzory čáry i LCD displej, původní ko
 
 ---
 
+### 3.7 Robustní motory s kovovou osou a integrovaným enkodérem
+
+Při experimentování s vyšší zátěží a přesnějším odměřováním ujeté dráhy vyvstala otázka vylepšení pohonu robota:
+
+#### Srovnání: Původní motor vs. Nový robustní motor s enkodérem
+| Vlastnost | Původní motor v JoyCaru | Nový vylepšený motor |
+|---|---|---|
+| **Odkaz výrobce** | [DFRobot FIT0100](https://www.dfrobot.com/product-100.html) | [DFRobot FIT01458](https://www.dfrobot.com/product-1458.html) |
+| **Dostupnost v ČR/EU** | Běžně v sadách | [Botland – Úhlový motor SJ02 120:1](https://botland.cz/stejnosmerne-motory-s-prevodovkou-a-kodery/6288-uhlovy-motor-s-prevodovkou-sj02-120-1-6v-160rpm-enkoder-6959420910199.html) |
+| **Materiál hřídele** | Plastová osa | **Pevná kovová osa** (vysoká odolnost) |
+| **Integrovaný enkodér** | Ne (pouze externí optická clonka v JoyCaru) | **Dvoukanálový magnetický enkodér** (směr i otáčky) |
+| **Proud naprázdno (při 6 V)** | cca 120 mA | cca **250 mA** |
+| **Proud v zátěži** | do 250 mA | **přes 500 mA** |
+| **Cena** | cca 2,89 € | cca 6,31 € |
+
+> [!WARNING]
+> **Pozor na proudové zatížení hlavní desky JoyCaru!**  
+> Kvůli podstatně vyššímu odběru proudu (při zátěži přes 500 mA na motor) **tento motor nepřipojujte přímo na hlavní desku JoyCaru** – hrozí přehřátí a poškození vestavěného motorového budiče.  
+> Motor byl úspěšně testován na dedikované výkonnější desce **[Elecfreaks motor:bit](https://shop.elecfreaks.com/products/elecfreaks-micro-bit-motor-bit)** (v ČR na [HW Kitchen](https://www.hwkitchen.cz/motorbit-pro-microbit-rozsirujici-modul-pro-motory/)), která je na vyšší proudové špičky stavěná.
+
+#### Mechanická montáž do podvozku JoyCaru:
+Motory mají shodné vnější rozměry i rozteč montážních bodů, takže by se zdálo, že půjdou vyměnit kus za kus. Kvůli přidané elektronice enkodéru na zadní části se však motor nevejde do spodního výlisku podvozku. Pro montáž bylo nutné **do plastového podvozku vyříznout/vyvrtat dodatečný otvor**, aby se tělo motoru s enkodérem bez pnutí usadilo.
+
+<!-- Obrázky motorů:
+![Srovnání původního motoru a motoru s kovovou osou](images/motory-srovnani.jpg)
+![1. Úprava podvozku JoyCaru pro nový motor](images/motor-uprava-podvozku-1.jpg)
+![2. Vyříznutý otvor v plastu podvozku](images/motor-uprava-podvozku-2.jpg)
+![3. Usazení motoru s enkodérem do podvozku](images/motor-uprava-podvozku-3.jpg)
+![4. Detail kovové hřídele a uchycení](images/motor-uprava-podvozku-4.jpg)
+![5. Testování s deskou motor:bit](images/motor-uprava-podvozku-5.jpg)
+-->
+
+---
+
+### 3.8 🔧 Záchrana robota: Kompletní náhrada motorového H-můstku (PCA9685 + L298N)
+
+Co dělat, když na JoyCaru selže integrovaný H-můstek řízení motorů?  
+Oficiální reklamace a výměna základní desky přes R_D sice funguje, ale v průběhu kurzu může trvat i několik týdnů, během kterých by student zůstal bez funkčního robota.
+
+JoyCar lze však **plnohodnotně oživit svépomocí** pomocí dvou levných, běžně dostupných modulů připojených přes I²C sběrnici:
+
+#### 1. 🔵 PCA9685 – 16kanálový 12bitový I²C PWM generátor (řízení rychlosti)
+Slouží k vytváření přesného PWM signálu pro oba motory.
+- **Výhoda:** 12bitové rozlišení (hodnoty 0–4095) poskytuje výrazně jemnější regulaci otáček než původní 8bitový čip PCA9633 (0–255).
+- **I²C adresa:** Výchozí adresa modulu je `0x40`. Propájením adresních plošek A0 a A5 na modulu ji lze změnit na `0x61` (přímo vedle adresy PCA9633 na JoyCaru), není to však nutné, pokud `0x40` nekoliduje s jinou periferií.
+- **Zapojení do JoyCaru:**
+  - `GND` $\rightarrow$ `GND` JoyCar
+  - `VCC` $\rightarrow$ `3V3` JoyCar
+  - `SCL` $\rightarrow$ `SCL` JoyCar
+  - `SDA` $\rightarrow$ `SDA` JoyCar
+- **Dostupnost:** [LaskaKit PCA9685](https://www.laskakit.cz/16-kanalovy-12-bit-pwm-servo-mini-shield-i2c-pca9685/) nebo [Drátek PCA9685](https://dratek.cz/arduino-platforma/1686-iic-i2c-modulovy-driver-servo-motoru-pro-arduino-pca9685-16-kanalu-12-bit-pwm.html).
+- 🎥 **Video:** [Ukázka PWM signálu generovaného přes PCA9685 na OneDrive](https://1drv.ms/v/c/c957b235b7cc93a4/EQxVImcPpqRNuBUnf40Q3zcBbeebQbfqqGO9fuUTcbp7Pg?e=kMonTN)
+
+#### 2. 🔴 L298N – Duální výkonový H-můstek (řízení směru a spínání motorů)
+Slouží k výkonovému spínání polarity a proudu z baterie do stejnosměrných motorů.
+- **Zapojení:**
+  - `ENA`, `ENB` $\rightarrow$ ponechat osazené jumpery (stále aktivní)
+  - `+12V` (napájecí svorka) $\rightarrow$ `V_BAT` JoyCaru (přímé napětí cca 6 V z baterií)
+  - `GND` $\rightarrow$ `GND` JoyCar
+  - `5V jumper` $\rightarrow$ **zapnout** (aktivuje interní 5V stabilizátor modulu pro jeho vlastní logiku)
+  - `IN1`, `IN2`, `IN3`, `IN4` $\rightarrow$ připojit na výstupy `PWM0`, `PWM1`, `PWM2`, `PWM3` z modulu PCA9685
+- **Logika řízení v kódu:**
+  - `IN1` a `IN2` řídí levý motor (jeden kanál = 0, druhý kanál = požadovaná rychlost 0–4095; pro couvání obráceně).
+  - `IN3` a `IN4` řídí pravý motor.
+- **Dostupnost:** [Drátek L298N](https://dratek.cz/arduino-platforma/877-arduino-h-mustek-pro-krokovy-motor-l298n-dual-h-most-dc.html) nebo [LaskaKit L298N](https://www.laskakit.cz/h-mustek-pro-krokovy-motor-l298n--dualni-motorovy-modul/).
+- 🎥 **Video:** [Ukázka řízení motorů JoyCaru přes PCA9685 + L298N na OneDrive](https://1drv.ms/v/c/c957b235b7cc93a4/EX965LoTJE9ImRro_H19WR8BmOk0GXOaT2mM66E-Y2-qxA?e=fAZtym)
+
+> [!TIP]
+> **Knihovny a software:**  
+> Pro řízení máme připravené CircuitPython knihovny i příklady:
+> - Původní `PCA9633`: 1 byte (hodnoty 0–255)
+> - Náhradní `PCA9685`: 2 byty (hodnoty 0–4095)  
+> Pokud se vám stane, že integrovaný budič odejde, mentor vám potřebné knihovny a schéma zapojení rád poskytne.
+
+<!-- Obrázky náhrady H-můstku:
+![Zapojení modulů PCA9685 a L298N na robotovi](images/hmustek-pca9685-l298n.jpg)
+-->
+
+---
+
 ## 4. Užitečné studijní odkazy
 
 ### 🛠️ Práce s Git a GitHubem pro začátečníky:
@@ -308,7 +390,5 @@ Když na robota přidáte přídavné senzory čáry i LCD displej, původní ko
 ---
 
 ## 5. Prostor pro další vylepšení a nápady
-
-Tuto sekci budeme v průběhu kurzu průběžně doplňovat. Pokud přijdete na zajímavý tip, 3D model (např. ochranné nárazníky, držáky čidel), úpravu nebo zlepšovák, pošlete nám jej a zařadíme ho sem pro ostatní!
 
 Tuto sekci budeme v průběhu kurzu průběžně doplňovat. Pokud přijdete na zajímavý tip, 3D model (např. ochranné nárazníky, držáky čidel), úpravu nebo zlepšovák, pošlete nám jej a zařadíme ho sem pro ostatní!

@@ -43,6 +43,13 @@ Tato složka slouží pro ukládání obrázků, fotografií a schémat použit�
 - `rozsireni-konektoru-v1.jpg` – Starší verze rozšíření konektoru s červeným 3,3V vodičem.
 - `rozsireni-konektoru-v2.jpg` – Pokročilé rozšíření hlavního konektoru pro přímé zacvaknutí 3pinových periferií.
 - `rozsireni-konektoru-detail.jpg` – Detail zapojení jumperů propojujících 3,3 V a GND.
+- `motory-srovnani.jpg` – Srovnání původního motoru FIT0100 a nového motoru s kovovou osou FIT01458.
+- `motor-uprava-podvozku-1.jpg` – Úprava spodní části podvozku JoyCaru pro montáž nového motoru.
+- `motor-uprava-podvozku-2.jpg` – Vyříznutý montážní otvor v plastovém podvozku.
+- `motor-uprava-podvozku-3.jpg` – Usazení motoru s enkodérem do upraveného podvozku.
+- `motor-uprava-podvozku-4.jpg` – Detail kovové hřídele a upevňovacích bodů.
+- `motor-uprava-podvozku-5.jpg` – Testování motoru s řídicí deskou motor:bit.
+- `hmustek-pca9685-l298n.jpg` – Kompletní náhrada H-můstku pomocí modulů PCA9685 a L298N.
 
 ---
 

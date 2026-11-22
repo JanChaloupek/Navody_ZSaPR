@@ -16,9 +16,8 @@ Během kurzu budete pracovat se **stavebnicí JoyCar** a **dvěma procesorovými
 - **Mechanická konstrukce:** Dvoukolový podvozek s nezávislým pohonem levého a pravého kola pomocí stejnosměrných motorů s převodovkou a předním opěrným kuličkovým kolečkem (tzv. diferenciální řízení podvozku).
 - **Bohatá senzorická výbava:**
   - **Sledování čáry (Line Tracking):** 3 infračervené optické senzory na spodní straně podvozku pro detekci černé vodící linie na světlém podkladu.
-  - **Detekce překážek:** 2 přední infračervené senzory přiblížení a **ultrazvukový dálkoměr** (na pohyblivém držáku) pro přesné měření vzdálenosti v centimetrech.
+  - **Detekce překážek:** 2 přední infračervené senzory přiblížení a **ultrazvukový dálkoměr** (na pohyblivém držáku) pro měření vzdálenosti v centimetrech.
   - **Měření rychlosti a ujeté dráhy (Odometrie):** Rychlostní senzory s perforovanými kotouči (enkodéry) na hřídelích obou motorů.
-  - **Snímání okolí:** Dva fotorezistory (světelné senzory) pro měření intenzity osvětlení vlevo a vpravo.
 - **Akční členy a signalizace:**
   - Výkonové řízení obou stejnosměrných motorů přes integrovaný I²C budič (obvod PCA9633).
   - Adresovatelné RGB LED diody (NeoPixel / WS2812B) vpředu i vzadu pro blinkry, brzdová světla a světlomety.
@@ -26,9 +25,9 @@ Během kurzu budete pracovat se **stavebnicí JoyCar** a **dvěma procesorovými
 - **Rozšiřitelnost:** Hlavní sběrnice I²C s expandérem PCF8574, který nabízí volné piny pro připojení dalších periferií (jak si ukážeme v kapitole o rozšíření na 6 senzorů čáry, LCD displej či externí H-můstek).
 
 #### 🎯 K čemu JoyCar v kurzu slouží:
-1. **Autonomní navigace a jízda po čáře:** Vývoj algoritmů od základního binárního přepínání přes plynulou regulaci (P/PD regulátor) až po spolehlivou detekci složitých křižovatek a odboček.
+1. **Autonomní navigace a jízda po čáře:** Vývoj algoritmů od základního binárního přepínání přes plynulou regulaci (P a PID regulace) až po spolehlivou detekci složitých křižovatek a odboček.
 2. **Bezkolizní pohyb a vyhýbání se překážkám:** Reakce na statické i pohybující se překážky v reálném čase.
-3. **Odometrie a kinematika robota:** Přesné odměřování ujeté vzdálenosti, otáčení o zadané úhly a výpočet pozice v prostoru.
+3. **Odometrie a kinematika robota:** Odměřování ujeté vzdálenosti, otáčení o zadané úhly a výpočet pozice v prostoru.
 4. **Reálný neblokující multitasking:** Naučíte se psát kód, který zvládá současně řídit motory, číst desítky senzorů za sekundu, blikat LED pásky a hrát melodie bez použití zhoubného `time.sleep()`.
 
 ---
@@ -51,7 +50,7 @@ Během kurzu budete pracovat se **stavebnicí JoyCar** a **dvěma procesorovými
 ## 📦 Vybavení pro kurz
 
 ### 🎁 Co dostanete (vzdělávací sada od R_D):
-- ✅ **Vzdělávací robot JoyCar** (kompletní podvozek, senzory čáry, ultrazvukový senzor překážek, světelné senzory, bzučák a LED).
+- ✅ **Vzdělávací robotická stavebnice JoyCar** (kompletní podvozek, senzory čáry, ultrazvukový dálkoměr, senzory překážek, enkodéry rychlosti, bzučák a NeoPixel LED).
 - ✅ **Procesorová deska Pico:ed v2** (s mikrokontrolérem Raspberry Pi RP2040).
 - ✅ **4 ks USB nabíjecích baterií** (speciální akumulátory s vestavěným měničem, které drží stabilní napětí 1,5 V po celou dobu až do vypnutí).
 

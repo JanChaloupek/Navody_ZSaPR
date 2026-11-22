@@ -63,6 +63,10 @@ Rozšíření instalujete kliknutím na ikonu **Extensions** (čtverce na levé 
    - Pokročilé gramatické zvýrazňování syntaxe Pythonu.
    - *Autor:* `MagicStack Inc.`
 
+5. **CodeSnap-plus (nebo CodeSnap)**
+   - Vytváří elegantní obrázky (snapshoty) vybraného kódu se zachovaným barevným tématem a čísly řádků pro vkládání do odevzdávaných Pull Requestů. Verze *CodeSnap-plus* navíc umožňuje kliknutím na číslo řádku zvýraznit klíčové řádky.
+   - *Název:* `CodeSnap-plus` (autor: `huibizhang`) nebo původní `CodeSnap` (autor: `adpyke`).
+
 ---
 
 ## 3. Získání výchozí struktury projektu

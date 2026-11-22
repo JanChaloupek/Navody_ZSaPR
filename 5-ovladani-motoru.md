@@ -63,6 +63,24 @@ Komunikace probíhá vždy zápisem **dvou bajtů**:
 | `0x04` | **PWM2** | Výkon pro motor B (levý) – **směr VZAD** (hodnota 0–255). |
 | `0x05` | **PWM3** | Výkon pro motor B (levý) – **směr VPŘED** (hodnota 0–255). |
 
+> [!NOTE]
+> ### 💡 Propojení s originální tabulkou výrobce Joy-IT (vysvětlení „kanálů 2, 3, 4 a 5“)
+> Pokud nahlédnete do oficiálního manuálu Joy-IT k robotu JoyCar, najdete v něm tabulku řízení motorů, která uvádí adresu `0x70` a kanály označené jako **KANAL 2 až KANAL 5**:
+> - **MOTOR RIGHT:** `KANAL 2` (vzad) a `KANAL 3` (vpřed)
+> - **MOTOR LEFT:** `KANAL 4` (vzad) a `KANAL 5` (vpřed)
+> 
+> **Jak to přesně odpovídá naší dokumentaci a hardwaru:**
+> 1. **Číslování kanálů vs. adresy registrů:**  
+>    Obvod PCA9633 je 4kanálový budič a jeho výstupy se v datasheetu NXP označují jako **PWM0, PWM1, PWM2 a PWM3**. Výrobce Joy-IT je v manuálu nazval *„KANAL 2, 3, 4 a 5“*, protože jejich **I²C adresy registrů** jsou právě hexadecimálně `0x02`, `0x03`, `0x04` a `0x05`. Naše přiřazení je tedy funkčně **na 100 % totožné**:
+>    - `KANAL 2` v manuálu = registr `0x02` (`PWM0` – pravý motor vzad)
+>    - `KANAL 3` v manuálu = registr `0x03` (`PWM1` – pravý motor vpřed)
+>    - `KANAL 4` v manuálu = registr `0x04` (`PWM2` – levý motor vzad)
+>    - `KANAL 5` v manuálu = registr `0x05` (`PWM3` – levý motor vpřed)
+> 2. **I²C adresa `0x70` vs. `0x62`:**  
+>    Adresa `0x70` z manuálu je obecná všesměrová adresa (`ALLCALLADR`), na kterou čip z výroby reaguje. Přímá hardwarová adresa čipu na sběrnici je `0x62` (u starších revizí `0x60`). V kódu lze použít obě, korektnější je však komunikovat přímo přes `0x62`.
+> 3. **Brzdění (Soft Braking vs. Strong Braking):**  
+>    Výrobce v tabulce uvádí stav `Soft Braking` (hodnota 255 na obou kanálech) a `Strong Braking` (hodnota 0 na obou kanálech). V naší bezpečné třídě při zastavení nastavujeme `0`, čímž se rozepnou spínací tranzistory a motor doběhne bez proudového namáhání můstku.
+
 ---
 
 ## 2. Bezpečná objektová třída pro CircuitPython

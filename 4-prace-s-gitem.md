@@ -156,7 +156,11 @@ git push origin ukol-1
    - **Base repository:** `Global-Classes-CZE/robot-programming3` | **base:** `main` *(cílový školní repozitář)*
    - **Head repository:** `vase-jmeno/robot-programming3` | **compare:** `ukol-1` *(vaše větev)*
 4. **Název Pull Requestu:** Zadejte přesný formát:  
-   `[Úkol 1] Jméno Příjmení`
+   **`<Jméno> <Příjmení> <duXX>`**  
+   *(Například: `Jan Chaloupek du5` nebo `Petr Novák du1`)*  
+   
+   > [!IMPORTANT]
+   > Dodržení tohoto formátu (Jméno Příjmení a označení úkolu např. `du5`) je povinné – slouží vyučujícím k rychlé identifikaci a správnému zaevidování hodnocení.
 5. Do textového pole popisu můžete uvést případné poznámky k řešení.
 6. **Klíčová sebekontrola:** Klikněte dole na záložku **Files changed** (Změněné soubory).
    - > [!TIP]

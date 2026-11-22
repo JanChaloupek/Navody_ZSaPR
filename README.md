@@ -92,4 +92,4 @@ Postupujte podle jednotlivých kapitol v uvedeném pořadí:
 3. **Přísný zákaz okamžité změny směru motorů (zákaz oficiálních kódů výrobce)!**  
    Okamžité přepnutí směru (např. z jízdy vpřed rovnou na zpátečku) vytvoří proudovou špičku a indukované napětí, které **spolehlivě zničí H-můstek na základní desce** robota. Vždy musíte nejprve nastavit PWM na 0 a nechat motor alespoň krátký okamžik doběhnout.
 4. **Odevzdávání pouze přes Pull Requesty!**  
-   Každý úkol kurzu se odevzdává jako samostatný Pull Request ze samostatné větve založené z čerstvého `main`.
+   Každý úkol kurzu se odevzdává jako samostatný Pull Request ze samostatné větve založené z čerstvého `main`. Název Pull Requestu musí být ve formátu **`<Jméno> <Příjmení> <duXX>`** (např. `Jan Chaloupek du5`).

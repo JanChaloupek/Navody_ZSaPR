@@ -19,6 +19,11 @@ V kurzu máte pro MicroPython k dispozici **dvě cesty**:
 
 ## 2. Varianta A: Stažení a práce s Mu Editorem (Pro micro:bit)
 
+> [!NOTE]
+> **Je pro spuštění Mu Editoru potřeba mít nainstalovaný Python a pip?**  
+> **Není!** Oficiální instalátor z [codewith.mu](https://codewith.mu/) pro Windows (`.exe`) i macOS (`.pkg`) je plně samostatná aplikace (standalone bundle), která má svůj vlastní Python runtime i všechny potřebné knihovny zabalené přímo v sobě. Student tedy nemusí instalovat Python, pip ani nic konfigurovat v příkazové řádce – stačí stáhnout a spustit instalátor.  
+> *(Instalace přes `pip install mu-editor` se používá volitelně pouze na Linuxu nebo u pokročilých uživatelů, kteří chtějí provozovat Mu ve svém vlastním virtuálním prostředí).*
+
 1. Navštivte oficiální stránky editoru: **[codewith.mu](https://codewith.mu/)**.
 2. V sekci **Download** stáhněte instalátor pro váš operační systém (**Windows**, **macOS** nebo **Linux**).
 3. Spusťte instalaci a otevřete program **Mu**.

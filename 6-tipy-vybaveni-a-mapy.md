@@ -375,8 +375,8 @@ Slouží k výkonovému spínání polarity a proudu z baterie do stejnosměrný
   - `5V jumper` $\rightarrow$ **zapnout** (aktivuje interní 5V stabilizátor modulu pro jeho vlastní logiku)
   - `IN1`, `IN2`, `IN3`, `IN4` $\rightarrow$ připojit na výstupy `PWM0`, `PWM1`, `PWM2`, `PWM3` z modulu PCA9685
 - **Logika řízení v kódu:**
-  - `IN1` a `IN2` řídí levý motor (jeden kanál = 0, druhý kanál = požadovaná rychlost 0–4095; pro couvání obráceně).
-  - `IN3` a `IN4` řídí pravý motor.
+  - `IN1` a `IN2` (kanály `PWM0` a `PWM1`) řídí pravý motor (jeden kanál = 0, druhý kanál = požadovaná rychlost 0–4095; pro couvání obráceně).
+  - `IN3` a `IN4` (kanály `PWM2` a `PWM3`) řídí levý motor.
 - **Dostupnost:** [Drátek L298N](https://dratek.cz/arduino-platforma/877-arduino-h-mustek-pro-krokovy-motor-l298n-dual-h-most-dc.html) nebo [LaskaKit L298N](https://www.laskakit.cz/h-mustek-pro-krokovy-motor-l298n--dualni-motorovy-modul/).
 - 🎥 **Video:** [Ukázka řízení motorů JoyCaru přes PCA9685 + L298N na OneDrive](https://1drv.ms/v/c/c957b235b7cc93a4/EX965LoTJE9ImRro_H19WR8BmOk0GXOaT2mM66E-Y2-qxA?e=fAZtym)
 

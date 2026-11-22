@@ -31,9 +31,16 @@ Místo stmívání LED diod jsou však výstupy tohoto čipu připojeny na báze
 
 ```mermaid
 flowchart LR
-    MCU["Pico:ed (RP2040)"] -->|"I²C sběrnice (SDA, SCL)"| PCA["I²C budič PCA9633 (adresa 0x62)"]
-    PCA -->|"PWM0 (vzad) / PWM1 (vpřed)"| MA["Pravý motor (Motor A)"]
-    PCA -->|"PWM2 (vzad) / PWM3 (vpřed)"| MB["Levý motor (Motor B)"]
+    MCU["Pico:ed (RP2040)"] -->|"I²C sběrnice\n(SDA, SCL)"| PCA["I²C LED budič PCA9633\n(adresa 0x62)"]
+
+    PCA -->|"Kanál 2 (PWM2 - vzad)"| HB_L["H-můstek na desce\n(levý kanál)"]
+    PCA -->|"Kanál 3 (PWM3 - vpřed)"| HB_L
+    
+    PCA -->|"Kanál 0 (PWM0 - vzad)"| HB_R["H-můstek na desce\n(pravý kanál)"]
+    PCA -->|"Kanál 1 (PWM1 - vpřed)"| HB_R
+
+    HB_L -->|"2 vodiče (M+, M-)"| ML["Levý motor (Motor B)"]
+    HB_R -->|"2 vodiče (M+, M-)"| MR["Pravý motor (Motor A)"]
 ```
 
 ### I²C Adresování PCA9633:
@@ -172,10 +179,23 @@ Pokud k odpálení původního čipu PCA9633 přece jen dojde, nemusíte čekat 
 
 ```mermaid
 flowchart LR
-    MCU["Pico:ed (RP2040)"] -->|"I²C sběrnice (3.3V)"| PCA["PWM generátor PCA9685 (adresa 0x61)"]
-    PCA -->|"PWM signály (kanály 0, 1 a 2, 3)"| L298["Výkonový H-můstek L298N"]
-    BAT["Akumulátory JoyCaru (6V)"] -->|"Napájení motorů"| L298
-    L298 --> Motory["Stejnosměrné motory"]
+    MCU["Pico:ed (RP2040)"] -->|"I²C sběrnice\n(SDA, SCL)"| PCA["PWM generátor PCA9685\n(16 kanálů, adresa 0x61)"]
+    
+    subgraph L298["Výkonový H-můstek L298N"]
+        IN_L["Řídicí vstupy levého motoru\n(svorky IN3, IN4)"]
+        IN_R["Řídicí vstupy pravého motoru\n(svorky IN1, IN2)"]
+    end
+
+    PCA -->|"Kanál 2 (PWM2 - vzad)"| IN_L
+    PCA -->|"Kanál 3 (PWM3 - vpřed)"| IN_L
+    
+    PCA -->|"Kanál 0 (PWM0 - vzad)"| IN_R
+    PCA -->|"Kanál 1 (PWM1 - vpřed)"| IN_R
+
+    BAT["Baterie JoyCaru (6 V)"] -->|"Výkonové napájení motorů (+12V, GND)"| L298
+
+    IN_L -->|"Svorky OUT3, OUT4"| ML["Levý motor"]
+    IN_R -->|"Svorky OUT1, OUT2"| MR["Pravý motor"]
 ```
 
 ### Ovladač pro PCA9685 v CircuitPythonu:

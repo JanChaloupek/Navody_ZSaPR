@@ -194,3 +194,13 @@ Až bude zadán další úkol (např. *Úkol 2*), zopakujete celý cyklus:
 5. Programujete, commitujete a posíláte PR z větve `ukol-2`.
 
 Díky tomuto postupu budete mít každé odevzdání naprosto čisté, přehledné a bez zbytečných chyb!
+
+---
+
+## 7. Doporučené externí materiály k samostudiu Gitu
+
+Pokud s Gitem teprve začínáte nebo si chcete ujasnit vizuální práci s verzováním přímo ve VS Code:
+- 🎥 **Video průvodce:** [Jak na Git a Git-Hub ve Visual Studio Code (YouTube video pro začátečníky)](https://www.youtube.com/watch?v=0v5K4GvK4Gs)
+- 📖 **Přehled příkazů:** [14 Git příkazů, které musí znát každý vývojář (Skillmea blog)](https://skillmea.cz/blog/14-git-prikazu-ktere-musi-znat-kazdy-vyvojar)
+
+👉 **Další tipy a návody na přípravu dráhy najdete v: [5. Praktické tipy, mapy a vylepšení výbavy](5-tipy-vybaveni-a-mapy.md)**

@@ -160,7 +160,8 @@ git push origin ukol-1
    *(Například: `Jan Chaloupek du5` nebo `Petr Novák du1`)*  
    
    > [!IMPORTANT]
-   > Dodržení tohoto formátu (Jméno Příjmení a označení úkolu např. `du5`) je povinné – slouží vyučujícím k rychlé identifikaci a správnému zaevidování hodnocení.
+   > Jméno a příjmení musí **přesně odpovídat jménu, pod kterým jste přihlášeni do kurzu v Google Classroom** a které používáte na Discord serveru kurzu (pokud máte na Discordu jinou přezdívku, upravte si ji pro náš server podle návodu v úvodu).  
+   > Dodržení tohoto formátu je povinné – slouží vyučujícím k rychlému spárování úkolu a zapsání bodů v Classroom.
 5. Do textového pole popisu můžete uvést případné poznámky k řešení.
 6. **Klíčová sebekontrola:** Klikněte dole na záložku **Files changed** (Změněné soubory).
    - > [!TIP]

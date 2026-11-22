@@ -92,4 +92,31 @@ Postupujte podle jednotlivých kapitol v uvedeném pořadí:
 3. **Přísný zákaz okamžité změny směru motorů (zákaz oficiálních kódů výrobce)!**  
    Okamžité přepnutí směru (např. z jízdy vpřed rovnou na zpátečku) vytvoří proudovou špičku a indukované napětí, které **spolehlivě zničí H-můstek na základní desce** robota. Vždy musíte nejprve nastavit PWM na 0 a nechat motor alespoň krátký okamžik doběhnout.
 4. **Odevzdávání pouze přes Pull Requesty!**  
-   Každý úkol kurzu se odevzdává jako samostatný Pull Request ze samostatné větve založené z čerstvého `main`. Název Pull Requestu musí být ve formátu **`<Jméno> <Příjmení> <duXX>`** (např. `Jan Chaloupek du5`).
+   Každý úkol kurzu se odevzdává jako samostatný Pull Request ze samostatné větve založené z čerstvého `main`. Název Pull Requestu musí být ve formátu **`<Jméno> <Příjmení> <duXX>`** (např. `Jan Chaloupek du5`) a jméno musí přesně odpovídat vašemu účtu v Google Classroom a na Discordu.
+
+---
+
+## 💬 Komunikace v kurzu a sjednocení účtů (Discord, Classroom, Zoom)
+
+Hlavním komunikačním kanálem kurzu je **Discord server kurzu**, online výuka probíhá přes **Zoom** a odevzdávání a bodové hodnocení úkolů se eviduje v **Google Classroom**.
+
+Abychom dokázali správně spárovat vaše odevzdané úkoly a udělit vám body, **musíte na všech platformách vystupovat pod stejným jménem a příjmením**.
+
+> [!IMPORTANT]
+> **Prosím, nastavte si na našem Discord serveru viditelné jméno stejné jako v Google Classroom.**  
+> Tím spárujeme váš Discord účet s účtem v Classroom, kde dostáváte body za domácí úkoly. Pokud budete stejné jméno používat i v aplikaci Zoom, velmi nám to usnadní orientaci při výuce a podpoře.
+
+### 🔧 Jak změnit zobrazované jméno na tomto Discord serveru:
+1. Klikněte / klepněte na svou profilovou ikonu:
+   - na PC vlevo dole,
+   - na mobilu vpravo dole.
+2. Vyberte **Upravit profil** (*Edit Profile*).
+3. Přejděte z hlavního profilu na záložku **Profily na serverech** (*Server Profiles*).
+4. V seznamu vyberte server **„Základy stavby a programování robotů“**.
+5. Do pole **Přezdívka serveru** (*Server Nickname*) vyplňte své **Jméno a Příjmení z Google Classroom**.
+6. Uložte změny.
+
+### 📝 Úvodní úkol: „Přihlášení na discord“
+Jakmile máte na Discordu nastavené správné jméno:
+- V příslušném kanálu kurzu na Discordu napište zprávu, abyste odevzdali úkol **„Přihlášení na discord“** 🙂.
+- Vyučující vám podle jména zaeviduje splnění úkolu v Google Classroom.

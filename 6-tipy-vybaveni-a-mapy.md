@@ -395,6 +395,9 @@ Slouží k výkonovému spínání polarity a proudu z baterie do stejnosměrný
 
 ## 4. Užitečné studijní odkazy
 
+### 🧪 Testování embedded kódu:
+- 📖 **Metodika a praktické příklady:** [Jak se testuje embedded kód v Pythonu (pomucky)](https://github.com/JanChaloupek/pomucky/blob/main/testovani-embedded-kodu.md) – základy unit testů, testování na PC bez připojeného robota a mockování hardwaru.
+
 ### 🛠️ Práce s Git a GitHubem pro začátečníky:
 - 🎥 **Video:** [Jak na Git a Git-Hub ve Visual Studio Code (YouTube video pro úplné začátečníky)](https://www.youtube.com/watch?v=0v5K4GvK4Gs)
 - 📖 **Tahák příkazů:** [14 Git příkazů, které musí znát každý vývojář (Skillmea blog)](https://skillmea.cz/blog/14-git-prikazu-ktere-musi-znat-kazdy-vyvojar)
@@ -410,6 +413,6 @@ Tuto sekci budeme v průběhu kurzu průběžně doplňovat. Pokud přijdete na 
 ### Kam pokračovat dál?
 
 - **Základní řízení motorů a ochrana můstku:**  
-  👉 **[5. Ovládání motorů robota JoyCar](ovladani-motoru.md)**
+  👉 **[5. Ovládání motorů robota JoyCar](5-ovladani-motoru.md)**
 - **Zpět na rozcestník všech návodů:**  
   👉 **[Hlavní přehled kurzu](README.md)**

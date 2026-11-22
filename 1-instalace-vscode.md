@@ -84,13 +84,13 @@ Celá připravená výchozí struktura projektu je součástí repozitáře kurz
 Máte k dispozici dvě cesty podle toho, zda již ovládáte Git, nebo chcete začít rychle bez něj:
 
 #### Varianta A: Přes Git (doporučený a profesionální postup)
-Pokud již pracujete s Git a GitHubem (podrobný návod pro odevzdávání přes Pull Requesty najdete v [4. Práce s Git a GitHubem](prace-s-gitem.md)):
+Pokud již pracujete s Git a GitHubem (podrobný návod pro odevzdávání přes Pull Requesty najdete v [4. Práce s Git a GitHubem](4-prace-s-gitem.md)):
 1. Otevřete terminál (PowerShell / Bash) a přejděte do složky pro projekty (např. `cd C:\Projekty`).
 2. Naklonujte repozitář kurzu:
    ```bash
    git clone https://github.com/Global-Classes-CZE/robot-programming3.git joyCarProjekt
    ```
-   *(Pokud již máte vytvořený svůj vlastní fork podle [4. Práce s Git a GitHubem](prace-s-gitem.md), naklonujte URL svého forku).*
+   *(Pokud již máte vytvořený svůj vlastní fork podle [4. Práce s Git a GitHubem](4-prace-s-gitem.md), naklonujte URL svého forku).*
 3. Klonovat lze také přímo z prostředí VS Code: stiskněte zkratku `Ctrl+Shift+P`, vyberte **Git: Clone**, vložte adresu repozitáře a vyberte složku na disku.
 
 #### Varianta B: Ruční stažení ZIP archivu z GitHubu (pro úplné začátečníky)
@@ -99,7 +99,7 @@ Pokud zatím Git neovládáte a chcete si nejprve osahat hardware a psaní kódu
 2. V pravé horní části klikněte na zelené tlačítko **`<> Code`**.
 3. V rozbalené nabídce zvolte položku **`Download ZIP`**.
 4. Stažený soubor ZIP rozbalte na svůj disk (např. do složky `joyCarProjekt`).
-5. K nastavení Gitu a odevzdávání úkolů přes Pull Requesty se můžete vrátit kdykoliv později podle [4. Práce s Git a GitHubem](prace-s-gitem.md).
+5. K nastavení Gitu a odevzdávání úkolů přes Pull Requesty se můžete vrátit kdykoliv později podle [4. Práce s Git a GitHubem](4-prace-s-gitem.md).
 
 ---
 
@@ -112,4 +112,4 @@ Pokud zatím Git neovládáte a chcete si nejprve osahat hardware a psaní kódu
 5. Zkontrolujte, zda v levém panelu Průzkumníka vidíte složky `.vscode`, `_stubs`, `lib` a soubory `pyrightconfig.json` i `code.py`.
 
 Nyní máte připravený editor i kompletní strukturu projektu. V dalším kroku připojíme desku Pico:ed a nastavíme automatické nahrávání:  
-👉 **Pokračujte na: [2. Práce s Pico:ed a CircuitPythonem](nastaveni-picoed.md)**
+👉 **Pokračujte na: [2. Práce s Pico:ed a CircuitPythonem](2-nastaveni-picoed.md)**

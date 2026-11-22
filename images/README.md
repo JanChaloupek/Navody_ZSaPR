@@ -4,7 +4,7 @@ Tato složka slouží pro ukládání obrázků, fotografií a schémat použit�
 
 ### Doporučené názvy a umístění obrázků:
 
-#### Pro kapitolu [tipy-vybaveni-a-mapy.md](../tipy-vybaveni-a-mapy.md):
+#### Pro kapitolu [6-tipy-vybaveni-a-mapy.md](../6-tipy-vybaveni-a-mapy.md):
 
 ##### 1. Základní výbava a mapy:
 - `magneticky-kabel.jpg` (nebo `.png`) – Detail zapojení magnetické koncovky v desce Pico:ed a přiblížení kabelu.

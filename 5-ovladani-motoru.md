@@ -260,6 +260,6 @@ Pokud chcete posunout jízdní vlastnosti JoyCaru na špičkovou úroveň, lze o
 ### Kam pokračovat dál?
 
 - **Vylepšení hardwaru, mapy na lino a rozšíření na 6 senzorů čáry:**  
-  👉 **[6. Praktické tipy, mapy a vylepšení výbavy](tipy-vybaveni-a-mapy.md)**
+  👉 **[6. Praktické tipy, mapy a vylepšení výbavy](6-tipy-vybaveni-a-mapy.md)**
 - **Zpět na rozcestník všech návodů:**  
   👉 **[Hlavní přehled kurzu](README.md)**

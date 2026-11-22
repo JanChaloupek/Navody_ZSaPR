@@ -175,5 +175,9 @@ Pokud chcete mít v levém průzkumníku VS Code zobrazený jak svůj pracovní 
 
 ---
 
-👉 **Další kapitola: [3. Úvodní práce s Micro:bitem a Mu Editorem](3-microbit-mu-editor.md)**  
-👉 **Návod pro odevzdávání úkolů: [4. Práce s Git a GitHubem](4-prace-s-gitem.md)**
+### Kam pokračovat dál?
+
+- **Pokud v kurzu začínáte úvodním srovnávacím cvičením s BBC micro:bitem:**  
+  👉 **[3. Úvodní práce s Micro:bitem a MicroPythonem](microbit-a-micropython.md)**
+- **Pokud pokračujete přímo v hlavní lince kurzu s robotem JoyCar:**  
+  👉 **[4. Práce s Git a GitHubem (Odevzdávání úkolů)](prace-s-gitem.md)**

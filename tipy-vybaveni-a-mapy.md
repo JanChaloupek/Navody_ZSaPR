@@ -1,4 +1,4 @@
-# 5. Praktické tipy, mapy a vylepšení výbavy (nepovinné)
+# 6. Praktické tipy, mapy a vylepšení výbavy (nepovinné)
 
 Tato kapitola je **nepovinná a rozšiřující**. Shrnuje osvědčené zkušenosti z praxe mentora a absolventů minulých běhů kurzu. Najdete zde doporučení na užitečné doplňky k hardwaru, návody a odkazy ke stažení map pro sledování čáry i postup výroby vlastní odolné dráhy.
 
@@ -404,3 +404,12 @@ Slouží k výkonovému spínání polarity a proudu z baterie do stejnosměrný
 ## 5. Prostor pro další vylepšení a nápady
 
 Tuto sekci budeme v průběhu kurzu průběžně doplňovat. Pokud přijdete na zajímavý tip, 3D model (např. ochranné nárazníky, držáky čidel), úpravu nebo zlepšovák, pošlete nám jej a zařadíme ho sem pro ostatní!
+
+---
+
+### Kam pokračovat dál?
+
+- **Základní řízení motorů a ochrana můstku:**  
+  👉 **[5. Ovládání motorů robota JoyCar](ovladani-motoru.md)**
+- **Zpět na rozcestník všech návodů:**  
+  👉 **[Hlavní přehled kurzu](README.md)**

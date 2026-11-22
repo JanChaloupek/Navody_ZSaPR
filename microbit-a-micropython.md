@@ -82,4 +82,4 @@ Pokud nechcete přepínat mezi různými editory a chcete MicroPython používat
 
 Vyzkoušeli jste si základní principy běhu MicroPythonu. Pro stavbu a programování našeho hlavního autonomního robota JoyCar však v dalších kapitolách budeme primárně využívat **CircuitPython na desce Pico:ed v2** pro jeho vynikající podporu knihoven, práci přes USB disk `CIRCUITPY` a přehledné řízení periferií.
 
-👉 **Pokračujte na: [4. Práce s Git a GitHubem (Odevzdávání úkolů)](4-prace-s-gitem.md)**
+👉 **Pokračujte na: [4. Práce s Git a GitHubem (Odevzdávání úkolů)](prace-s-gitem.md)**

@@ -208,4 +208,11 @@ Pokud s Gitem teprve začínáte nebo si chcete ujasnit vizuální práci s verz
 - 🎥 **Video průvodce:** [Jak na Git a Git-Hub ve Visual Studio Code (YouTube video pro začátečníky)](https://www.youtube.com/watch?v=0v5K4GvK4Gs)
 - 📖 **Přehled příkazů:** [14 Git příkazů, které musí znát každý vývojář (Skillmea blog)](https://skillmea.cz/blog/14-git-prikazu-ktere-musi-znat-kazdy-vyvojar)
 
-👉 **Další tipy a návody na přípravu dráhy najdete v: [5. Praktické tipy, mapy a vylepšení výbavy](5-tipy-vybaveni-a-mapy.md)**
+---
+
+### Kam pokračovat dál?
+
+- **Krok 4 – programování pohybu robota:**  
+  👉 **[5. Ovládání motorů robota JoyCar](ovladani-motoru.md)** – bezpečné řízení motorů a prevence odpálení můstku.
+- **Příprava dráhy a mapy pro jízdu robota:**  
+  👉 **[6. Praktické tipy, mapy a vylepšení výbavy](tipy-vybaveni-a-mapy.md)** – návod na výrobu testovací dráhy (páska na lino, dlaždice A4, PDF mapy).

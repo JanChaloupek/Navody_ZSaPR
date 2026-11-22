@@ -64,7 +64,7 @@ Během kurzu budete pracovat se **stavebnicí JoyCar** a **dvěma procesorovými
   - *Předlohy pro velkoformátový tisk:* hotové PDF podklady pro formáty A1 nebo A3.
 
 > [!TIP]
-> Tipy na praktické doplňky (magnetický USB kabel proti poškození konektoru, záložní napájení, podrobný návod jak vyrobit srolovatelnou dráhu na linoleu a odkazy na PDF mapy) najdete v rozšiřující kapitole **[5. Praktické tipy, mapy a vylepšení výbavy](5-tipy-vybaveni-a-mapy.md)**.
+> Tipy na praktické doplňky (magnetický USB kabel proti poškození konektoru, záložní napájení, podrobný návod jak vyrobit srolovatelnou dráhu na linoleu a odkazy na PDF mapy) najdete v rozšiřující kapitole **[6. Praktické tipy, mapy a vylepšení výbavy](tipy-vybaveni-a-mapy.md)**.
 
 ---
 
@@ -74,12 +74,12 @@ Postupujte podle jednotlivých kapitol v uvedeném pořadí:
 
 | Kapitola | Název návodu | Popis |
 |---|---|---|
-| **Krok 1** | [1. Instalace a nastavení Visual Studio Code](1-instalace-vscode.md) | Stažení VS Code, instalace správných rozšíření (pozor na správnou verzi CircuitPythonu!) a příprava pracovní složky. |
-| **Krok 2** | [2. Práce s Pico:ed a CircuitPythonem](2-nastaveni-picoed.md) | Kontrola a upgrade firmware, automatické nahrávání kódu při uložení (`copy.ps1`), sériová konzole (REPL), řešení potíží a práce ve Workspace. |
-| **Doplněk** | [3. Úvodní práce s Micro:bitem a MicroPythonem](3-microbit-mu-editor.md) | Úvodní srovnání s MicroPythonem: jednoduchý Mu Editor nebo pokročilé prostředí přímo ve VS Code s rozšířením MicroPython Panel a knihovnou `picoed_v2_lib`. |
-| **Krok 3** | [4. Práce s Git a GitHubem (Odevzdávání úkolů)](4-prace-s-gitem.md) | Vytvoření forku, klonování, správa větví a **vytváření čistých Pull Requestů bez míchání starých úkolů**. |
-| **Hardware** | [6. Ovládání motorů robota JoyCar](6-ovladani-motoru-joycar.md) | **Kriticky důležitá kapitola:** princip budiče PCA9633, bezpečný kód pro motory, prevence spálení můstku a náhradní řešení přes PCA9685. |
-| **Tipy (nepovinné)** | [5. Praktické tipy, mapy a vylepšení](5-tipy-vybaveni-a-mapy.md) | Magnetický USB kabel, tipy pro napájení, srolovatelná mapa na lino, hack I2C expandéru a rozšíření na 6 senzorů čáry. |
+| **Krok 1** | [1. Instalace a nastavení Visual Studio Code](instalace-vscode.md) | Stažení VS Code, instalace správných rozšíření (pozor na správnou verzi CircuitPythonu!) a příprava pracovní složky. |
+| **Krok 2** | [2. Práce s Pico:ed a CircuitPythonem](nastaveni-picoed.md) | Kontrola a upgrade firmware, automatické nahrávání kódu při uložení (`copy.ps1`), sériová konzole (REPL), řešení potíží a práce ve Workspace. |
+| **Doplněk** | [3. Úvodní práce s Micro:bitem a MicroPythonem](microbit-a-micropython.md) | Úvodní srovnání s MicroPythonem: jednoduchý Mu Editor nebo pokročilé prostředí přímo ve VS Code s rozšířením MicroPython Panel a knihovnou `picoed_v2_lib`. |
+| **Krok 3** | [4. Práce s Git a GitHubem (Odevzdávání úkolů)](prace-s-gitem.md) | Vytvoření forku, klonování, správa větví a **vytváření čistých Pull Requestů bez míchání starých úkolů**. |
+| **Krok 4** | [5. Ovládání motorů robota JoyCar](ovladani-motoru.md) | **Kriticky důležitá kapitola:** princip budiče PCA9633, bezpečný kód pro motory, prevence spálení můstku a náhradní řešení přes PCA9685. |
+| **Tipy (nepovinné)** | [6. Praktické tipy, mapy a vylepšení výbavy](tipy-vybaveni-a-mapy.md) | Magnetický USB kabel, tipy pro napájení, srolovatelná mapa na lino, hack I2C expandéru a rozšíření na 6 senzorů čáry. |
 
 ---
 

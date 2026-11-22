@@ -1,4 +1,4 @@
-# 6. Ovládání motorů robota JoyCar (originální PCA9633 a náhrada PCA9685)
+# 5. Ovládání motorů robota JoyCar (originální PCA9633 a náhrada PCA9685)
 
 Tato kapitola se věnuje nejdůležitějšímu akčnímu členu robota: **stejnosměrným motorům podvozku**. Dozvíte se, jak je řízení motorů na JoyCaru technicky zapojeno, jak s nimi správně pracovat a jak předejít jejich zničení.
 
@@ -254,3 +254,12 @@ Pokud chcete posunout jízdní vlastnosti JoyCaru na špičkovou úroveň, lze o
 2. **Přechod přes nulu při změně směru:** Mezi jízdou vpřed a vzad zařaďte povinné zastavení a krátkou prodlevu.
 3. **Nepoužívejte oficiální kód výrobce:** Používejte zásadně naši bezpečnou třídu.
 4. **V případě závady nezoufejte:** Spálený můstek lze levně a rychle nahradit kombinací modulů PCA9685 a L298N.
+
+---
+
+### Kam pokračovat dál?
+
+- **Vylepšení hardwaru, mapy na lino a rozšíření na 6 senzorů čáry:**  
+  👉 **[6. Praktické tipy, mapy a vylepšení výbavy](tipy-vybaveni-a-mapy.md)**
+- **Zpět na rozcestník všech návodů:**  
+  👉 **[Hlavní přehled kurzu](README.md)**

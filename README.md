@@ -52,7 +52,7 @@ Postupujte podle jednotlivých kapitol v uvedeném pořadí:
 | **Krok 2** | [2. Práce s Pico:ed a CircuitPythonem](2-nastaveni-picoed.md) | Kontrola a upgrade firmware, automatické nahrávání kódu při uložení (`copy.ps1`), sériová konzole (REPL), řešení potíží a práce ve Workspace. |
 | **Doplněk** | [3. Úvodní práce s Micro:bitem a Mu Editorem](3-microbit-mu-editor.md) | Informativní návod pro úvodní srovnání: instalace Mu Editoru a první program pro BBC micro:bit. |
 | **Krok 3** | [4. Práce s Git a GitHubem (Odevzdávání úkolů)](4-prace-s-gitem.md) | Vytvoření forku, klonování, správa větví a **vytváření čistých Pull Requestů bez míchání starých úkolů**. |
-| **Tipy (nepovinné)** | [5. Praktické tipy, mapy a vylepšení](5-tipy-vybaveni-a-mapy.md) | Magnetický USB kabel, tipy pro napájení, výroba srolovatelné mapy na lino, odkazy na PDF podklady. |
+| **Tipy (nepovinné)** | [5. Praktické tipy, mapy a vylepšení](5-tipy-vybaveni-a-mapy.md) | Magnetický USB kabel, tipy pro napájení, srolovatelná mapa na lino, hack I2C expandéru a rozšíření na 6 senzorů čáry. |
 
 ---
 

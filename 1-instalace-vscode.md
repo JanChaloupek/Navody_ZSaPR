@@ -65,28 +65,51 @@ Rozšíření instalujete kliknutím na ikonu **Extensions** (čtverce na levé 
 
 ---
 
-## 3. Vytvoření a příprava pracovního adresáře
+## 3. Získání výchozí struktury projektu
 
-Zdrojové kódy svých programů budete mít uložené na svém pevném disku (např. v `Dokumenty/joyCarProjekt`). Tuto složku budeme verzovat v Gitu.
+Celá připravená výchozí struktura projektu je součástí repozitáře kurzu na GitHubu. Nemusíte nic ručně konfigurovat – projekt už přímo obsahuje:
+- **`.vscode/`** – připravená konfigurace editoru, doporučená rozšíření (`extensions.json`), pravidla ignorování souborů (`.ignoreCopy`) a nahrávací skripty:
+  - `copy.ps1` (autorský skript mentora kurzu Jana Chaloupka pro Windows)
+  - `copy.sh` (skript studenta Robina Bortlíka upravený Janem Chaloupkem pro macOS a Linux)
+- **`_stubs/`** – interní složka s typovými definicemi a fake moduly CircuitPythonu (`board`, `busio`, `digitalio`, `picoed`, `neopixel`...). Podtržítko v názvu značí, že jde o interní knihovny pro editor a offline unit testy na PC, které se nekopírují do robota. Plně nahrazuje dřívější složku `lib_vsc_only/`.
+- **`lib/`** – složka pro ovladače a knihovny hardware JoyCaru.
+- **`pyrightconfig.json`** – konfigurace analyzátoru Pylance/Pyright pro přesné našeptávání a typovou kontrolu bez falešných chybových hlášení.
+- **`code.py`** – hlavní vstupní soubor programu běžící přímo v procesoru robota.
+- **`.gitignore`** – pravidla verzování zamezující nahrávání mezipaměti a dočasných souborů do Gitu.
 
-1. Vytvořte na disku novou prázdnou složku, například `joyCarProjekt`.
-2. Stáhněte si připravený inicializační archiv kurzu:  
-   🔗 **[vsc_init_circuitPythonProject-main.zip](https://github.com/JanChaloupek/vsc_init_circuitPythonProject/archive/refs/heads/main.zip)**
-3. Stažený ZIP rozbalte a jeho obsah nakopírujte do své nové složky `joyCarProjekt`.  
-   Složka musí obsahovat:
-   - `.vscode/` – konfigurační soubory editoru, skripty pro nahrávání (`copy.ps1`, `copy.sh`) a seznam doporučených rozšíření `extensions.json`.
-   - `lib/` – složka pro knihovny hardwaru robota JoyCar.
-   - `lib_vsc_only/` – pomocné typové stuby pouze pro VS Code na PC (nepřenášejí se na robota).
-   - `.gitignore` – seznam souborů, které se nemají nahrávat na GitHub.
+---
+
+### Jak projekt získat do počítače:
+
+Máte k dispozici dvě cesty podle toho, zda již ovládáte Git, nebo chcete začít rychle bez něj:
+
+#### Varianta A: Přes Git (doporučený a profesionální postup)
+Pokud již pracujete s Git a GitHubem (podrobný návod pro odevzdávání přes Pull Requesty najdete v [Kapitole 4](4-prace-s-gitem.md)):
+1. Otevřete terminál (PowerShell / Bash) a přejděte do složky pro projekty (např. `cd C:\Projekty`).
+2. Naklonujte repozitář kurzu:
+   ```bash
+   git clone https://github.com/Global-Classes-CZE/robotprogramming.git joyCarProjekt
+   ```
+   *(Pokud již máte vytvořený svůj vlastní fork podle [Kapitoly 4](4-prace-s-gitem.md), naklonujte URL svého forku).*
+3. Klonovat lze také přímo z prostředí VS Code: stiskněte zkratku `Ctrl+Shift+P`, vyberte **Git: Clone**, vložte adresu repozitáře a vyberte složku na disku.
+
+#### Varianta B: Ruční stažení ZIP archivu z GitHubu (pro úplné začátečníky)
+Pokud zatím Git neovládáte a chcete si nejprve osahat hardware a psaní kódu:
+1. Otevřete v prohlížeči oficiální repozitář kurzu na GitHubu (např. [github.com/Global-Classes-CZE/robotprogramming](https://github.com/Global-Classes-CZE/robotprogramming)).
+2. V pravé horní části klikněte na zelené tlačítko **`<> Code`**.
+3. V rozbalené nabídce zvolte položku **`Download ZIP`**.
+4. Stažený soubor ZIP rozbalte na svůj disk (např. do složky `joyCarProjekt`).
+5. K nastavení Gitu a odevzdávání úkolů přes Pull Requesty se můžete vrátit kdykoliv později podle [4. Práce s Git a GitHubem](4-prace-s-gitem.md).
 
 ---
 
 ## 4. Otevření projektu ve VS Code
 
 1. Spusťte VS Code.
-2. V horním menu zvolte **File** → **Open Folder...** (nebo použijte zkratku `Ctrl+K Ctrl+O`).
-3. Vyberte svůj připravený pracovní adresář (např. `joyCarProjekt`).
+2. V horním menu zvolte **File** → **Open Folder...** (nebo stiskněte zkratku `Ctrl+K Ctrl+O`).
+3. Vyberte složku projektu (např. `joyCarProjekt`).
 4. VS Code automaticky detekuje soubor `.vscode/extensions.json`. Pokud se v pravém dolním rohu zobrazí výzva *„Do you want to install the recommended extensions?“*, potvrďte kliknutím na **Install**.
+5. Zkontrolujte, zda v levém panelu Průzkumníka vidíte složky `.vscode`, `_stubs`, `lib` a soubory `pyrightconfig.json` i `code.py`.
 
-Nyní máte nainstalovaný editor i základní kostru projektu. V dalším kroku připojíme desku Pico:ed a nastavíme automatické nahrávání:  
+Nyní máte připravený editor i kompletní strukturu projektu. V dalším kroku připojíme desku Pico:ed a nastavíme automatické nahrávání:  
 👉 **Pokračujte na: [2. Práce s Pico:ed a CircuitPythonem](2-nastaveni-picoed.md)**

@@ -36,7 +36,7 @@ Robot JoyCar používá 4 ks speciálních **USB nabíjecích Li-ion akumulátor
 
 ## 2. Testovací mapa a dráha pro robota
 
-Autonomní robot JoyCar se orientuje pomocí odrazových infračervených (IR) senzorů na spodní straně podvozku. Pro spolehlivou jízdu po čáře potřebuje **výrazný kontrast mezi světlým podkladem a černou čarou** (ideální šířka čáry je cca 15–20 mm).
+Autonomní robot JoyCar se orientuje pomocí odrazových infračervených (IR) senzorů na spodní straně podvozku. Pro spolehlivou jízdu po čáře potřebuje **výrazný kontrast mezi světlým podkladem a černou čarou** (ideální šířka čáry je **přibližně 15 mm**, což přesně odpovídá standardní elektrikářské izolační pásce).
 
 Existuje několik způsobů, jak si testovací dráhu připravit:
 

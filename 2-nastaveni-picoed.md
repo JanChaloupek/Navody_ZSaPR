@@ -52,14 +52,34 @@ Připojte desku Pico:ed k počítači pomocí microUSB kabelu. V Průzkumníku s
    `ELECFREAKS:Pico:ed`
 6. Tím se stáhnou typové definice specifické pro Pico:ed a editor začne správně napovídat piny a moduly.
 
-### Kontrola cest ke knihovnám v `settings.json`:
-Otevřete soubor `.vscode/settings.json` a ujistěte se, že sekce `python.analysis.extraPaths` obsahuje cesty k lokálním knihovnám `./lib` a `./lib_vsc_only`:
+### Kontrola konfigurace v `settings.json` a `pyrightconfig.json`:
+V novém uspořádání kurzu (vycházejícím z moderní architektury `3-SW_GIT`) jsou veškeré typové definice a fake moduly CircuitPythonu umístěny v interní složce **`_stubs/`** (nahrazující starší složku `lib_vsc_only/`).
+
+Otevřete soubor `.vscode/settings.json` a ujistěte se, že obsahuje nastavení pro `_stubs`:
 ```jsonc
+"python.analysis.stubPath": "_stubs",
 "python.analysis.extraPaths": [
     "./lib",
-    "./lib_vsc_only"
+    "./_stubs"
 ]
 ```
+
+V kořenu projektu se rovněž nachází konfigurační soubor **`pyrightconfig.json`**, který jazykovému serveru Pylance/Pyright říká, kde hledat knihovny a stuby:
+```json
+{
+  "include": ["."],
+  "stubPath": "_stubs",
+  "extraPaths": ["./lib", "./_stubs"],
+  "executionEnvironments": [
+    {
+      "root": ".",
+      "extraPaths": ["./lib", "./_stubs"],
+      "stubPath": "_stubs"
+    }
+  ]
+}
+```
+Díky tomu vám VS Code ihned nabízí bezchybnou nápovědu (IntelliSense) pro moduly desky Pico:ed (`board`, `busio`, `digitalio`, `picoed`, `neopixel` atd.) a nepodtrhává importy červeně jako chybu.
 
 ---
 
@@ -98,7 +118,9 @@ Otevřete `.vscode/settings.json` ve svém projektu a doplňte následující bl
 ```
 
 > [!NOTE]
-> Skript `copy.ps1` pro Windows je autorský skript kurzu a je průběžně laděn. Skript `copy.sh` pro Linux a macOS naleznete také v [oficiálním repozitáři šablony](https://github.com/JanChaloupek/vsc_init_circuitPythonProject/blob/main/.vscode/copy.sh).
+> **Původ a autorství skriptů:**
+> - Skript **`copy.ps1`** pro Windows je autorský skript lektora a mentora kurzu (**Jan Chaloupek**) a je průběžně laděn a optimalizován pro spolehlivé nahrávání na disk `CIRCUITPY`.
+> - Skript **`copy.sh`** pro macOS a Linux původně vytvořil student kurzu **Robin Bortlík** (@Robin Bortlik) v předchozích ročnících a Jan Chaloupek jej následně upravil a začlenil do standardní výbavy kurzu.
 
 ---
 

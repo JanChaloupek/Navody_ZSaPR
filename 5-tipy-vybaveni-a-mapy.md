@@ -16,6 +16,10 @@ Při vývoji a ladění kódu budete kabel k desce **Pico:ed** připojovat a odp
   - [AlzaPower MagCore 2in1 USB-C / micro USB 3A (1,5 m)](https://www.alza.cz/alzapower-magcore-2in1-usb-c-micro-usb-3a-1-5m-cerny-d6486450.htm)
   - [AlzaPower MagCore 2in1 USB-C / micro USB 3A (2 m)](https://www.alza.cz/alzapower-magcore-2in1-usb-c-micro-usb-3a-2m-cerny-d6486452.htm)
 
+<!-- Obrázek magnetického kabelu v desce:
+![Magnetický kabel v desce Pico:ed](images/magneticky-kabel.jpg)
+-->
+
 > [!NOTE]
 > Magnetický kabel není povinný – veškerou práci zvládnete i s běžným microUSB kabelem. Jde o praktické doporučení pro ochranu desky a pohodlnější práci.
 
@@ -73,6 +77,12 @@ Pokud máte doma málo místa a potřebujete dráhu po práci snadno uklidit, sk
 
 > [!TIP]
 > Výsledkem je rovný podklad s vysokým kontrastem bílé a černé, po kterém robot hladce přejíždí bez zadrhávání podvozku či senzorů.
+
+<!-- Obrázky mapy na linoleu:
+![Rozložená mapa na linoleu](images/mapa-linoleum-hotova.jpg)
+![Srolovaná mapa pro snadný transport](images/mapa-linoleum-srolovana.jpg)
+![Detail spasování čar](images/mapa-lepeni-detail.jpg)
+-->
 
 ---
 

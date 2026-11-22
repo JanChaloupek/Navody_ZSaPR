@@ -1,13 +1,13 @@
 # Návody pro studenty – Základy stavby a programování robotů
 
 Vítejte v kurzu **Základy stavby a programování robotů**!  
-Tento repozitář obsahuje ucelené návody krok za krokem pro přípravu vývojového prostředí, práci s hardwarem a odevzdávání semestrálních úkolů.
+Tento repozitář obsahuje ucelené návody krok za krokem pro přípravu vývojového prostředí, práci s hardwarem a odevzdávání úkolů kurzu.
 
 ---
 
 ## 🤖 Používaný hardware v kurzu
 
-Během semestru budete pracovat se dvěma procesorovými deskami:
+Během kurzu budete pracovat se dvěma procesorovými deskami:
 
 1. **Pico:ed v2 (s procesorem Raspberry Pi RP2040) a robot JoyCar** *(Hlavní platforma kurzu)*
    - Na této desce běží **CircuitPython** (verze 9 nebo vyšší).
@@ -42,4 +42,4 @@ Postupujte podle jednotlivých kapitol v uvedeném pořadí:
 2. **Přísný zákaz blokujícího `time.sleep()` v robotických úlohách!**  
    Autonomní robot musí neustále sledovat senzory čáry a reagovat na překážky. Pokud v programu použijete `time.sleep()`, robot „oslepne“ a havaruje. Všechny časové úlohy řešíme neblokujícími časovači `Timer` a `Period`.
 3. **Odevzdávání pouze přes Pull Requesty!**  
-   Každý domácí či semestrální úkol se odevzdává jako samostatný Pull Request ze samostatné větve založené z čerstvého `main`.
+   Každý úkol kurzu se odevzdává jako samostatný Pull Request ze samostatné větve založené z čerstvého `main`.

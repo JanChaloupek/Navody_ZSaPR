@@ -2,7 +2,7 @@
 
 V tomto kurzu se naučíte pracovat s verzovacím systémem **Git** a platformou **GitHub** způsobem, který se běžně používá v profesionálních softwarových týmech.
 
-Všechny semestrální a domácí úkoly se budou odevzdávat formou **Pull Requestu (PR)** do oficiálního repozitáře kurzu (podobně jako v [minulých ročnících kurzu](https://github.com/Global-Classes-CZE/robotprogramming/pulls?q=is%3Apr+state%3Aclosed)).
+Všechny úkoly kurzu se budou odevzdávat formou **Pull Requestu (PR)** do oficiálního repozitáře kurzu (podobně jako v [minulých ročnících kurzu](https://github.com/Global-Classes-CZE/robotprogramming/pulls?q=is%3Apr+state%3Aclosed)).
 
 Tento návod vám ukáže, jak vše nastavit a jak se vyhnout nejčastější chybě studentů: **míchání starých úkolů do nových odevzdání**.
 
@@ -29,7 +29,7 @@ Váš osobní repozitář na GitHubu (ORIGIN)
 
 ---
 
-## 2. Úvodní nastavení (dělá se jen jednou na začátku semestru)
+## 2. Úvodní nastavení (dělá se jen jednou na začátku kurzu)
 
 ### Krok 1: Vytvoření forku na GitHubu
 1. Přihlaste se na [github.com](https://github.com).

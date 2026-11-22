@@ -1,6 +1,6 @@
 # 3. Úvodní práce s Micro:bitem a Mu Editorem
 
-Tato kapitola je **samostatná a informativní**. Slouží výhradně pro úvodní cvičení na začátku semestru, kde si vyzkoušíme desku **BBC micro:bit v2** a ukážeme si rozdíl mezi **MicroPythonem** a **CircuitPythonem**.
+Tato kapitola je **samostatná a informativní**. Slouží výhradně pro úvodní cvičení na začátku kurzu, kde si vyzkoušíme desku **BBC micro:bit v2** a ukážeme si rozdíl mezi **MicroPythonem** a **CircuitPythonem**.
 
 Pro tuto úvodní část nepoužíváme složité nastavování ve VS Code, ale jednoduchý a spolehlivý oficiální **Mu Editor**.
 
@@ -60,7 +60,7 @@ V editoru Mu máte k dispozici dva skvělé nástroje:
 
 ## 5. Shrnutí a návrat k hlavnímu robotovi JoyCar
 
-Vyzkoušeli jste si základní chování mikrokontroléru. Pro zbytek semestru a stavbu autonomního robota JoyCar však budeme potřebovat výrazně vyšší výkon, 8 senzorů, řízení motorů a profesionální vývojové prostředí.
+Vyzkoušeli jste si základní chování mikrokontroléru. Pro zbytek kurzu a stavbu autonomního robota JoyCar však budeme potřebovat výrazně vyšší výkon, 8 senzorů, řízení motorů a profesionální vývojové prostředí.
 
 Proto se nyní vrátíme k **Pico:ed** a editoru **Visual Studio Code**:  
 👉 **Pokračujte na: [4. Práce s Git a GitHubem (Odevzdávání úkolů)](4-prace-s-gitem.md)**

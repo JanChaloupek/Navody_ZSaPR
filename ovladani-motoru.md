@@ -11,7 +11,7 @@ Tato kapitola se věnuje nejdůležitějšímu akčnímu členu robota: **stejno
 > 
 > 1. **PŘÍSNÝ ZÁKAZ OKAMŽITÉ ZMĚNY SMĚRU OTÁČENÍ MOTORU:**  
 >    Pokud motor točí dopředu a váš program **okamžitě přepne směr na zpátečku** (nebo naopak), vznikne v obvodu obrovská proudová špička v kombinaci s protisměrným indukovaným napětím (Back-EMF).  
->    **Tento jev spolehlivě zničí (spálí) motorový budič na základní desce!**  
+>    **Tento jev může snadno zničit (spálit) motorový budič na základní desce!**  
 >    *(K této závadě došlo bohužel v každém dosavadním ročníku kurzu u studentů, kteří toto pravidlo nerespektovali.)*
 > 
 > 2. **PRAVIDLO POVINNÉHO PŘECHODU PŘES NULU:**  

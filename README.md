@@ -89,7 +89,7 @@ Postupujte podle jednotlivých kapitol v uvedeném pořadí:
 2. **Přísný zákaz blokujícího `time.sleep()` v robotických úlohách!**  
    Autonomní robot musí neustále sledovat senzory čáry a reagovat na překážky. Pokud v programu použijete `time.sleep()`, robot „oslepne“ a havaruje. Všechny časové úlohy řešíme neblokujícími časovači `Timer` a `Period`.
 3. **Přísný zákaz okamžité změny směru motorů (zákaz oficiálních kódů výrobce)!**  
-   Okamžité přepnutí směru (např. z jízdy vpřed rovnou na zpátečku) vytvoří proudovou špičku a indukované napětí, které **spolehlivě zničí H-můstek na základní desce** robota. Vždy musíte nejprve nastavit PWM na 0 a nechat motor alespoň krátký okamžik doběhnout.
+   Okamžité přepnutí směru (např. z jízdy vpřed rovnou na zpátečku) vytvoří proudovou špičku a indukované napětí, které **může snadno zničit H-můstek na základní desce** robota. Vždy musíte nejprve nastavit PWM na 0 a nechat motor alespoň krátký okamžik doběhnout.
 4. **Odevzdávání pouze přes Pull Requesty!**  
    Každý úkol kurzu se odevzdává jako samostatný Pull Request ze samostatné větve založené z čerstvého `main`. Název Pull Requestu musí být ve formátu **`<Jméno> <Příjmení> <duXX>`** (např. `Jan Chaloupek du5`) a jméno musí přesně odpovídat vašemu účtu v Google Classroom a na Discordu.
 

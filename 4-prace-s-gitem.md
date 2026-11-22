@@ -166,14 +166,14 @@ git push origin ukol-1
    Do textového pole popisu uveďte stručné shrnutí vašeho řešení.
    
    > [!TIP]
-   > **Vložení ukázky klíčového kódu (CodeSnap) – usnadní a urychlí hodnocení vyučujícímu:**  
+   > **Vložení ukázky klíčového kódu (CodeSnap-plus-fix) – usnadní a urychlí hodnocení vyučujícímu:**  
    > U složitějších domácích úloh je skvělou a osvědčenou praxí přiložit do popisu Pull Requestu obrázek (snapshot) stěžejní části kódu, která řeší jádro zadání (např. řídicí podmínku, stavový automat nebo regulátor). Vyučující tak okamžitě „na první dobrou“ vidí vaši myšlenku bez nutnosti okamžitě listovat celým diffem.  
    > 
-   > **Jak snapshot vytvořit během pár sekund přes rozšíření CodeSnap-plus:**
+   > **Jak snapshot vytvořit během pár sekund přes rozšíření CodeSnap-plus-fix:**
    > 1. Ve VS Code označte myší stěžejní blok kódu.
-   > 2. Klikněte pravým tlačítkem myši a zvolte **CodeSnap**.
-   > 3. V otevřeném náhledu můžete kliknutím na čísla řádků ještě barevně zvýraznit nejdůležitější řádky (výhoda verze *CodeSnap-plus*).
-   > 4. Klikněte do náhledu a stiskněte **`Ctrl+C`** (zkopírovat do schránky), případně klikněte na ikonku fotoaparátu pro uložení PNG.
+   > 2. Klikněte pravým tlačítkem myši a zvolte **CodeSnap-plus-fix** (nebo stiskněte `Ctrl+Shift+P` a vyhledejte *CodeSnap-plus-fix*).
+   > 3. V otevřeném náhledu můžete kliknutím na čísla řádků barevně zvýraznit nejdůležitější řádky kódu (cykluje režimy Focus / Git-Add / Git-Remove).
+   > 4. Klikněte do náhledu a stiskněte **`Ctrl+C`** (zkopírovat do schránky), případně klikněte na ikonku spouště pro uložení PNG.
    > 5. Přejděte na stránku nového Pull Requestu na GitHubu a v poli pro text popisu stiskněte **`Ctrl+V`**. GitHub obrázek automaticky nahraje a zobrazí!
 6. **Klíčová sebekontrola:** Klikněte dole na záložku **Files changed** (Změněné soubory).
    - > [!TIP]

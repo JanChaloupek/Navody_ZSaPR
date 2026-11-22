@@ -30,6 +30,9 @@ Tato složka slouží pro ukládání obrázků, fotografií a schémat použit�
 - `kostka-9-s-jumpery.jpg` – Výsledná kostka s nasazenými propojovacími jumpery.
 - `kostka-10-na-joycaru-volne.jpg` – Vyrobená kostka položená na JoyCaru blízko svého místa.
 - `kostka-11-zapojena-senzory.jpg` – Kostka zapojená na správném místě na konektoru s připojenými senzory čáry.
+- `kostka-prodlouzena-1.jpg` – Prodloužená verze kostky s přímým propojením 3,3 V pomocí jumperů.
+- `kostka-prodlouzena-2.jpg` – Pohled na osazení prodloužené kostky na konektoru JoyCaru.
+- `kostka-prodlouzena-3.jpg` – Příprava pozic pro napájení analogových senzorů čáry.
 
 ##### 4. Další hardwarové úpravy (tuning):
 - `drzak-baterie-1.jpg` – Plexisklový držák baterií namontovaný na robotovi.

@@ -221,6 +221,18 @@ Vyrobil jsem si kompaktní „kostku“ z běžné dvouřadé kolíkové lišty,
 ![11. Kostka zapojená s přídavnými senzory](images/kostka-11-zapojena-senzory.jpg)
 -->
 
+#### 🔄 Další (prodloužená) verze kostky – připojení 3,3 V přímo jumpery
+V další vývojové variantě vznikla **prodloužená verze adaptérové kostky**:
+- **Přímé propojení 3,3 V jumpery:** Díky prodloužení lišty lze napájení 3,3 V propojit přímo pomocí jumperů, takže odpadá nutnost vést samostatný červený vodič na dálku přes celou desku.
+- **Příprava pro analogové senzory čáry:** Tato prodloužená kostka poskytuje více volných pozic s napájením a zemí, což je ideální pro připojení kabelů od dalších (např. analogových) senzorů čáry.
+- *Zaznamenáno v diskuzním kanálu kurzu: „Senzory připojené k Joy-Car (až 6 senzorů čáry)“.*
+
+<!-- Obrázky prodloužené kostky:
+![Prodloužená verze kostky s přímým 3,3V jumperem](images/kostka-prodlouzena-1.jpg)
+![Pohled na osazení na konektoru JoyCaru](images/kostka-prodlouzena-2.jpg)
+![Příprava pro další kabely senzorů](images/kostka-prodlouzena-3.jpg)
+-->
+
 ---
 
 ### 3.3 Plexisklový rychloupínací držák baterie

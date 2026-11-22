@@ -88,14 +88,14 @@ Pokud již pracujete s Git a GitHubem (podrobný návod pro odevzdávání přes
 1. Otevřete terminál (PowerShell / Bash) a přejděte do složky pro projekty (např. `cd C:\Projekty`).
 2. Naklonujte repozitář kurzu:
    ```bash
-   git clone https://github.com/Global-Classes-CZE/robotprogramming.git joyCarProjekt
+   git clone https://github.com/Global-Classes-CZE/robot-programming3.git joyCarProjekt
    ```
    *(Pokud již máte vytvořený svůj vlastní fork podle [Kapitoly 4](4-prace-s-gitem.md), naklonujte URL svého forku).*
 3. Klonovat lze také přímo z prostředí VS Code: stiskněte zkratku `Ctrl+Shift+P`, vyberte **Git: Clone**, vložte adresu repozitáře a vyberte složku na disku.
 
 #### Varianta B: Ruční stažení ZIP archivu z GitHubu (pro úplné začátečníky)
 Pokud zatím Git neovládáte a chcete si nejprve osahat hardware a psaní kódu:
-1. Otevřete v prohlížeči oficiální repozitář kurzu na GitHubu (např. [github.com/Global-Classes-CZE/robotprogramming](https://github.com/Global-Classes-CZE/robotprogramming)).
+1. Otevřete v prohlížeči oficiální repozitář kurzu na GitHubu (např. [github.com/Global-Classes-CZE/robot-programming3](https://github.com/Global-Classes-CZE/robot-programming3)).
 2. V pravé horní části klikněte na zelené tlačítko **`<> Code`**.
 3. V rozbalené nabídce zvolte položku **`Download ZIP`**.
 4. Stažený soubor ZIP rozbalte na svůj disk (např. do složky `joyCarProjekt`).

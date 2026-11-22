@@ -39,18 +39,18 @@ Váš osobní repozitář na GitHubu (ORIGIN)
 5. Na vašem profilu vznikne vaše vlastní kopie repozitáře.
 
 ### Krok 2: Naklonování vašeho forku do počítače
-1. Na stránce vašeho forku klikněte na zelené tlačítko **<> Code** a zkopírujte URL adresu (např. `https://github.com/vase-jmeno/robotprogramming.git`).
+1. Na stránce vašeho forku klikněte na zelené tlačítko **<> Code** a zkopírujte URL adresu (např. `https://github.com/vase-jmeno/robot-programming3.git`).
 2. Otevřete terminál (nebo VS Code: `Ctrl+Shift+P` → *Git: Clone*).
 3. Spusťte příkaz pro naklonování:
    ```bash
-   git clone https://github.com/vase-jmeno/robotprogramming.git
-   cd robotprogramming
+   git clone https://github.com/vase-jmeno/robot-programming3.git
+   cd robot-programming3
    ```
 
 ### Krok 3: Nastavení propojení na oficiální repozitář (`upstream`)
 Ve složce projektu nastavíme odkaz na původní školní repozitář, abychom z něj mohli stahovat aktualizace:
 ```bash
-git remote add upstream https://github.com/Global-Classes-CZE/robotprogramming.git
+git remote add upstream https://github.com/Global-Classes-CZE/robot-programming3.git
 ```
 Ověřte nastavení příkazem:
 ```bash
@@ -149,12 +149,12 @@ git push origin ukol-1
 
 ### Fáze 5: Vytvoření Pull Requestu pro vyučujícího
 
-1. Otevřete v prohlížeči stránku svého forku na GitHubu (`https://github.com/vase-jmeno/robotprogramming`).
+1. Otevřete v prohlížeči stránku svého forku na GitHubu (`https://github.com/vase-jmeno/robot-programming3`).
 2. Nahoře se automaticky objeví žlutý proužek:  
    **`ukol-1 had recent pushes less than a minute ago`** s tlačítkem **Compare & pull request**. Klikněte na něj.
 3. **Velmi důležitá kontrola záhlaví (směr PR):**
-   - **Base repository:** `Global-Classes-CZE/robotprogramming` | **base:** `main` *(cílový školní repozitář)*
-   - **Head repository:** `vase-jmeno/robotprogramming` | **compare:** `ukol-1` *(vaše větev)*
+   - **Base repository:** `Global-Classes-CZE/robot-programming3` | **base:** `main` *(cílový školní repozitář)*
+   - **Head repository:** `vase-jmeno/robot-programming3` | **compare:** `ukol-1` *(vaše větev)*
 4. **Název Pull Requestu:** Zadejte přesný formát:  
    `[Úkol 1] Jméno Příjmení`
 5. Do textového pole popisu můžete uvést případné poznámky k řešení.

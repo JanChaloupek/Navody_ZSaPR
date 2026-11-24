@@ -28,8 +28,8 @@ Před zahájením montáže doporučujeme vybalit a zkontrolovat všechny souč�
 | **Servomotor (SG90)** | 2× | Mikroserva pro natáčení ultrazvukového snímače (případně další mechanismy) |
 | **Stejnosměrný motor TT s převodovkou** | 2× | Pohonné motory kol se dvěma výstupními hřídelemi (vnější pro kolo, vnitřní pro enkodér) |
 | **Bateriové pouzdro** | 1× | Pouzdro pro 4× AA baterie s vypínačem a vývodem vodičů |
-| **Sada 3pinových DuPont kabelů** | 7× | Kabely pro senzory čáry, překážek a rychlosti |
-| **Sada 4pinových DuPont kabelů** | 5× | Kabely pro 4 LED světelné moduly a ultrazvukový senzor |
+| **Sada 3pinových kabelů** | 7× | 3žilové kabely s pevným pořadím vodičů: černá (GND), červená (VCC / +), žlutá (signál / Data) |
+| **Sada 4pinových kabelů** | 5× | Kabely pro 4 LED světelné moduly a ultrazvukový senzor |
 
 <img src="images/joycar-senzory-prehled.png" width="450" alt="Detailní přehled všech senzorů JoyCar">
 
@@ -115,25 +115,39 @@ Před zahájením montáže doporučujeme vybalit a zkontrolovat všechny souč�
    - Přišroubujte šikmo na přední boky základny šrouby M2,5 × 10 mm a maticemi.
 4. **LED světelné moduly (FL, FR, RL, RR):**
    - Zasuňte do zářezů v rozích podvozku a zajistěte šroubky M2,5 × 5 mm.
-5. **Ultrazvukový senzor:**
-   - **Pevná montáž (doporučeno pro začátek):** Ultrazvuk vložte do držáku (**Ultrasonic Bracket**) a upevněte na předek šasi šroubem M3 × 14 mm.
-   - **Pohyblivá montáž se servem:** Zasuňte servo do otvoru v horním šasi, nasaďte páku serva a na ni stahovacími páskami připevněte držák ultrazvukového snímače.
+5. **Ultrazvukový senzor se servomotorem (pro kurz ZSaPR je NUTNÁ montáž na servo!):**
+   > [!IMPORTANT]
+   > **Pro náš kurz ZSaPR je montáž ultrazvuku na servomotor povinná!** Pevnou montáž na spodní základnu nepoužívejte – robot potřebuje mít možnost aktivně otáčet „hlavou“, skenovat prostor před sebou do stran a vyhledávat překážky pod různými úhly.
+
+   **Postup montáže otočné hlavy se servem:**
+   1. **Usazení mikroserva do horního šasi:** Do obdélníkového výřezu v horní akrylové desce (Chassis) zasuňte mikroservo **SG90**. Nejprve otvorem protáhněte servokabel směrem dolů a pak do výřezu usaďte tělo serva (výstupní ozubená hřídelka směřuje dopředu).
+   2. **Vystředění a zajištění páky serva:** Na ozubenou hřídelku nasaďte plastové jednoramenné raménko (páku) serva tak, aby při středové poloze (cca 90°) směřovalo přímo dopředu v ose jízdy robota. Zajistěte jej malým středovým vrutem z příslušenství serva.
+   3. **Sestavení držáku ultrazvuku:** Spojte akrylový držák ultrazvuku (**Ultrasonic Bracket**) a držák serva (**Servo Bracket**) pomocí šroubu **M3 × 14 mm** a matice **M3**.
+   4. **Připevnění k páce serva:** Sestavený držák přiložte k raménku serva a pevně jej přitáhněte dvěma přiloženými stahovacími plastovými páskami (prostrčí se otvory v držáku a v raménku serva). Přebytky pásek opatrně odstřihněte.
+   5. **Zasunutí ultrazvukového senzoru:** Senzor HC-SR04 zatlačte oběma válcovými měniči („očima“) do kruhových otvorů v držáku.  
+      *(Pozor: 4 připojovací piny senzoru musí směřovat **nahoru**, aby k nim byl snadný přístup pro zapojení kabelu).*
 
 ---
 
 ## 3. Zapojení kabeláže k základní desce
 
 > [!CAUTION]
-> ### ⚠️ Kritické varování k barvám vodičů:
-> V oficiálních nákresech výrobce jsou kabely znázorněny v konkrétních barvách (oranžová, modrá, zelená, žlutá).  
-> **V reálných sadách JoyCar však barvy vodičů těmto obrázkům neodpovídají!** Kabely jsou dodávány jako běžné pásky DuPont vodičů s náhodnými duhovými barvami.
+> ### ⚠️ Kritické varování k barvám vodičů a pořadí pinů:
+> V oficiálních nákresech výrobce Joy-IT jsou kabely znázorněny v odlišných barvách (modrá, zelená, oranžová).  
+> **Reálná stavebnice JoyCar obsahuje 3žilové kabely s pevným pořadím žil:**
+> 1. **Černá** = Zem (`G` / `GND`)
+> 2. **Červená** = Napájení 3,3 V (`+` / `VCC`)
+> 3. **Žlutá** = Datový signál (`D` / `OUT` / `Signal`)
 > 
-> **Při zapojování se NIKDY neřiďte barvou drátku! Vždy sledujte potisk pinů přímo na desce a na senzorech:**
-> - **`G` / `GND`** = Zem (obvykle hnědý nebo černý vodič)
-> - **`+` / `V` / `VCC`** = Napájení (obvykle červený vodič)
-> - **`D` / `S` / `OUT`** = Datový signál (obvykle žlutý, bílý nebo oranžový vodič)
+> Na základní desce JoyCaru (bloky `LINE TRK`, `SPEED`, `OBSTCL`) toto pořadí řad přesně sedí:
+> - Spodní řada: **`G`** $\rightarrow$ černý vodič
+> - Prostřední řada: **`+`** $\rightarrow$ červený vodič
+> - Horní řada: **`D`** $\rightarrow$ žlutý vodič
 > 
-> **Přepólování napájení (záměna `+` a `GND`) může senzor či mikrokontrolér nevratně zničit!**
+> **POZOR NA ZÁDRHEL:**  
+> Zatímco na senzory sledování čáry sedí tento kabel 1:1, **na snímačích rychlosti (Speed Sensors) jsou piny na destičce v jiném pořadí (např. VCC a GND jsou navzájem prohozené)!**  
+> Pokud byste kabel zapojili přímo bez úpravy, **dojde k přepólování snímače**!  
+> **Při zapojování se proto VŽDY řiďte potiskem pinů na konkrétní desce a senzoru, nikoli pouze mechanickým nasazením konektoru.**
 
 > [!TIP]
 > **Kdy zapojovat:**  
@@ -148,18 +162,33 @@ Propojte 3pinovými kabely do pinového bloku označeného **`LINE TRK`**:
 - **L** (levý senzor) $\rightarrow$ sloupec `L`
 - **M** (střední senzor) $\rightarrow$ sloupec `M`
 - **R** (pravý senzor) $\rightarrow$ sloupec `R`
-- Orientace řad: horní řada je signál **`D`**, prostřední je **`+`** (3,3 V) a spodní je **`G`** (zem).
+- Orientace řad: horní řada je signál **`D`** (žlutá), prostřední je **`+`** / 3,3 V (červená) a spodní je **`G`** / zem (černá). Na senzorech čáry odpovídá toto pořadí kabelu přímo.
 
 ---
 
 ### B. Snímače rychlosti (Speed Sensors / Enkodéry)
 <img src="images/zapojeni-snimace-rychlosti.png" width="550" alt="Schéma zapojení snímačů rychlosti">
 
-Propojte 3pinovými kabely do pinového bloku označeného **`SPEED`**:
+Propojte do pinového bloku označeného **`SPEED`**:
 - **L** (levý enkodér) $\rightarrow$ sloupec `L`
 - **R** (pravý enkodér) $\rightarrow$ sloupec `R`
-- > [!WARNING]
-  > Senzory rychlosti mají na své desce **4 výstupní piny**, ale propojují se pouze **3 vodiči** (`VCC`, `GND` a digitální výstup `D0` / `OUT`). Čtvrtý analogový pin `A0` zůstává nezapojen!
+- Orientace na základní desce: spodní řada je `G` (černá), prostřední `+` (červená), horní `D` (žlutá).
+
+> [!WARNING]
+> ### ⚠️ Pozor na prohozené piny u snímačů rychlosti:
+> Destička snímače rychlosti má 4 piny s potiskem: **`VCC`**, **`GND`**, **`D0`** (digitální výstup) a **`A0`** (analogový výstup).
+> 
+> 1. **Piny napájení jsou prohozené:**  
+>    Na dodaném 3žilovém kabelu jde pořadí *Černá (GND) – Červená (VCC) – Žlutá (D)*. Na senzoru je však pořadí pinů *VCC – GND – D0*.  
+>    Pokud byste 3pinový konektor nasadili tak, jak je, propojíte černý drát (GND) na VCC a červený drát (3,3 V) na GND = **zkrat a přepólování snímače**!
+> 2. **Jak kabel správně zapojit:**  
+>    - Na straně konektoru, která se zasouvá do snímače rychlosti, opatrně hrotem jehly nebo nožíku nadzvedněte plastovou západku DuPont pouzdra a **prohoďte černý a červený vodič**.
+>    - Tím získáte správné pořadí odpovídající potisku na plošném spoji:  
+>      - **`VCC`** $\rightarrow$ **Červený vodič** (napájení +3,3 V)  
+>      - **`GND`** $\rightarrow$ **Černý vodič** (zem)  
+>      - **`D0`** $\rightarrow$ **Žlutý vodič** (digitální signál otáček)  
+>    - *(Případně lze vodiče od sebe podélně oddělit a nasadit jednotlivě).*
+> 3. **Pin A0 zůstává volný:** Čtvrtý pin `A0` (analogový výstup) se nezapojuje!
 
 ---
 
@@ -188,7 +217,7 @@ Každý modul má 4 piny a propojuje se 4pinovým kabelem do konektoru **`LEDs`*
 ### E. Ultrazvukový senzor vzdálenosti
 <img src="images/zapojeni-ultrazvuk.png" width="550" alt="Schéma zapojení ultrazvukového senzoru">
 
-Propojte 4pinovým kabelem do svislého bloku pinů označeného **`US`**:
+Ultrazvukový senzor HC-SR04 je usazen v akrylovém držáku nahoře na mikroservu v horním šasi. Propojte jej 4pinovým kabelem do svislého bloku pinů označeného **`US`**:
 - Piny shora dolů odpovídají popisu na desce:
   - **`+`** $\rightarrow$ `VCC` senzoru
   - **`T`** $\rightarrow$ `Trig` (Trigger signál)
@@ -200,9 +229,9 @@ Propojte 4pinovým kabelem do svislého bloku pinů označeného **`US`**:
 ### F. Servomotory
 <img src="images/zapojeni-serva.png" width="550" alt="Schéma zapojení servomotorů">
 
-Servokonektory se zasouvají přímo do pinového bloku **`SERVO`**:
-- **1** $\rightarrow$ Servo pro natáčení ultrazvuku (pin 1)
-- **2** $\rightarrow$ Volitelné druhé servo (pin 2)
+Kabel mikroserva (vedoucí z otočné ultrazvukové hlavy v horním šasi) se zasouvá přímo do pinového bloku **`SERVO`**:
+- **1** $\rightarrow$ Servo pro natáčení ultrazvukové hlavy (pin 1 – **povinné pro kurz**)
+- **2** $\rightarrow$ Volitelné druhé servo (pin 2 – např. pro budoucí náklon / tilt)
 - *Orientace konektoru:* Signální vodič (oranžový/žlutý) na pin `D`, napájení (červený) na `+`, zem (hnědý/černý) na `G`.
 
 ---

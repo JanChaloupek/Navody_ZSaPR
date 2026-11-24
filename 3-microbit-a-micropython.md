@@ -15,6 +15,8 @@ V kurzu máte pro MicroPython k dispozici **dvě cesty**:
   - **BBC micro:bit (MicroPython):** Kód se do desky nahrává flashováním nebo sériovým přenosem (přes `mpremote` či WebUSB). V počítači nevzniká virtuální flash disk typu `CIRCUITPY`.
   - **Pico:ed (CircuitPython):** Kód se nahrává jako běžné soubory na USB disk `CIRCUITPY`. Robot nabízí výrazně větší výkon procesoru RP2040 (dvoujádrový ARM Cortex-M0+ na 133 MHz) a bohaté možnosti pro řízení motorů a senzorů JoyCaru.
 
+<img src="images/joycar-microbit-v2.jpg" width="380" alt="Robot JoyCar osazený procesorovou deskou BBC micro:bit v2">
+
 ---
 
 ## 2. Varianta A: Stažení a práce s Mu Editorem (Pro micro:bit)

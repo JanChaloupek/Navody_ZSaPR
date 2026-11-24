@@ -16,9 +16,8 @@ Při vývoji a ladění kódu budete kabel k desce **Pico:ed** připojovat a odp
   - [AlzaPower MagCore 2in1 USB-C / micro USB 3A (1,5 m)](https://www.alza.cz/alzapower-magcore-2in1-usb-c-micro-usb-3a-1-5m-cerny-d6486450.htm)
   - [AlzaPower MagCore 2in1 USB-C / micro USB 3A (2 m)](https://www.alza.cz/alzapower-magcore-2in1-usb-c-micro-usb-3a-2m-cerny-d6486452.htm)
 
-<!-- Obrázek magnetického kabelu v desce:
-![Magnetický kabel v desce Pico:ed](images/magneticky-kabel.jpg)
--->
+<!-- Obrázek magnetického kabelu v desce: -->
+<img src="images/magneticky-kabel.jpg" width="380" alt="Magnetický kabel v desce Pico:ed">
 
 > [!NOTE]
 > Magnetický kabel není povinný – veškerou práci zvládnete i s běžným microUSB kabelem. Jde o praktické doporučení pro ochranu desky a pohodlnější práci.
@@ -57,10 +56,14 @@ Velmi oblíbený systém modulárních papírových dlaždic, které si můžete
 ### Možnost C: Oficiální předlohy map pro kurz (A1 / A3)
 Pro finální projekt a křižovatky máme k dispozici připravené PDF šablony pro velkoformátový tisk:
 - 📂 **[Odkaz na stažení souborů map z OneDrive](https://1drv.ms/f/c/c957b235b7cc93a4/IgC6aauu_nNZQrMK8IJcA2njASdURRjqxCBx6xwbaK_lPdo?e=lDsPzl)**
-  - `maps.pdf` – obsahuje dva ovály pro jízdu po čáře a rozvržení křižovatek pro náš projekt (formát A1).
+  - `maps.pdf` – obsahuje dva ovály pro jízdu po čáře a rozvržení křižovatek 3×4 pro náš projekt (formát A1, oficiální mapa z 1. běhu).
   - `maps - split to A3.pdf` – stejná mapa rozdělená na formát A3 pro tisk v běžných copycentrech.
-  - `maps2.pdf` – dvě alternativní rozložení křižovatek pro pokročilejší testování.
+  - `maps2.pdf` – dvě alternativní rozložení křižovatek (4×5 obdélníky a 3×4 čtverce) pro pokročilejší testování (předlohy pro 2. běh).
   - `maps2 - split to A3.pdf` – verze maps2 rozdělená na listy A3.
+
+<img src="images/mapa-tistena-1beh.jpg" width="380" alt="Reálná mapa vytištěná podle předlohy maps.pdf">
+
+*Ukázka velkoformátové mapy z 1. běhu kurzu sestavené podle předlohy `maps.pdf` (dva ovály a křižovatková síť 3×4).*
 
 ---
 
@@ -69,19 +72,33 @@ Pro finální projekt a křižovatky máme k dispozici připravené PDF šablony
 Pokud máte doma málo místa a potřebujete dráhu po práci snadno uklidit, skvěle se osvědčil podklad z linolea:
 
 1. **Příprava dlaždic:** Vytiskněte a pečlivě vystříhejte jednotlivé dlaždice na papíry formátu A4.
+   
+   <img src="images/dlazdice-a4-vystrihane.jpg" width="340" alt="Vystříhané dlaždice formátu A4">
+
 2. **Výběr rozměrů:** Vyberte místo v místnosti, kde budete dráhu rozkládat, a určete maximální rozměry.
 3. **Základ z linolea:** Pořiďte kus běžného linolea nebo PVC podlahové krytiny odpovídajícího rozměru (často se dají velmi levně sehnat odřezky ve stavebninách či podlahářstvích).
    - *Výhoda linolea:* Je těžké a leží zcela rovně, nezvlní se jako papír, netrhá se a lze jej kdykoliv srolovat a postavit do kouta.
-4. **Návrh tratě:** Rozložte dlaždice "nasucho" tak, aby dráha obsahovala jak rovinky a oblouky pro jízdu po čáře, tak křižovatky pro plnění úloh projektu.
-5. **Lepení:** Jednotlivé díly pečlivě srovnejte podle čar (aby na sebe čáry plynule navazovaly bez schodů) a přilepte k linoleu lepidlem na papír nebo tenkou oboustrannou lepicí páskou.
+4. **Návrh tratě a sestavení zatáček:** Oblouky a zatáčky se skládají z jednotlivých klínových výsečí. Jednotlivé díly k sobě pečlivě slícujte podle vodicích rohových značek a čar a slepte lepidlem na papír (např. Herkules).
+   
+   <img src="images/mapa-lepeni-detail.jpg" width="340" alt="Sestavení oblouku a spasování dílů">
+   
+   *Ukázka sestavování oblouku zatáčky z jednotlivých výsečí podle rohových značek a čar.*
+
+5. **Postupné lepení na linoleum:** Rozvrhněte křižovatkovou síť a obvodový okruh. Dlaždice lepte postupně řadu po řadě k linoleu. Během schnutí lepidla je vhodné spoje zatížit (např. cihlami nebo knihami), aby se papír nezvlnil.
+
+| 1. fáze: První řada dlaždic | 2. fáze: Rozpracování křižovatek | 3. fáze: Zatížení spojů závažím | 4. fáze: Dolepení obvodového okruhu |
+| :---: | :---: | :---: | :---: |
+| <img src="images/mapa-lepeni-postup-1.jpg" width="190" alt="1. fáze: První řada dlaždic na linoleu"> | <img src="images/mapa-lepeni-postup-2.jpg" width="190" alt="2. fáze: Rozpracování sítě křižovatek"> | <img src="images/mapa-lepeni-postup-3.jpg" width="190" alt="3. fáze: Zatížení papíru závažím při schnutí"> | <img src="images/mapa-lepeni-postup-4.jpg" width="190" alt="4. fáze: Dolepení obvodového okruhu"> |
 
 > [!TIP]
 > Výsledkem je rovný podklad s vysokým kontrastem bílé a černé, po kterém robot hladce přejíždí bez zadrhávání podvozku či senzorů.
 
-<!-- Obrázky mapy na linoleu:
-![Rozložená mapa na linoleu](images/mapa-linoleum-hotova.jpg)
+<img src="images/mapa-linoleum-hotova.jpg" width="420" alt="Celkový pohled na rozloženou mapu s nalepenými dlaždicemi na linoleu">
+
+*Hotová a plně funkční dráha z modulárních A4 dlaždic nalepených na linoleu (s křižovatkovou sítí i vnějším okruhem).*
+
+<!-- Chybějící obrázek pro mapu:
 ![Srolovaná mapa pro snadný transport](images/mapa-linoleum-srolovana.jpg)
-![Detail spasování čar](images/mapa-lepeni-detail.jpg)
 -->
 
 ---
@@ -96,7 +113,7 @@ V této části najdete přehled vyzkoušených úprav:
 1. **Šest senzorů čáry a odhalení tajemství I2C expandéru**
 2. **Fotopostup výroby adaptérové „kostky“ pro přídavné senzory**
 3. **Plexisklový držák baterie s rychloupínáním bez nářadí**
-4. **Uchycení dvojitého serva – návrh 3D součástky**
+4. **Dvouosý mechanismus pro ultrazvukový senzor (Pan-Tilt se dvěma servy)**
 5. **Znakový LCD displej přes I²C (zobrazování odometrie a křižovatek)**
 6. **Rozšíření hlavního konektoru JoyCaru pro 3pinové periferie**
 7. **Robustní motory s kovovou osou a integrovaným enkodérem**
@@ -125,6 +142,8 @@ Tyto 3 nepoužité piny expandéru jsou vyvedeny na dlouhý rozšiřující kone
 - **`EOUT1`** (bit 1 na I2C expandéru)
 - **`EOUT7`** (bit 7 na I2C expandéru)
 
+<img src="images/popisky-konektoru.jpg" width="400" alt="Piny EOUT0, EOUT1 a EOUT7 na konektoru JoyCaru">
+
 ---
 
 #### 🚦 Proč 3 senzory čáry nestačí na spolehlivou detekci křižovatek?
@@ -142,10 +161,10 @@ Tyto 3 nepoužité piny expandéru jsou vyvedeny na dlouhý rozšiřující kone
 3. Funguje to spolehlivě, ale robot přijde o možnost detekovat překážky před sebou těmito senzory.
 4. Vyžaduje to vyvrtání dalších otvorů do spodní desky podvozku pro šroubky senzorů.
 
-<!-- Obrázky Způsobu A:
-![Odpojené konektory senzorů překážek](images/senzory-prekazek-odpojene.jpg)
-![Přídavné senzory přišroubované zespodu do navrtané desky](images/senzory-zespodu-navrtane.jpg)
--->
+| Odpojení předních senzorů překážek | Přídavné senzory zespodu v navrtané desce |
+| :---: | :---: |
+| <img src="images/senzory-prekazek-odpojene.jpg" width="300" alt="Odpojené konektory senzorů překážek"> | <img src="images/senzory-zespodu-navrtane.jpg" width="300" alt="Přídavné senzory přišroubované zespodu do navrtané desky"> |
+| *Odpojené konektory předních senzorů překážek na robotovi* | *Přídavné senzory čáry přišroubované do podvozku* |
 
 > [!TIP]
 > **Video ukázka:** Podívejte se, jak lze stavy senzorů živě přenášet a vizualizovat na maticovém LED displeji Pico:edu:  
@@ -178,8 +197,11 @@ Výsledné rozmístění 6 senzorů na spodní desce robota nabízí vynikajíc�
    - Pro detekci křižovatky stačí současná aktivace dvou senzorů.
    - Běžné kmitání robota při jízdě po čáře na rovince tyto krajní senzory vůbec nezasáhne, takže křižovatku nikdy neminete ani omylem nezachytíte falešný odbočovací signál.
 
-<!-- Obrázky rozmístění 6 senzorů:
-![Rozmístění 6 senzorů na spodní straně podvozku](images/6-senzoru-rozmisteni.jpg)
+| Původní stav (3 senzory čáry) | Rozšířený podvozek (6 senzorů čáry) | Optické stínění senzorů |
+| :---: | :---: | :---: |
+| <img src="images/joycar-podvozek-vychozi-senzory.jpg" width="220" alt="Původní podvozek se 3 senzory"> | <img src="images/6-senzoru-rozmisteni.jpg" width="220" alt="Rozmístění 6 senzorů zespodu"> | <img src="images/6-senzoru-detail-prepazky.jpg" width="220" alt="Optické stínění mezi senzory čáry"> |
+| *Původní zapojení JoyCaru* | *Vylepšené rozmístění: 4 vnitřní + 2 předsazené krajní* | *Přepážky zamezující optickým přeslechům IR diod* |
+<!-- Chybějící obrázek:
 ![Detail 15mm čáry pod 4 vnitřními senzory](images/6-senzoru-detail-cary.jpg)
 -->
 
@@ -207,19 +229,26 @@ Vyrobil jsem si kompaktní „kostku“ z běžné dvouřadé kolíkové lišty,
 > **To nikdy nedělejte!** Procesor Pico:ed i I2C expandér PCF8574 pracují s napětím **3,3 V**. Pokud byste senzory napájeli z 5 V, na signálních pinech by se objevilo 5 V a mohlo by dojít ke zničení expandéru i desky Pico:ed!  
 > Proto je napájení 3,3 V vyřešeno **krátkým červeným propojovacím vodičem**, který přivádí bezpečné napětí 3,3 V z příslušného pinu na konektoru JoyCaru.
 
-<!-- Fotodokumentace výroby kostky:
-![1. Výchozí kolíková lišta](images/kostka-1-vychozi-lista.jpg)
-![2. Zkrácená lišta na 2x9 pinů](images/kostka-2-zkracena-lista.jpg)
-![3. Pájené spoje z odizolovaného drátu](images/kostka-3-pajene-spoje.jpg)
-![4. Vedení spojů zespoda](images/kostka-4-vedeni-spoju-zespodu.jpg)
-![5. Vedení spojů shora](images/kostka-5-vedeni-spoju-shora.jpg)
-![6. Zaizolování spodku páskou](images/kostka-6-zaizolovana-paskou.jpg)
-![7. Pohled shora na vyrobenou kostku](images/kostka-7-pohled-shora.jpg)
-![8. Potištěný papír s barevným značením](images/kostka-8-barevny-papir.jpg)
-![9. Výsledná kostka s jumpery](images/kostka-9-s-jumpery.jpg)
-![10. Kostka položená na JoyCaru](images/kostka-10-na-joycaru-volne.jpg)
-![11. Kostka zapojená s přídavnými senzory](images/kostka-11-zapojena-senzory.jpg)
--->
+| ⚠️ CHYBA: Přímé 5V zapojení (HROZÍ ZNIČENÍ) | ✅ SPRÁVNĚ: Napájení 3,3 V červeným vodičem |
+| :---: | :---: |
+| <img src="images/kostka-varovani-5v-schema.jpg" width="300" alt="Chyba: 5V zapojení"> | <img src="images/kostka-zapojeni-3v3-schema.jpg" width="300" alt="Správné zapojení 3,3 V"> |
+| *Nikdy nespojujte piny jumperem na 5 V!* | *Bezpečné 3,3V napájení z pinu 3V3* |
+
+| 1. Výchozí kolíková lišta | 2. Zkrácená lišta (2×9 pinů) | 3. Pájené spoje z drátu |
+| :---: | :---: | :---: |
+| <img src="images/kostka-1-vychozi-lista.jpg" width="220" alt="1. Výchozí kolíková lišta"> | <img src="images/kostka-2-zkracena-lista.jpg" width="220" alt="2. Zkrácená lišta na 2x9 pinů"> | <img src="images/kostka-3-pajene-spoje.jpg" width="220" alt="3. Pájené spoje z odizolovaného drátu"> |
+
+| 4. Vedení spojů zespoda | 5. Vedení spojů shora | 6. Zaizolování spodku páskou |
+| :---: | :---: | :---: |
+| <img src="images/kostka-4-vedeni-spoju-zespodu.jpg" width="220" alt="4. Vedení spojů zespoda"> | <img src="images/kostka-5-vedeni-spoju-shora.jpg" width="220" alt="5. Vedení spojů shora"> | <img src="images/kostka-6-zaizolovana-paskou.jpg" width="220" alt="6. Zaizolování spodku páskou"> |
+
+| 7. Pohled shora na kostku | 8. Barevný papírový štítek | 9. Nasazení jumperů |
+| :---: | :---: | :---: |
+| <img src="images/kostka-7-pohled-shora.jpg" width="220" alt="7. Pohled shora na vyrobenou kostku"> | <img src="images/kostka-8-barevny-papir.jpg" width="220" alt="8. Potištěný papír s barevným značením"> | <img src="images/kostka-9-s-jumpery.jpg" width="220" alt="9. Výsledná kostka s jumpery"> |
+
+| 10. Kostka položená na JoyCaru | 11. Kostka zapojená se senzory |
+| :---: | :---: |
+| <img src="images/kostka-10-na-joycaru-volne.jpg" width="300" alt="10. Kostka položená na JoyCaru"> | <img src="images/kostka-11-zapojena-senzory.jpg" width="300" alt="11. Kostka zapojená s přídavnými senzory"> |
 
 #### 🔄 Další (prodloužená) verze kostky – připojení 3,3 V přímo jumpery
 V další vývojové variantě vznikla **prodloužená verze adaptérové kostky**:
@@ -227,11 +256,9 @@ V další vývojové variantě vznikla **prodloužená verze adaptérové kostky
 - **Příprava pro analogové senzory čáry:** Tato prodloužená kostka poskytuje více volných pozic s napájením a zemí, což je ideální pro připojení kabelů od dalších (např. analogových) senzorů čáry.
 - *Zaznamenáno v diskuzním kanálu kurzu: „Senzory připojené k Joy-Car (až 6 senzorů čáry)“.*
 
-<!-- Obrázky prodloužené kostky:
-![Prodloužená verze kostky s přímým 3,3V jumperem](images/kostka-prodlouzena-1.jpg)
-![Pohled na osazení na konektoru JoyCaru](images/kostka-prodlouzena-2.jpg)
-![Příprava pro další kabely senzorů](images/kostka-prodlouzena-3.jpg)
--->
+| Prodloužená verze kostky (čelní pohled) | Osazení na desce JoyCaru (pohled shora) |
+| :---: | :---: |
+| <img src="images/kostka-prodlouzena-1.jpg" width="260" alt="Prodloužená verze kostky"> | <img src="images/kostka-prodlouzena-2.jpg" width="260" alt="Pohled na osazení na konektoru JoyCaru"> |
 
 ---
 
@@ -244,25 +271,22 @@ Při dynamických jízdách a prudkém zatáčení robota hrozí, že se baterie
   - **Výměna zcela bez nářadí:** Držák má v horní části vytvořenou praktickou drážku. Stačí vložit nehet do drážky, zatáhnout lehce k sobě a celý battery pack pohodlně vytáhnout směrem dozadu.
   - Zvyšuje mechanickou odolnost a usnadňuje bleskovou výměnu vybitých baterií během testování.
 
-<!-- Obrázky plexisklového držáku:
-![Plexisklový držák baterie na JoyCaru](images/drzak-baterie-1.jpg)
-![Detail drážky a vysouvání battery packu](images/drzak-baterie-2.jpg)
--->
+| Plexisklový držák baterie | Detail drážky a vysouvání battery packu |
+| :---: | :---: |
+| <img src="images/drzak-baterie-1.jpg" width="300" alt="Plexisklový držák baterie na JoyCaru"> | <img src="images/drzak-baterie-2.jpg" width="300" alt="Detail drážky a vysouvání battery packu"> |
 
 ---
 
-### 3.4 Uchycení dvojitého serva – návrh 3D součástky
+### 3.4 Dvouosý mechanismus pro ultrazvukový senzor (Pan-Tilt se dvěma servy)
 
-Základní stavebnice JoyCar obsahuje držák pro jedno servo (např. pro natáčení ultrazvukového snímače), ale základní deska nabízí výstupy pro **dvě modelářská serva**.
+Základní stavebnice JoyCar obsahuje držák pro jedno servo (pro natáčení ultrazvukového snímače vlevo a vpravo), ale základní deska nabízí výstupy pro **dvě modelářská serva**.
 
-- V 1. běhu kurzu jsme v rámci dobrovolného domácího úkolu řešili **návrh 3D tištěného dílu pro uchycení druhého serva**.
-- Cílem bylo najít smysluplné využití obou serv najednou – například dvouosý mechanismus pro natáčení a naklápění snímače (Pan/Tilt), zvedací rameno, čisticí radlici nebo chapač překážek.
+- V rámci rozšiřujících úprav vznikla konstrukce **dvouosého mechanismu (Pan-Tilt)** z čirého plexiskla se dvěma mikroservy SG90.
+- Umožňuje jak horizontální otáčení (vlevo/vpravo), tak vertikální naklápění snímače (nahoru/dolů) – ideální pro prostorové skenování okolí nebo mapování překážek.
 
-<!-- Obrázky 3D dílu pro servo:
-![3D model uchycení druhého serva](images/uchyceni-serva-3d-1.jpg)
-![Montáž druhého serva na robotovi](images/uchyceni-serva-3d-2.jpg)
-![Detail dvouosého mechanismu](images/uchyceni-serva-3d-3.jpg)
--->
+| Čelní pohled na mechanismus Pan-Tilt | Pohled shora na usazení senzoru | Detail upevnění serva náklonu |
+| :---: | :---: | :---: |
+| <img src="images/dvojite-servo-1.jpg" width="220" alt="Čelní pohled na Pan-Tilt mechanismus se dvěma servy"> | <img src="images/dvojite-servo-2.jpg" width="220" alt="Pohled shora na usazení ultrazvukového senzoru"> | <img src="images/dvojite-servo-3.jpg" width="220" alt="Detail upevnění naklápěcího serva stahovací páskou"> |
 
 ---
 
@@ -282,11 +306,9 @@ Základní stavebnice JoyCar obsahuje držák pro jedno servo (např. pro natá�
     ```
   - Okamžitý odečet stavu všech 6 senzorů čáry, aktuální rychlosti motorů či stavu řídicího automatu na křižovatkách.
 
-<!-- Obrázky LCD displeje:
-![Znakový LCD displej připojený přes I2C](images/lcd-displej-i2c-1.jpg)
-![Pohled na umístění displeje na JoyCaru](images/lcd-displej-i2c-2.jpg)
-![Displej zobrazující živá data odometrie](images/lcd-displej-odometrie.jpg)
--->
+| Displej připojený přes I²C | Umístění displeje na JoyCaru | Živá data odometrie |
+| :---: | :---: | :---: |
+| <img src="images/lcd-displej-i2c-1.jpg" width="220" alt="Znakový LCD displej připojený přes I2C"> | <img src="images/lcd-displej-i2c-2.jpg" width="220" alt="Pohled na umístění displeje na JoyCaru"> | <img src="images/lcd-displej-odometrie.jpg" width="220" alt="Displej zobrazující živá data odometrie"> |
 
 ---
 
@@ -301,15 +323,13 @@ Když na robota přidáte přídavné senzory čáry i LCD displej, původní ko
 - **Konstrukce a připojení:**
   - Rozšíření je přichyceno k hlavnímu konektoru JoyCaru pomocí jumperů, které přivádějí **3,3 V** a **GND**.
   - **Bezpečnostní pravidlo 3,3 V:** Stejně jako u kostky senzorů byl záměrně obejit pin s 5 V. Pico:ed pracuje s 3,3V logikou a vyšší napětí na signálových vodičích by mohlo procesor poškodit.
-- **Postupný vývoj:**
-  - V raných verzích bylo 3,3V napájení přivedeno na dálku samostatným červeným kablíkem.
-  - Pozdější celistvá verze rozšíření již integrovala jumpery pro kompaktní a robustní montáž.
+| Rozváděcí lišta napájení (čelní pohled) | Detail zapojení jumperů a 3,3V vodiče |
+| :---: | :---: |
+| <img src="images/kostka-prodlouzena-1.jpg" width="280" alt="Rozváděcí lišta napájení osazená na desce JoyCaru"> | <img src="images/kostka-prodlouzena-2.jpg" width="280" alt="Detail zapojení jumperů a přivedení 3,3 V"> |
 
-<!-- Obrázky rozšíření konektoru:
-![Starší verze s červeným napájecím kablíkem](images/rozsireni-konektoru-v1.jpg)
-![Pokročilá verze rozšíření hlavního konektoru](images/rozsireni-konektoru-v2.jpg)
-![Detail zapojení jumperů pro 3,3V a GND](images/rozsireni-konektoru-detail.jpg)
--->
+| Zapojení konektoru pro sledování čáry (LINE TRK) | Pinout rozšiřujícího konektoru desky (EOUT) |
+| :---: | :---: |
+| <img src="images/senzory-cary-konektor-1.jpg" width="280" alt="Připojení konektoru senzorů sledování čáry"> | <img src="images/senzory-cary-konektor-pinout.jpg" width="280" alt="Pinout rozšiřujícího konektoru s piny EOUT"> |
 
 ---
 
@@ -334,16 +354,15 @@ Při experimentování s vyšší zátěží a přesnějším odměřováním uj
 > Motor byl úspěšně testován na dedikované výkonnější desce **[Elecfreaks motor:bit](https://shop.elecfreaks.com/products/elecfreaks-micro-bit-motor-bit)** (v ČR na [HW Kitchen](https://www.hwkitchen.cz/motorbit-pro-microbit-rozsirujici-modul-pro-motory/)), která je na vyšší proudové špičky stavěná.
 
 #### Mechanická montáž do podvozku JoyCaru:
-Motory mají shodné vnější rozměry i rozteč montážních bodů, takže by se zdálo, že půjdou vyměnit kus za kus. Kvůli přidané elektronice enkodéru na zadní části se však motor nevejde do spodního výlisku podvozku. Pro montáž bylo nutné **do plastového podvozku vyříznout/vyvrtat dodatečný otvor**, aby se tělo motoru s enkodérem bez pnutí usadilo.
+Motory mají shodné vnější rozměry i rozteč montážních bodů, takže by se zdálo, že půjdou vyměnit kus za kus. Kvůli přidané elektronice enkodéru na zadní části se však motor nevejde do spodního výlisku podvozku. Pro montáž bylo nutné **do plexisklového podvozku vyříznout dodatečný montážní otvor**, aby se tělo motoru s enkodérem bez pnutí usadilo.
 
-<!-- Obrázky motorů:
-![Srovnání původního motoru a motoru s kovovou osou](images/motory-srovnani.jpg)
-![1. Úprava podvozku JoyCaru pro nový motor](images/motor-uprava-podvozku-1.jpg)
-![2. Vyříznutý otvor v plastu podvozku](images/motor-uprava-podvozku-2.jpg)
-![3. Usazení motoru s enkodérem do podvozku](images/motor-uprava-podvozku-3.jpg)
-![4. Detail kovové hřídele a uchycení](images/motor-uprava-podvozku-4.jpg)
-![5. Testování s deskou motor:bit](images/motor-uprava-podvozku-5.jpg)
--->
+| Srovnání motorů v podvozku | Srovnání enkodérových koleček | Detail a pinout motoru DFRobot |
+| :---: | :---: | :---: |
+| <img src="images/motory-srovnani.jpg" width="240" alt="Srovnání původního motoru a motoru s enkodérem"> | <img src="images/enkoder-kolecko-srovnani.jpg" width="240" alt="Srovnání enkodérových koleček"> | <img src="images/motor-novy-enkoder-popis.png" width="240" alt="Nový motor DFRobot s kovovou osou a pinoutem enkodéru"> |
+
+| 1. Vyměření otvoru pravítkem | 2. Vyříznutý montážní otvor | 3. Usazení motoru s enkodérem |
+| :---: | :---: | :---: |
+| <img src="images/motor-uprava-podvozku-1.jpg" width="220" alt="1. Vyměření montážního otvoru pravítkem na podvozku"> | <img src="images/motor-uprava-podvozku-2.jpg" width="220" alt="2. Vyříznutý montážní otvor v plexiskle podvozku"> | <img src="images/motor-uprava-podvozku-3.jpg" width="220" alt="3. Usazení motoru s enkodérem do upraveného podvozku"> |
 
 ---
 
@@ -387,7 +406,11 @@ Slouží k výkonovému spínání polarity a proudu z baterie do stejnosměrný
 > - Náhradní `PCA9685`: 2 byty (hodnoty 0–4095)  
 > Pokud se vám stane, že integrovaný budič odejde, mentor vám potřebné knihovny a schéma zapojení rád poskytne.
 
-<!-- Obrázky náhrady H-můstku:
+| PCA9685 (16kanálový I²C PWM modul) | L298N (Duální výkonový H-můstek) |
+| :---: | :---: |
+| <img src="images/pca9685-modul.jpg" width="280" alt="PCA9685 I2C PWM generátor"> | <img src="images/l298n-modul.jpg" width="280" alt="L298N výkonový H-můstek"> |
+
+<!-- Chybějící obrázek:
 ![Zapojení modulů PCA9685 a L298N na robotovi](images/hmustek-pca9685-l298n.jpg)
 -->
 

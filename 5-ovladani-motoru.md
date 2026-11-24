@@ -69,6 +69,8 @@ Komunikace probíhá vždy zápisem **dvou bajtů**:
 > - **MOTOR RIGHT:** `KANAL 2` (vzad) a `KANAL 3` (vpřed)
 > - **MOTOR LEFT:** `KANAL 4` (vzad) a `KANAL 5` (vpřed)
 > 
+> <img src="images/motory-tabulka-joyit.png" width="550" alt="Originální tabulka řízení motorů z manuálu Joy-IT">
+> 
 > **Jak to přesně odpovídá naší dokumentaci a hardwaru:**
 > 1. **Číslování kanálů vs. adresy registrů:**  
 >    Obvod PCA9633 je 4kanálový budič a jeho výstupy se v datasheetu NXP označují jako **PWM0, PWM1, PWM2 a PWM3**. Výrobce Joy-IT je v manuálu nazval *„KANAL 2, 3, 4 a 5“*, protože jejich **I²C adresy registrů** jsou právě hexadecimálně `0x02`, `0x03`, `0x04` a `0x05`. Naše přiřazení je tedy funkčně **na 100 % totožné**:

@@ -8,14 +8,19 @@ Tato složka slouží pro ukládání obrázků, fotografií a schémat použit�
 
 ##### 1. Základní výbava a mapy:
 - `magneticky-kabel.jpg` (nebo `.png`) – Detail zapojení magnetické koncovky v desce Pico:ed a přiblížení kabelu.
-- `mapa-linoleum-hotova.jpg` – Celkový pohled na rozloženou mapu s nalepenými dlaždicemi na linoleu.
+- `mapa-tistena-1beh.jpg` – Velkoformátová mapa vytištěná podle předlohy maps.pdf (1. běh kurzu).
+- `mapa-linoleum-hotova.jpg` – Celkový pohled na rozloženou mapu s nalepenými dlaždicemi na linoleu (2. běh).
 - `mapa-linoleum-srolovana.jpg` – Fotografie srolované mapy pro snadné skladování a transport.
-- `mapa-lepeni-detail.jpg` – Detail přesného spasování čar mezi dvěma papírovými dlaždicemi.
+- `mapa-lepeni-detail.jpg` – Detail sestavování a lepení oblouku ze segmentů (spasování rohových značek a čar).
+- `mapa-lepeni-postup-1.jpg` až `4.jpg` – Fáze postupného lepení dlaždic na linoleum (1. až 4. fáze).
+- `dlazdice-a4-vystrihane.jpg` – Vystříhané papírové dlaždice A4 před lepením.
+- `dlazdice-vysece-priprava.jpg` – Příprava vystříhaných klínových výsečí pro oblouky na pracovním stole.
 
 ##### 2. Šest senzorů čáry a podvozek:
 - `senzory-prekazek-odpojene.jpg` – Odpojené konektory předních senzorů překážek.
 - `senzory-zespodu-navrtane.jpg` – Přídavné senzory přišroubované zespodu do navrtané desky.
 - `6-senzoru-rozmisteni.jpg` – Rozmístění 6 senzorů čáry na spodní desce podvozku.
+- `6-senzoru-detail-prepazky.jpg` – Detail optických přepážek zabraňujících vzájemnému rušení senzorů.
 - `6-senzoru-detail-cary.jpg` – Detail 15mm čáry pod 4 vnitřními senzory.
 
 ##### 3. Výroba adaptérové „kostky“ krok za krokem:
@@ -30,28 +35,26 @@ Tato složka slouží pro ukládání obrázků, fotografií a schémat použit�
 - `kostka-9-s-jumpery.jpg` – Výsledná kostka s nasazenými propojovacími jumpery.
 - `kostka-10-na-joycaru-volne.jpg` – Vyrobená kostka položená na JoyCaru blízko svého místa.
 - `kostka-11-zapojena-senzory.jpg` – Kostka zapojená na správném místě na konektoru s připojenými senzory čáry.
-- `kostka-prodlouzena-1.jpg` – Prodloužená verze kostky s přímým propojením 3,3 V pomocí jumperů.
-- `kostka-prodlouzena-2.jpg` – Pohled na osazení prodloužené kostky na konektoru JoyCaru.
-- `kostka-prodlouzena-3.jpg` – Příprava pozic pro napájení analogových senzorů čáry.
+- `kostka-prodlouzena-1.jpg` – Prodloužená rozváděcí lišta s přímým propojením 3,3 V a GND (čelní pohled).
+- `kostka-prodlouzena-2.jpg` – Detail osazení lišty na konektoru JoyCaru a zapojení jumperů (šikmý pohled).
 
 ##### 4. Další hardwarové úpravy (tuning):
 - `drzak-baterie-1.jpg` – Plexisklový držák baterií namontovaný na robotovi.
 - `drzak-baterie-2.jpg` – Detail drážky pro nehet a vysunutí battery packu směrem dozadu.
-- `uchyceni-serva-3d-1.jpg` – 3D návrh dílu pro uchycení druhého serva na JoyCaru.
-- `uchyceni-serva-3d-2.jpg` – Realizace uchycení druhého serva na robotovi.
-- `uchyceni-serva-3d-3.jpg` – Detail mechaniky se dvěma servy.
+- `dvojite-servo-1.jpg` – Čelní pohled na dvouosý mechanismus (Pan-Tilt) z plexiskla se dvěma servy.
+- `dvojite-servo-2.jpg` – Pohled shora na usazení ultrazvukového senzoru na robotovi.
+- `dvojite-servo-3.jpg` – Detail upevnění naklápěcího serva stahovací páskou na plexisklové stojce.
 - `lcd-displej-i2c-1.jpg` – Znakový LCD displej připojený přes sběrnici I²C (SDA, SCL).
 - `lcd-displej-i2c-2.jpg` – Pohled na umístění LCD displeje na podvozku.
 - `lcd-displej-odometrie.jpg` – Displej zobrazující živé souřadnice odometrie (x, y, theta).
-- `rozsireni-konektoru-v1.jpg` – Starší verze rozšíření konektoru s červeným 3,3V vodičem.
-- `rozsireni-konektoru-v2.jpg` – Pokročilé rozšíření hlavního konektoru pro přímé zacvaknutí 3pinových periferií.
-- `rozsireni-konektoru-detail.jpg` – Detail zapojení jumperů propojujících 3,3 V a GND.
-- `motory-srovnani.jpg` – Srovnání původního motoru FIT0100 a nového motoru s kovovou osou FIT01458.
-- `motor-uprava-podvozku-1.jpg` – Úprava spodní části podvozku JoyCaru pro montáž nového motoru.
-- `motor-uprava-podvozku-2.jpg` – Vyříznutý montážní otvor v plastovém podvozku.
+- `senzory-cary-konektor-1.jpg` – Zapojení konektoru sledování čáry (LINE TRK) na desce JoyCaru.
+- `senzory-cary-konektor-pinout.jpg` – Pinout rozšiřujícího konektoru desky s vyznačenými piny EOUT.
+- `motory-srovnani.jpg` – Srovnání původního motoru a nového motoru s enkodérem v podvozku.
+- `enkoder-kolecko-srovnani.jpg` – Srovnání původní a nové clonky enkodéru.
+- `motor-novy-enkoder-popis.png` – Schéma a pinout nového motoru DFRobot s kovovou osou a magnetickým enkodérem.
+- `motor-uprava-podvozku-1.jpg` – Vyměření montážního otvoru pravítkem na plexiskle podvozku.
+- `motor-uprava-podvozku-2.jpg` – Vyříznutý montážní otvor v plexisklovém podvozku.
 - `motor-uprava-podvozku-3.jpg` – Usazení motoru s enkodérem do upraveného podvozku.
-- `motor-uprava-podvozku-4.jpg` – Detail kovové hřídele a upevňovacích bodů.
-- `motor-uprava-podvozku-5.jpg` – Testování motoru s řídicí deskou motor:bit.
 - `hmustek-pca9685-l298n.jpg` – Kompletní náhrada H-můstku pomocí modulů PCA9685 a L298N.
 
 ---

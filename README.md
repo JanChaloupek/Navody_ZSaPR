@@ -11,6 +11,8 @@ Během kurzu budete pracovat se **stavebnicí JoyCar** a **dvěma procesorovými
 
 ### 🚗 Co je to JoyCar a k čemu slouží?
 
+<img src="images/joycar-picoed.jpg" width="450" alt="Sestavený robot JoyCar s deskou Pico:ed v2">
+
 **JoyCar** je modulární vzdělávací robotická stavebnice na kolovém podvozku navržená pro praktickou výuku robotiky, mechatroniky a autonomních systémů. Představuje ideální most mezi softwarovým programováním a reálným fyzickým světem:
 
 - **Mechanická konstrukce:** Dvoukolový podvozek s nezávislým pohonem levého a pravého kola pomocí stejnosměrných motorů s převodovkou a předním opěrným kuličkovým kolečkem (tzv. diferenciální řízení podvozku).
@@ -23,6 +25,8 @@ Během kurzu budete pracovat se **stavebnicí JoyCar** a **dvěma procesorovými
   - Adresovatelné RGB LED diody (NeoPixel / WS2812B) vpředu i vzadu pro blinkry, brzdová světla a světlomety.
   - Piezoelektrický bzučák pro akustickou signalizaci a přehrávání tónů.
 - **Rozšiřitelnost:** Hlavní sběrnice I²C s expandérem PCF8574, který nabízí volné piny pro připojení dalších periferií (jak si ukážeme v kapitole o rozšíření na 6 senzorů čáry, LCD displej či externí H-můstek).
+
+<img src="images/joycar-mainboard-popis.png" width="550" alt="Přehled komponent a zapojení základní desky JoyCar">
 
 #### 🎯 K čemu JoyCar v kurzu slouží:
 1. **Autonomní navigace a jízda po čáře:** Vývoj algoritmů od základního binárního přepínání přes plynulou regulaci (P a PID regulace) až po spolehlivou detekci složitých křižovatek a odboček.

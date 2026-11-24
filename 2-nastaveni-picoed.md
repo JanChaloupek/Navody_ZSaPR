@@ -52,6 +52,11 @@ Připojte desku Pico:ed k počítači pomocí microUSB kabelu. V Průzkumníku s
    `ELECFREAKS:Pico:ed`
 6. Tím se stáhnou typové definice specifické pro Pico:ed a editor začne správně napovídat piny a moduly.
 
+| Aktivace rozšíření v dolní stavové liště | Pozor na příponu `code.py` ve Windows |
+| :---: | :---: |
+| <img src="images/vsc-circuitpython-aktivace.png" width="340" alt="Aktivace CircuitPython ve VS Code"> | <img src="images/vsc-code-py-pripona-spravne-spatne.png" width="340" alt="Pozor na skryté přípony souborů"> |
+| *Výběr desky Pico:ed na stavové liště* | *Vlevo špatně (`code.py.txt`), vpravo správně (`code.py`)* |
+
 ### Kontrola konfigurace v `settings.json` a `pyrightconfig.json`:
 V novém uspořádání kurzu (vycházejícím z moderní architektury `3-SW_GIT`) jsou veškeré typové definice a fake moduly CircuitPythonu umístěny v interní složce **`_stubs/`** (nahrazující starší složku `lib_vsc_only/`).
 

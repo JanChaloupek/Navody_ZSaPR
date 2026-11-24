@@ -60,6 +60,10 @@ Měli byste vidět:
 - `origin` ukazuje na vaše osobní URL.
 - `upstream` ukazuje na oficiální školní URL.
 
+### Krok 4: Rychlá příprava prostředí (`setup.bat`)
+Před začátkem psaní kódu spusťte ve složce projektu soubor **`setup.bat`** (ve Windows na něj stačí dvakrát kliknout v Průzkumníkovi nebo spustit `.\setup.bat` v terminálu).  
+Tento skript za vás plně automaticky nainstaluje všechna potřebná rozšíření do VS Code, nastaví komunikaci i automatické nahrávání kódu při stisku `Ctrl+S` (`Run on Save`).
+
 ---
 
 ## 3. Zlaté pravidlo: Jeden úkol = Jedna samostatná větev

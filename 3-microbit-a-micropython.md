@@ -59,10 +59,11 @@ Pokud nechcete přepínat mezi různými editory a chcete MicroPython používat
 
 ### Co je v projektu pro MicroPython připraveno:
 
-1. **Jednorázová příprava prostředí (`.vscode/setup.bat` / `setup.ps1`):**
+1. **Jednorázová univerzální příprava prostředí (`setup.bat` / `.vscode/setup.ps1`):**
    - Zkontroluje instalaci Pythonu a nástroje `pip`.
    - Automaticky nainstaluje komunikační balíček **`mpremote`** (oficiální nástroj MicroPythonu pro správu zařízení přes sériový port).
    - Nainstaluje do vašeho VS Code speciální rozšíření **MicroPython Panel** (`.vscode/dist/micropython-panel.vsix`).
+   - Připraví kompletní sadu rozšíření z Marketplace pro MicroPython i CircuitPython současně.
 
 2. **Rozšíření MicroPython Panel:**
    - V levém Activity Baru přidá ikonu mikrokontroleru s přehledným panelem tlačítek.
@@ -71,6 +72,7 @@ Pokud nechcete přepínat mezi různými editory a chcete MicroPython používat
      - 🟩 **▶ REPL** – spustí `.vscode/repl.ps1` a otevře interaktivní terminál MicroPythonu.
      - 🟦 **📂 List files** – spustí `.vscode/list.ps1` a vypíše soubory uložené v paměti desky.
      - 🟥 **🗑 Wipe device** – spustí `.vscode/wipe.ps1` a bezpečně vymaže paměť desky pro čistý začátek.
+   - Obě technologie (MicroPython a CircuitPython) v projektu harmonicky koexistují – automatické ukládání `Run on Save` pro CircuitPython soubor `main.py` ignoruje, takže se můžete kdykoli bez kolize přepnout mezi psaním pro CircuitPython (`code.py`) a MicroPython (`main.py`).
 
 3. **Knihovna hardware pro Pico:ed (`lib/picoed_v2_lib`):**
    - Pokud provozujete desku Pico:ed s MicroPython firmwarem, máte v adresáři `lib/picoed_v2_lib` k dispozici hotové ovladače:

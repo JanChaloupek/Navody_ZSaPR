@@ -15,7 +15,12 @@ Tento průvodce vás krok za krokem provede instalací editoru **Visual Studio C
 
 ## 2. Instalace potřebných rozšíření
 
-Rozšíření instalujete kliknutím na ikonu **Extensions** (čtverce na levé liště, případně zkratkou `Ctrl+Shift+X`) a vyhledáním podle názvu.
+> [!TIP]
+> **Superrychlá automatická instalace pomocí `setup.bat` (Windows):**  
+> Pokud pracujete na Windows a stáhnete si připravenou výchozí strukturu projektu (viz [Krok 3](#3-získání-výchozí-struktury-projektu)), **nemusíte tato rozšíření instalovat ručně jedno po druhém**. Stačí ve složce projektu spustit skript **`setup.bat`**, který všechna potřebná i doporučená rozšíření, Python nástroje i konfiguraci `Run on Save` nainstaluje a nastaví plně automaticky!  
+> Následující seznam slouží jako přehled pro ruční kontrolu nebo pro uživatele jiných operačních systémů (macOS/Linux).
+
+Rozšíření ručně instalujete kliknutím na ikonu **Extensions** (čtverce na levé liště, případně zkratkou `Ctrl+Shift+X`) a vyhledáním podle názvu.
 
 ### Povinná rozšíření:
 
@@ -73,13 +78,17 @@ Rozšíření instalujete kliknutím na ikonu **Extensions** (čtverce na levé 
 ## 3. Získání výchozí struktury projektu
 
 Celá připravená výchozí struktura projektu je součástí repozitáře kurzu na GitHubu. Nemusíte nic ručně konfigurovat – projekt už přímo obsahuje:
-- **`.vscode/`** – připravená konfigurace editoru, doporučená rozšíření (`extensions.json`), pravidla ignorování souborů (`.ignoreCopy`) a nahrávací skripty:
-  - `copy.ps1` (autorský skript mentora kurzu Jana Chaloupka pro Windows)
+- **`setup.bat`** – jednorázový instalační a konfigurační skript pro Windows (automaticky zkontroluje a nainstaluje Python, pip, mpremote, všechna potřebná i doporučená rozšíření z Marketplace, vestavěný balíček MicroPython Panelu a nakonfiguruje `Run on Save`).
+- **`.vscode/`** – připravená konfigurace editoru (`settings.json`), doporučená rozšíření (`extensions.json`), pravidla ignorování souborů (`.ignoreCopy`), instalační skript (`setup.ps1`), balíček `dist/micropython-panel.vsix` a nahrávací skripty:
+  - `copy.ps1` (autorský skript mentora kurzu Jana Chaloupka pro Windows pro bleskové nahrávání na disk `CIRCUITPY`)
   - `copy.sh` (skript studenta Robina Bortlíka upravený Janem Chaloupkem pro macOS a Linux)
-- **`_stubs/`** – interní složka s typovými definicemi a fake moduly CircuitPythonu (`board`, `busio`, `digitalio`, `picoed`, `neopixel`...). Podtržítko v názvu značí, že jde o interní knihovny pro editor a offline unit testy na PC, které se nekopírují do robota. Plně nahrazuje dřívější složku `lib_vsc_only/`.
-- **`lib/`** – složka pro ovladače a knihovny hardware JoyCaru.
+  - pomocné skripty pro MicroPython (`upload.ps1`, `repl.ps1`, `list.ps1`, `wipe.ps1`, `mpy.ps1` atd.)
+- **`_fake/`** – mock moduly hardware (`board`, `picoed`, `pwmio`, `digitalio`, `neopixel`, `time`), které umožňují spouštět a testovat kód offline přímo na PC bez připojeného robota.
+- **`_stubs/`** – interní složka s typovými definicemi CircuitPythonu pro bezchybnou nápovědu (IntelliSense) ve VS Code.
+- **`lib/`** – složka pro ovladače a knihovny hardware JoyCaru (včetně `picoed_v2_lib` pro MicroPython).
 - **`pyrightconfig.json`** – konfigurace analyzátoru Pylance/Pyright pro přesné našeptávání a typovou kontrolu bez falešných chybových hlášení.
-- **`code.py`** – hlavní vstupní soubor programu běžící přímo v procesoru robota.
+- **`code.py`** – hlavní program pro CircuitPython na desce Pico:ed.
+- **`main.py`** – výchozí program pro MicroPython.
 - **`.gitignore`** – pravidla verzování zamezující nahrávání mezipaměti a dočasných souborů do Gitu.
 
 ---
@@ -108,13 +117,21 @@ Pokud zatím Git neovládáte a chcete si nejprve osahat hardware a psaní kódu
 
 ---
 
-## 4. Otevření projektu ve VS Code
+## 4. Otevření projektu ve VS Code a rychlá příprava (`setup.bat`)
 
 1. Spusťte VS Code.
 2. V horním menu zvolte **File** → **Open Folder...** (nebo stiskněte zkratku `Ctrl+K Ctrl+O`).
 3. Vyberte složku projektu (např. `joyCarProjekt`).
-4. VS Code automaticky detekuje soubor `.vscode/extensions.json`. Pokud se v pravém dolním rohu zobrazí výzva *„Do you want to install the recommended extensions?“*, potvrďte kliknutím na **Install**.
-5. Zkontrolujte, zda v levém panelu Průzkumníka vidíte složky `.vscode`, `_stubs`, `lib` a soubory `pyrightconfig.json` i `code.py`.
+4. **Automatická instalace a příprava prostředí (`setup.bat`):**  
+   V kořenu projektu poklepejte na soubor **`setup.bat`** (nebo jej spusťte v terminálu).  
+   Tento skript za vás plně automaticky:
+   - zkontroluje a případně nainstaluje Python a nástroj pip,
+   - nainstaluje nástroj `mpremote` pro MicroPython,
+   - nainstaluje vestavěné rozšíření **MicroPython Panel**,
+   - hromadně nainstaluje všechna potřebná rozšíření z Marketplace (včetně `CircuitPython v2 Cursor AI 0.3.3`, `Run on Save`, Pylance, cSpell s češtinou a Indent Rainbow),
+   - automaticky nakonfiguruje `Run on Save` pro okamžité odesílání kódu do robota při stisku `Ctrl+S`,
+   - zkontroluje připojenou desku (USB disk `CIRCUITPY` i COM porty).
+5. Zkontrolujte, zda v levém panelu Průzkumníka vidíte složky `.vscode`, `_stubs`, `_fake`, `lib` a soubory `pyrightconfig.json`, `code.py` i `main.py`.
 
-Nyní máte připravený editor i kompletní strukturu projektu. V dalším kroku připojíme desku Pico:ed a nastavíme automatické nahrávání:  
+Nyní máte připravený editor i kompletní strukturu projektu. V dalším kroku připojíme desku Pico:ed:  
 👉 **Pokračujte na: [2. Práce s Pico:ed a CircuitPythonem](2-nastaveni-picoed.md)**

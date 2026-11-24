@@ -92,11 +92,16 @@ Díky tomu vám VS Code ihned nabízí bezchybnou nápovědu (IntelliSense) pro 
 
 Při každém stisku `Ctrl+S` ve VS Code rozšíření **Run on Save** automaticky spustí skript `copy.ps1` (pro Windows) nebo `copy.sh` (pro macOS/Linux). Skript zkontroluje soubor `.vscode/.ignoreCopy` a pokud soubor není ignorován, ihned jej nakopíruje na disk `CIRCUITPY`.
 
-### Nastavení konfigurace v `.vscode/settings.json`:
+> [!TIP]
+> **Pro uživatele Windows je vše již plně nastaveno!**  
+> Pokud jste po otevření projektu spustili skript **`setup.bat`**, rozšíření `Run on Save` je již nainstalováno a konfigurace v `.vscode/settings.json` je připravena. **Nemusíte nic ručně konfigurovat.** Stačí otevřít soubor `code.py`, stisknout `Ctrl+S` a kód se okamžitě odešle do desky Pico:ed.  
+> V souboru `.vscode/.ignoreCopy` je navíc zapsán soubor `main.py`, takže automatické ukládání CircuitPythonu nijak nekoliduje s případnou prací v MicroPythonu.
 
-Otevřete `.vscode/settings.json` ve svém projektu a doplňte následující blok podle vašeho operačního systému:
+### Kontrola a případná změna konfigurace v `.vscode/settings.json`:
 
-#### Pro Windows:
+Pokud byste konfiguraci potřebovali ověřit nebo provozujete jiný operační systém:
+
+#### Pro Windows (výchozí stav nastavený přes `setup.bat`):
 ```json
 "emeraldwalk.runonsave": {
     "commands": [
@@ -110,6 +115,7 @@ Otevřete `.vscode/settings.json` ve svém projektu a doplňte následující bl
 ```
 
 #### Pro macOS / Linux:
+Uživatelé macOS a Linuxu v souboru `.vscode/settings.json` pouze upraví příkaz na spouštění bash skriptu:
 ```json
 "emeraldwalk.runonsave": {
     "commands": [
@@ -126,6 +132,11 @@ Otevřete `.vscode/settings.json` ve svém projektu a doplňte následující bl
 > **Původ a autorství skriptů:**
 > - Skript **`copy.ps1`** pro Windows je autorský skript lektora a mentora kurzu (**Jan Chaloupek**) a je průběžně laděn a optimalizován pro spolehlivé nahrávání na disk `CIRCUITPY`.
 > - Skript **`copy.sh`** pro macOS a Linux původně vytvořil student kurzu **Robin Bortlík** (@Robin Bortlik) v předchozích ročnících a Jan Chaloupek jej následně upravil a začlenil do standardní výbavy kurzu.
+
+### 💡 Offline testování a simulace bez robota (`_fake/`)
+
+Pokud zrovna nemáte desku Pico:ed u sebe (např. na cestách), můžete své algoritmy spouštět a testovat přímo v běžném Pythonu na PC. Projekt obsahuje interní složku **`_fake/`**, která simuluje hardware Pico:edu (`board`, `picoed`, `pwmio`, `digitalio`, `neopixel`, `time`).  
+Díky pravidlům v `.vscode/.ignoreCopy` se tyto testovací moduly nikdy nenahrají na reálného robota.
 
 ---
 

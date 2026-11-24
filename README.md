@@ -77,10 +77,10 @@ Postupujte podle jednotlivých kapitol v uvedeném pořadí:
 
 | Kapitola | Název návodu | Popis |
 |---|---|---|
-| **Krok 1** | [1. Instalace a nastavení Visual Studio Code](1-instalace-vscode.md) | Stažení VS Code, instalace správných rozšíření (pozor na správnou verzi CircuitPythonu!) a příprava pracovní složky. |
-| **Krok 2** | [2. Práce s Pico:ed a CircuitPythonem](2-nastaveni-picoed.md) | Kontrola a upgrade firmware, automatické nahrávání kódu při uložení (`copy.ps1`), sériová konzole (REPL), řešení potíží a práce ve Workspace. |
+| **Krok 1** | [1. Instalace a nastavení Visual Studio Code](1-instalace-vscode.md) | Stažení VS Code, automatická instalace rozšíření i nástrojů skriptem `setup.bat` a příprava pracovní složky. |
+| **Krok 2** | [2. Práce s Pico:ed a CircuitPythonem](2-nastaveni-picoed.md) | Kontrola a upgrade firmware, automatické nahrávání kódu při uložení (`Run on Save` / `copy.ps1`), offline simulace (`_fake`), sériová konzole (REPL) a řešení potíží. |
 | **Doplněk** | [3. Úvodní práce s Micro:bitem a MicroPythonem](3-microbit-a-micropython.md) | Úvodní srovnání s MicroPythonem: jednoduchý Mu Editor nebo pokročilé prostředí přímo ve VS Code s rozšířením MicroPython Panel a knihovnou `picoed_v2_lib`. |
-| **Krok 3** | [4. Práce s Git a GitHubem (Odevzdávání úkolů)](4-prace-s-gitem.md) | Vytvoření forku, klonování, správa větví a **vytváření čistých Pull Requestů bez míchání starých úkolů**. |
+| **Krok 3** | [4. Práce s Git a GitHubem (Odevzdávání úkolů)](4-prace-s-gitem.md) | Vytvoření forku, klonování, spuštění `setup.bat`, správa větví a **vytváření čistých Pull Requestů bez míchání starých úkolů**. |
 | **Krok 4** | [5. Ovládání motorů robota JoyCar](5-ovladani-motoru.md) | **Kriticky důležitá kapitola:** princip budiče PCA9633, bezpečný kód pro motory, prevence spálení můstku a náhradní řešení přes PCA9685. |
 | **Tipy (nepovinné)** | [6. Praktické tipy, mapy a vylepšení výbavy](6-tipy-vybaveni-a-mapy.md) | Magnetický USB kabel, tipy pro napájení, srolovatelná mapa na lino, hack I2C expandéru a rozšíření na 6 senzorů čáry. |
 
@@ -88,8 +88,8 @@ Postupujte podle jednotlivých kapitol v uvedeném pořadí:
 
 ## ⚠️ Důležitá pravidla pro práci v kurzu
 
-1. **Python na počítači nespouštíme!**  
-   Veškerý kód pro robota běží přímo na mikrokontroléru Pico:ed (případně micro:bit). Na svém počítači nespouštíte žádný `python.exe` (výjimkou jsou pouze offline unit testy, které budeme probírat v pokročilejší části kurzu – viz metodický návod [Jak se testuje embedded kód](https://github.com/JanChaloupek/pomucky/blob/main/testovani-embedded-kodu.md)).
+1. **Kód robota nespouštíme na počítači!**  
+   Veškerý běžný kód pro robota běží přímo na mikrokontroléru Pico:ed (případně micro:bit). Na svém počítači nespouštíte kód přímo na fyzickém hardwaru (výjimkou je offline testování s využitím simulace `_fake/` a unit testy, které budeme probírat v pokročilejší části kurzu – viz metodický návod [Jak se testuje embedded kód](https://github.com/JanChaloupek/pomucky/blob/main/testovani-embedded-kodu.md)).
 2. **Přísný zákaz blokujícího `time.sleep()` v robotických úlohách!**  
    Autonomní robot musí neustále sledovat senzory čáry a reagovat na překážky. Pokud v programu použijete `time.sleep()`, robot „oslepne“ a havaruje. Všechny časové úlohy řešíme neblokujícími časovači `Timer` a `Period`.
 3. **Přísný zákaz okamžité změny směru motorů (zákaz oficiálních kódů výrobce)!**  

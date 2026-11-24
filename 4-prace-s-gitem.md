@@ -228,7 +228,9 @@ Pokud s Gitem teprve začínáte nebo si chcete ujasnit vizuální práci s verz
 
 ### Kam pokračovat dál?
 
-- **Krok 4 – programování pohybu robota:**  
-  👉 **[5. Ovládání motorů robota JoyCar](5-ovladani-motoru.md)** – bezpečné řízení motorů a prevence odpálení můstku.
+- **Krok 4 – stavba a zapojení robota:**  
+  👉 **[5. Mechanická montáž a zapojení robota JoyCar](5-montaz-a-zapojeni-joycaru.md)** – mechanické sestavení, osazení senzorů a správné zapojení kabelů.
+- **Krok 5 – programování pohybu robota:**  
+  👉 **[6. Ovládání motorů robota JoyCar](6-ovladani-motoru.md)** – bezpečné řízení motorů a prevence odpálení můstku.
 - **Příprava dráhy a mapy pro jízdu robota:**  
-  👉 **[6. Praktické tipy, mapy a vylepšení výbavy](6-tipy-vybaveni-a-mapy.md)** – návod na výrobu testovací dráhy (páska na lino, dlaždice A4, PDF mapy).
+  👉 **[7. Praktické tipy, mapy a vylepšení výbavy](7-tipy-vybaveni-a-mapy.md)** – návod na výrobu testovací dráhy (páska na lino, dlaždice A4, PDF mapy).

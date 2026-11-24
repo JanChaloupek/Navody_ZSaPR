@@ -67,7 +67,7 @@ Během kurzu budete pracovat se **stavebnicí JoyCar** a **dvěma procesorovými
   - *Předlohy pro velkoformátový tisk:* hotové PDF podklady pro formáty A1 nebo A3.
 
 > [!TIP]
-> Tipy na praktické doplňky (magnetický USB kabel proti poškození konektoru, záložní napájení, podrobný návod jak vyrobit srolovatelnou dráhu na linoleu a odkazy na PDF mapy) najdete v rozšiřující kapitole **[6. Praktické tipy, mapy a vylepšení výbavy](6-tipy-vybaveni-a-mapy.md)**.
+> Tipy na praktické doplňky (magnetický USB kabel proti poškození konektoru, záložní napájení, podrobný návod jak vyrobit srolovatelnou dráhu na linoleu a odkazy na PDF mapy) najdete v rozšiřující kapitole **[7. Praktické tipy, mapy a vylepšení výbavy](7-tipy-vybaveni-a-mapy.md)**.
 
 ---
 
@@ -81,8 +81,9 @@ Postupujte podle jednotlivých kapitol v uvedeném pořadí:
 | **Krok 2** | [2. Práce s Pico:ed a CircuitPythonem](2-nastaveni-picoed.md) | Kontrola a upgrade firmware, automatické nahrávání kódu při uložení (`Run on Save` / `copy.ps1`), offline simulace (`_fake`), sériová konzole (REPL) a řešení potíží. |
 | **Doplněk** | [3. Úvodní práce s Micro:bitem a MicroPythonem](3-microbit-a-micropython.md) | Úvodní srovnání s MicroPythonem: jednoduchý Mu Editor nebo pokročilé prostředí přímo ve VS Code s rozšířením MicroPython Panel a knihovnou `picoed_v2_lib`. |
 | **Krok 3** | [4. Práce s Git a GitHubem (Odevzdávání úkolů)](4-prace-s-gitem.md) | Vytvoření forku, klonování, spuštění `setup.bat`, správa větví a **vytváření čistých Pull Requestů bez míchání starých úkolů**. |
-| **Krok 4** | [5. Ovládání motorů robota JoyCar](5-ovladani-motoru.md) | **Kriticky důležitá kapitola:** princip budiče PCA9633, bezpečný kód pro motory, prevence spálení můstku a náhradní řešení přes PCA9685. |
-| **Tipy (nepovinné)** | [6. Praktické tipy, mapy a vylepšení výbavy](6-tipy-vybaveni-a-mapy.md) | Magnetický USB kabel, tipy pro napájení, srolovatelná mapa na lino, hack I2C expandéru a rozšíření na 6 senzorů čáry. |
+| **Krok 4** | [5. Mechanická montáž a zapojení robota JoyCar](5-montaz-a-zapojeni-joycaru.md) | Fyzické sestavení podvozku krok za krokem, zapojení senzorů a motorů, varování k barvám vodičů a celkové blokové schéma. |
+| **Krok 5** | [6. Ovládání motorů robota JoyCar](6-ovladani-motoru.md) | **Kriticky důležitá kapitola:** princip budiče PCA9633, bezpečný kód pro motory, prevence spálení můstku a náhradní řešení přes PCA9685. |
+| **Tipy (nepovinné)** | [7. Praktické tipy, mapy a vylepšení výbavy](7-tipy-vybaveni-a-mapy.md) | Magnetický USB kabel, tipy pro napájení, srolovatelná mapa na lino, hack I2C expandéru a rozšíření na 6 senzorů čáry. |
 
 ---
 

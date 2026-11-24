@@ -1,4 +1,4 @@
-# 6. Praktické tipy, mapy a vylepšení výbavy (nepovinné)
+# 7. Praktické tipy, mapy a vylepšení výbavy (nepovinné)
 
 Tato kapitola je **nepovinná a rozšiřující**. Shrnuje osvědčené zkušenosti z praxe mentora a absolventů minulých běhů kurzu. Najdete zde doporučení na užitečné doplňky k hardwaru, návody a odkazy ke stažení map pro sledování čáry i postup výroby vlastní odolné dráhy.
 
@@ -436,6 +436,8 @@ Tuto sekci budeme v průběhu kurzu průběžně doplňovat. Pokud přijdete na 
 ### Kam pokračovat dál?
 
 - **Základní řízení motorů a ochrana můstku:**  
-  👉 **[5. Ovládání motorů robota JoyCar](5-ovladani-motoru.md)**
+  👉 **[6. Ovládání motorů robota JoyCar](6-ovladani-motoru.md)**
+- **Mechanická montáž a zapojení robota:**  
+  👉 **[5. Mechanická montáž a zapojení robota JoyCar](5-montaz-a-zapojeni-joycaru.md)**
 - **Zpět na rozcestník všech návodů:**  
   👉 **[Hlavní přehled kurzu](README.md)**

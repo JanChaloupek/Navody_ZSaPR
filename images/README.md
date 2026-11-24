@@ -4,7 +4,29 @@ Tato složka slouží pro ukládání obrázků, fotografií a schémat použit�
 
 ### Doporučené názvy a umístění obrázků:
 
-#### Pro kapitolu [6-tipy-vybaveni-a-mapy.md](../6-tipy-vybaveni-a-mapy.md):
+#### Pro kapitolu [5-montaz-a-zapojeni-joycaru.md](../5-montaz-a-zapojeni-joycaru.md):
+
+##### 1. Přehledy dílů a sestavený robot:
+- `joycar-sestaveny-produkt.png` – Kompletně sestavený robot Joy-Car (produktová fotografie výrobce).
+- `joycar-senzory-prehled.png` – Přehled a rozmístění senzorů a výbavy Joy-Caru.
+- `joycar-detaily-vyrobce.png` – Konstrukční detaily a součástky Joy-Caru.
+- `joycar-dily-elektronika.png` – Přehled elektronických modulů a desek v balení stavebnice.
+- `joycar-dily-mechanika.png` – Přehled mechanických dílů, akrylových částí a spojovacího materiálu.
+
+##### 2. Schémata zapojení komponent:
+- `joycar-schema-zapojeni.png` – Kompletní blokové a elektrické schéma zapojení JoyCaru (revize 1.3).
+- `zapojeni-motory.png` – Schéma zapojení stejnosměrných motorů k hlavní desce.
+- `zapojeni-baterie.png` – Schéma zapojení bateriového pouzdra (vypínač, napájení).
+- `zapojeni-senzory-cary.png` – Schéma zapojení 3 senzorů sledování čáry (Line Tracking).
+- `zapojeni-snimace-rychlosti.png` – Schéma zapojení optických snímačů rychlosti (Speed Sensors).
+- `zapojeni-senzory-prekazek.png` – Schéma zapojení infračervených senzorů překážek.
+- `zapojeni-led-svetla.png` – Schéma zapojení předních bílých a zadních červených LED světel.
+- `zapojeni-ultrazvuk.png` – Schéma zapojení ultrazvukového senzoru vzdálenosti.
+- `zapojeni-serva.png` – Schéma zapojení mikroserva pro natáčení ultrazvukového senzoru.
+
+---
+
+#### Pro kapitolu [7-tipy-vybaveni-a-mapy.md](../7-tipy-vybaveni-a-mapy.md):
 
 ##### 1. Základní výbava a mapy:
 - `magneticky-kabel.jpg` (nebo `.png`) – Detail zapojení magnetické koncovky v desce Pico:ed a přiblížení kabelu.

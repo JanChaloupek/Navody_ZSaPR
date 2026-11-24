@@ -7,7 +7,7 @@ Tato složka slouží pro ukládání obrázků, fotografií a schémat použit�
 #### Pro kapitolu [5-montaz-a-zapojeni-joycaru.md](../5-montaz-a-zapojeni-joycaru.md):
 
 ##### 1. Přehledy dílů a sestavený robot:
-- `joycar-sestaveny-produkt.png` – Kompletně sestavený robot Joy-Car (produktová fotografie výrobce).
+- `joycar-sestaveny-produkt.png` – Kompletně sestavený robot Joy-Car s otočným ultrazvukem na servu nahoře (oficiální produktová fotografie výrobce).
 - `joycar-senzory-prehled.png` – Přehled a rozmístění senzorů a výbavy Joy-Caru.
 - `joycar-detaily-vyrobce.png` – Konstrukční detaily a součástky Joy-Caru.
 - `joycar-dily-elektronika.png` – Přehled elektronických modulů a desek v balení stavebnice.

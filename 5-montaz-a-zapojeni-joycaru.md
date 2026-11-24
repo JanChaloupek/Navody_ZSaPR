@@ -3,9 +3,9 @@
 V této kapitole si krok za krokem sestavíte samotného robota **JoyCar** – od mechanické montáže podvozku a motorů, přes osazení senzorů, až po správné zapojení veškeré kabeláže k základní desce.
 
 <div align="center">
-  <img src="images/joycar-sestaveny-produkt.png" width="480" alt="Kompletně sestavený robot JoyCar s rozsvícenými LED světly">
+  <img src="images/joycar-sestaveny-produkt.png" width="480" alt="Kompletně sestavený robot JoyCar s otočným ultrazvukovým senzorem na servomotoru">
   <br>
-  <em>Kompletně sestavený robot JoyCar s deskou, senzory a LED osvětlením</em>
+  <em>Kompletně sestavený robot JoyCar s otočnou ultrazvukovou hlavou na servomotoru</em>
 </div>
 
 ---
@@ -25,11 +25,11 @@ Před zahájením montáže doporučujeme vybalit a zkontrolovat všechny souč�
 | **Snímač rychlosti (Speed Sensor)** | 2× | Optické štěrbinové snímače (optozávory) pro odměřování otáček motorů (enkodéry) |
 | **LED světelný modul** | 4× | RGB LED moduly světlometů a blinkrů (přední FL, FR a zadní RL, RR) |
 | **Ultrazvukový senzor (HC-SR04)** | 1× | Snímač vzdálenosti pro bezkontaktní měření objektů |
-| **Servomotor (SG90)** | 2× | Mikroserva pro natáčení ultrazvukového snímače (případně další mechanismy) |
+| **Servomotor (SG90)** | 2× | Mikroserva s vlastním kabelem (hnědá, červená, žlutá) pro natáčení ultrazvukového snímače |
 | **Stejnosměrný motor TT s převodovkou** | 2× | Pohonné motory kol se dvěma výstupními hřídelemi (vnější pro kolo, vnitřní pro enkodér) |
 | **Bateriové pouzdro** | 1× | Pouzdro pro 4× AA baterie s vypínačem a vývodem vodičů |
-| **Sada 3pinových kabelů** | 7× | 3žilové kabely s pevným pořadím vodičů: černá (GND), červená (VCC / +), žlutá (signál / Data) |
-| **Sada 4pinových kabelů** | 5× | Kabely pro 4 LED světelné moduly a ultrazvukový senzor |
+| **Sada 3pinových kabelů** | 7× | 3žilové kabely s barvami: **černá (GND), červená (VCC / +), žlutá (Data)** pro senzory čáry, překážek a rychlosti |
+| **Sada 4pinových kabelů** | 5× | 4žilové kabely s barvami: **černá, zelená, modrá, červená** pro 4 LED moduly a ultrazvuk |
 
 <img src="images/joycar-senzory-prehled.png" width="450" alt="Detailní přehled všech senzorů JoyCar">
 
@@ -132,22 +132,33 @@ Před zahájením montáže doporučujeme vybalit a zkontrolovat všechny souč�
 ## 3. Zapojení kabeláže k základní desce
 
 > [!CAUTION]
-> ### ⚠️ Kritické varování k barvám vodičů a pořadí pinů:
-> V oficiálních nákresech výrobce Joy-IT jsou kabely znázorněny v odlišných barvách (modrá, zelená, oranžová).  
-> **Reálná stavebnice JoyCar obsahuje 3žilové kabely s pevným pořadím žil:**
-> 1. **Černá** = Zem (`G` / `GND`)
-> 2. **Červená** = Napájení 3,3 V (`+` / `VCC`)
-> 3. **Žlutá** = Datový signál (`D` / `OUT` / `Signal`)
+> ### ⚠️ Přehled kabelů ve stavebnici vs. barevné značení:
+> V oficiálních nákresech výrobce Joy-IT jsou barvy kabelů znázorněny odlišně od skutečnosti.  
+> **Ve stavebnici JoyCar pracujete se 3 typy kabelů s konkrétními barvami:**
 > 
-> Na základní desce JoyCaru (bloky `LINE TRK`, `SPEED`, `OBSTCL`) toto pořadí řad přesně sedí:
-> - Spodní řada: **`G`** $\rightarrow$ černý vodič
-> - Prostřední řada: **`+`** $\rightarrow$ červený vodič
-> - Horní řada: **`D`** $\rightarrow$ žlutý vodič
+> 1. **3žilové kabely (7×) – barvy: `Černá` – `Červená` – `Žlutá`**  
+>    - Používají se pro: **3× senzory čáry**, **2× senzory překážek** a **2× snímače rychlosti**.
+>    - Standardní logika: **Černá** = Zem (`GND`), **Červená** = Napájení (`+3,3 V`), **Žlutá** = Data (`Signál`).
 > 
-> **POZOR NA ZÁDRHEL:**  
-> Zatímco na senzory sledování čáry sedí tento kabel 1:1, **na snímačích rychlosti (Speed Sensors) jsou piny na destičce v jiném pořadí (např. VCC a GND jsou navzájem prohozené)!**  
-> Pokud byste kabel zapojili přímo bez úpravy, **dojde k přepólování snímače**!  
-> **Při zapojování se proto VŽDY řiďte potiskem pinů na konkrétní desce a senzoru, nikoli pouze mechanickým nasazením konektoru.**
+> 2. **4žilové kabely (5×) – barvy: `Černá` – `Zelená` – `Modrá` – `Červená`**  
+>    - Používají se pro: **4× LED moduly světel** a **1× ultrazvukový senzor**.
+>    - Krajní vodiče odpovídají napájení (**Červená** = `+3,3 V`, **Černá** = `GND`), vnitřní vodiče (**Zelená** a **Modrá**) přenášejí řídicí a datové signály.
+> 
+> 3. **Integrovaný kabel servomotoru SG90 – barvy: `Hnědá` – `Červená` – `Žlutá`**  
+>    - Tento kabel vede neoddělitelně přímo z těla serva.
+>    - **Hnědá** = Zem (`G`), **Červená** = Napájení (`+`), **Žlutá** = PWM signál (`D`).
+> 
+> ---
+> 
+> **ZVLÁŠTNÍ POZOR NA SNÍMAČE RYCHLOSTI (`SPEED`):**  
+> Na základní desce (`SPEED`) i na samotném snímači rychlosti je **stejné pořadí pinů** (`+`/`VCC`, `G`/`GND`, `D`/`D0`).  
+> 3žilový kabel tedy spojuje správné piny navzájem (pin 1 do 1, pin 2 do 2, pin 3 do 3). Elektricky vše funguje, **ale barvy kabelu jsou opticky obráceně**:  
+> - Černý drát propojuje `+` (3,3 V)  
+> - Červený drát propojuje `GND` (zem)  
+> 
+> 👉 **Student má dvě správné možnosti:**  
+> - **Možnost A (rychlá / „barvoslepá“):** Ponechá kabel tak, jak je (1:1). Elektricky je to v pořádku a nic se nespálí, jen je napájení na černém a zem na červeném.  
+> - **Možnost B (elektrotechnicky čistá):** Prohodí černý a červený vodič v DuPont pouzdře **na OBOU koncích kabelu**, aby červená byla opravdu `+` a černá `GND`. *(Pozor: Nikdy neprohazujte vodiče jen na jednom konci, to by způsobilo zkrat a přepólování!).*
 
 > [!TIP]
 > **Kdy zapojovat:**  
@@ -172,23 +183,24 @@ Propojte 3pinovými kabely do pinového bloku označeného **`LINE TRK`**:
 Propojte do pinového bloku označeného **`SPEED`**:
 - **L** (levý enkodér) $\rightarrow$ sloupec `L`
 - **R** (pravý enkodér) $\rightarrow$ sloupec `R`
-- Orientace na základní desce: spodní řada je `G` (černá), prostřední `+` (červená), horní `D` (žlutá).
 
-> [!WARNING]
-> ### ⚠️ Pozor na prohozené piny u snímačů rychlosti:
-> Destička snímače rychlosti má 4 piny s potiskem: **`VCC`**, **`GND`**, **`D0`** (digitální výstup) a **`A0`** (analogový výstup).
+> [!IMPORTANT]
+> ### 🔍 Pořadí pinů na desce a snímači vs. barvy kabelu:
+> Podívejte se pozorně na popisek pinů na základní desce JoyCaru u bloku `SPEED` a na destičce snímače rychlosti:
 > 
-> 1. **Piny napájení jsou prohozené:**  
->    Na dodaném 3žilovém kabelu jde pořadí *Černá (GND) – Červená (VCC) – Žlutá (D)*. Na senzoru je však pořadí pinů *VCC – GND – D0*.  
->    Pokud byste 3pinový konektor nasadili tak, jak je, propojíte černý drát (GND) na VCC a červený drát (3,3 V) na GND = **zkrat a přepólování snímače**!
-> 2. **Jak kabel správně zapojit:**  
->    - Na straně konektoru, která se zasouvá do snímače rychlosti, opatrně hrotem jehly nebo nožíku nadzvedněte plastovou západku DuPont pouzdra a **prohoďte černý a červený vodič**.
->    - Tím získáte správné pořadí odpovídající potisku na plošném spoji:  
->      - **`VCC`** $\rightarrow$ **Červený vodič** (napájení +3,3 V)  
->      - **`GND`** $\rightarrow$ **Černý vodič** (zem)  
->      - **`D0`** $\rightarrow$ **Žlutý vodič** (digitální signál otáček)  
->    - *(Případně lze vodiče od sebe podélně oddělit a nasadit jednotlivě).*
-> 3. **Pin A0 zůstává volný:** Čtvrtý pin `A0` (analogový výstup) se nezapojuje!
+> | Pin | Základní deska (`SPEED`) | Snímač rychlosti | Běžný 3žilový kabel | Co to v praxi znamená? |
+> | :---: | :---: | :---: | :---: | :--- |
+> | **Pin 1** | **`+`** (3,3 V) | **`VCC`** (napájení) | **Černý vodič** | Pořadí pinů na desce i snímači je **shodné**! |
+> | **Pin 2** | **`G`** (Zem) | **`GND`** (zem) | **Červený vodič** | Kabel propojuje správné piny navzájem... |
+> | **Pin 3** | **`D`** (Signál) | **`D0`** (digitální OUT) | **Žlutý vodič** | ...ale napájení je vedeno černým a zem červeným! |
+> | *(Pin 4)* | *(není)* | **`A0`** (analogový výstup) | *(nezapojeno)* | **Čtvrtý pin A0 zůstává volný!** |
+> 
+> **Jak to zapojit (2 správné cesty):**
+> 1. **Rychlá varianta („barvoslepá“):**  
+>    Zapojte 3pinový kabel z desky do snímače přímo (1:1 na piny VCC, GND, D0) bez jakýchkoliv úprav. Elektricky je zapojení naprosto funkční a bezpečné, jen musíte vědět, že v tomto konkrétním spoji vede kladné napětí černý vodič a zem červený vodič.
+> 2. **Profesionální varianta (prohození na OBOU koncích):**  
+>    Pokud chcete striktně dodržet barevné značení (červená = +, černá = GND), musíte opatrně hrotem jehly nebo nožíku nadzvednout plastové jazýčky DuPont konektoru a prohodit černý a červený vodič **na obou koncích kabelu**!  
+>    *(Pozor: Pokud byste vodiče prohodili pouze na jednom konci, došlo by k přepólování snímače!).*
 
 ---
 
@@ -206,7 +218,7 @@ Propojte 3pinovými kabely do pinového bloku označeného **`OBSTCL`**:
 ### D. LED světelné moduly
 <img src="images/zapojeni-led-svetla.png" width="550" alt="Schéma zapojení 4 LED světelných modulů">
 
-Každý modul má 4 piny a propojuje se 4pinovým kabelem do konektoru **`LEDs`**:
+Každý modul má 4 piny a propojuje se 4pinovým kabelem (barvy vodičů: **černá, zelená, modrá, červená**) do konektoru **`LEDs`**:
 - **FL** = Front Left (Přední levé světlo)
 - **FR** = Front Right (Přední pravé světlo)
 - **RL** = Rear Left (Zadní levé světlo)
@@ -217,22 +229,26 @@ Každý modul má 4 piny a propojuje se 4pinovým kabelem do konektoru **`LEDs`*
 ### E. Ultrazvukový senzor vzdálenosti
 <img src="images/zapojeni-ultrazvuk.png" width="550" alt="Schéma zapojení ultrazvukového senzoru">
 
-Ultrazvukový senzor HC-SR04 je usazen v akrylovém držáku nahoře na mikroservu v horním šasi. Propojte jej 4pinovým kabelem do svislého bloku pinů označeného **`US`**:
-- Piny shora dolů odpovídají popisu na desce:
-  - **`+`** $\rightarrow$ `VCC` senzoru
-  - **`T`** $\rightarrow$ `Trig` (Trigger signál)
-  - **`E`** $\rightarrow$ `Echo` (Echo signál)
-  - **`G`** $\rightarrow$ `GND` (Zem)
+Ultrazvukový senzor HC-SR04 je usazen v akrylovém držáku nahoře na mikroservu v horním šasi. Propojte jej 4pinovým kabelem (barvy vodičů: **černá, zelená, modrá, červená**) do svislého bloku pinů označeného **`US`**:
+- Piny shora dolů odpovídají popisu na desce i senzoru:
+  - **`+`** $\rightarrow$ `VCC` senzoru (**červený vodič**)
+  - **`T`** $\rightarrow$ `Trig` Trigger signál (**modrý vodič**)
+  - **`E`** $\rightarrow$ `Echo` Echo signál (**zelený vodič**)
+  - **`G`** $\rightarrow$ `GND` Zem (**černý vodič**)
+- *Krajní vodiče 4žilového pásku tedy odpovídají napájení (+ červená, GND černá).*
 
 ---
 
 ### F. Servomotory
 <img src="images/zapojeni-serva.png" width="550" alt="Schéma zapojení servomotorů">
 
-Kabel mikroserva (vedoucí z otočné ultrazvukové hlavy v horním šasi) se zasouvá přímo do pinového bloku **`SERVO`**:
+Mikroservo SG90 má svůj vlastní 3žilový kabel s koncovkou v barvách **hnědá, červená, žlutá**. Zasouvá se přímo do pinového bloku **`SERVO`**:
 - **1** $\rightarrow$ Servo pro natáčení ultrazvukové hlavy (pin 1 – **povinné pro kurz**)
 - **2** $\rightarrow$ Volitelné druhé servo (pin 2 – např. pro budoucí náklon / tilt)
-- *Orientace konektoru:* Signální vodič (oranžový/žlutý) na pin `D`, napájení (červený) na `+`, zem (hnědý/černý) na `G`.
+- *Orientace konektoru:*
+  - **`G`** $\rightarrow$ **Hnědý vodič** (zem / GND)
+  - **`+`** $\rightarrow$ **Červený vodič** (napájení +3,3 V / VCC)
+  - **`D`** $\rightarrow$ **Žlutý / oranžový vodič** (řídicí PWM signál)
 
 ---
 

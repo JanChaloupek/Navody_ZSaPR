@@ -303,7 +303,7 @@ Pro porozumění tomu, jak mikrokontrolér s jednotlivými periferiemi komunikuj
    - `Pin 7` $\rightarrow$ Volný pin **`EOUT7`** na hlavní liště  
    *(Volné piny EOUT0, EOUT1 a EOUT7 v pokročilé části kurzu využijeme pro připojení dalších 3 senzorů čáry!)*
 
-   <img src="images/joycar-io-expander-rev1.3.png" width="650" alt="Detailní zapojení 8 pinů I2C expandéru pro Revizi 1.3 (EOUT0, EOUT1 a EOUT7)">
+   <img src="images/joycar-pinout-rev1.3.png" width="750" alt="Reálná fotografie rozšiřující lišty JoyCar Rev 1.3 s vyznačenými výstupy EOUT0, EOUT1 a EOUT7">
 2. **Řízení motorů (PWM + Direction):**  
    Motory jsou řízeny specializovaným I²C PWM čipem **PCA9633**, který generuje PWM signály pro levý i pravý motor.
 3. **Přímo vyvedené piny mikrokontroléru:**

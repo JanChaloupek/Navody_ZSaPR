@@ -28,7 +28,7 @@ Během kurzu budete pracovat se **stavebnicí JoyCar** a **dvěma procesorovými
 
 <img src="images/joycar-mainboard-popis.png" width="580" alt="Přehled komponent a zapojení základní desky JoyCar Rev 1.3 s piny EOUT0, EOUT1 a EOUT7">
 
-<img src="images/joycar-io-expander-rev1.3.png" width="580" alt="Detailní zapojení 8 pinů I2C expandéru pro Revizi 1.3 (EOUT0, EOUT1 a EOUT7)">
+<img src="images/joycar-pinout-rev1.3.png" width="750" alt="Detailní fotografie rozšiřující lišty JoyCar Rev 1.3 s vyznačenými piny EOUT0, EOUT1 a EOUT7">
 
 #### 🎯 K čemu JoyCar v kurzu slouží:
 1. **Autonomní navigace a jízda po čáře:** Vývoj algoritmů od základního binárního přepínání přes plynulou regulaci (P a PID regulace) až po spolehlivou detekci složitých křižovatek a odboček.

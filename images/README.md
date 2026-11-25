@@ -23,7 +23,7 @@ Tato složka slouží pro ukládání obrázků, fotografií a schémat použit�
 - `zapojeni-led-svetla.png` – Schéma zapojení předních bílých a zadních červených LED světel.
 - `zapojeni-ultrazvuk.png` – Schéma zapojení ultrazvukového senzoru vzdálenosti.
 - `zapojeni-serva.png` – Schéma zapojení mikroserva pro natáčení ultrazvukového senzoru.
-- `joycar-io-expander-rev1.3.png` – Oficiální schéma zapojení 8 pinů I²C expandéru pro Revizi 1.3 s vyvedenými piny EOUT0, EOUT1 a EOUT7.
+- `joycar-pinout-rev1.3.png` – Detailní reálná fotografie rozšiřující lišty desky JoyCar Rev 1.3 s vyznačenými piny EOUT0, EOUT1 a EOUT7.
 
 ---
 
@@ -85,7 +85,7 @@ Tato složka slouží pro ukládání obrázků, fotografií a schémat použit�
 #### Pro [README.md](../README.md) a úvod:
 - `joycar-picoed.jpg` – Celkový pohled na sestaveného robota JoyCar s osazenou deskou Pico:ed v2.
 - `joycar-mainboard-popis.png` – Přehled komponent a konektorů základní desky JoyCar Rev 1.3 s vyznačenými výstupy EOUT0, EOUT1 a EOUT7.
-- `joycar-io-expander-rev1.3.png` – Schéma zapojení 8 pinů I²C expandéru pro Revizi 1.3.
+- `joycar-pinout-rev1.3.png` – Fotografie rozšiřující lišty desky JoyCar Rev 1.3 s piny EOUT0, EOUT1 a EOUT7.
 - `baterie-usb.jpg` – USB nabíjecí baterie 1,5 V (Li-ion).
 
 > **Tip:** Fotografie stačí nahrát do této složky pod uvedenými názvy a v příslušném `.md` souboru odkomentovat značku `![Popis obrázku](images/nazev-souboru.jpg)`.

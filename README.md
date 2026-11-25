@@ -24,7 +24,7 @@ Během kurzu budete pracovat se **stavebnicí JoyCar** a **dvěma procesorovými
   - Výkonové řízení obou stejnosměrných motorů přes integrovaný I²C budič (obvod PCA9633).
   - Adresovatelné RGB LED diody (NeoPixel / WS2812B) vpředu i vzadu pro blinkry, brzdová světla a světlomety.
   - Piezoelektrický bzučák pro akustickou signalizaci a přehrávání tónů.
-- **Rozšiřitelnost (deska Revize 1.3):** Hlavní sběrnice I²C s expandérem PCA9555 (adresa `0x38`). V revizi 1.3 jsou snímače otáček motorů zapojeny přímo do pinů mikrokontroléru, což na rozšiřujícím konektoru I²C expandéru uvolnilo **3 volné digitální výstupy: EOUT0, EOUT1 a EOUT7** pro připojení dalších periferií (jak si ukážeme v kapitole o rozšíření na 6 senzorů čáry, LCD displej či externí H-můstek).
+- **Rozšiřitelnost (deska Revize 1.3):** Hlavní sběrnice I²C s 8bitovým expandérem **PCF8574** (adresa `0x38`). V revizi 1.3 jsou snímače otáček motorů zapojeny přímo do pinů mikrokontroléru, což na rozšiřujícím konektoru I²C expandéru uvolnilo **3 volné digitální výstupy: EOUT0, EOUT1 a EOUT7** pro připojení dalších periferií (jak si ukážeme v kapitole o rozšíření na 6 senzorů čáry, LCD displej či externí H-můstek).
 
 <img src="images/joycar-mainboard-popis.png" width="580" alt="Přehled komponent a zapojení základní desky JoyCar Rev 1.3 s piny EOUT0, EOUT1 a EOUT7">
 

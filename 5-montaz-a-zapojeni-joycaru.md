@@ -291,7 +291,7 @@ Pro porozumění tomu, jak mikrokontrolér s jednotlivými periferiemi komunikuj
 <img src="images/joycar-schema-zapojeni.png" width="750" alt="Kompletní blokové schéma zapojení a architektury robota JoyCar">
 
 ### Klíčové principy zapojení desky:
-1. **I²C expandér (PCA9555 / 8 IO-Pins):**  
+1. **I²C expandér (PCF8574 / 8 IO pinů, adresa `0x38`):**  
    Protože mikrokontrolér má omezený počet pinů, většina diskrétních senzorů je připojena přes 8bitový I²C expandér:
    - `Pin 0` $\rightarrow$ Volný pin **`EOUT0`** na hlavní liště
    - `Pin 1` $\rightarrow$ Volný pin **`EOUT1`** na hlavní liště

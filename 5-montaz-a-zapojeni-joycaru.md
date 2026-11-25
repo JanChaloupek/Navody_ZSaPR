@@ -60,7 +60,7 @@ Před zahájením montáže doporučujeme vybalit a zkontrolovat všechny souč�
   - 5× M3 × 14 mm (pro držáky baterie a ultrazvuku)
 - **Distanční sloupky:**
   - 4× M3 × 30 mm kovové sloupky (spojují spodní základnu a horní šasi)
-  - 4× M2,5 × 10 mm distanční sloupky (pro montáž senzorů čáry pod podvozek)
+  - 4× M2,5 × 10 mm distanční sloupky (pro uchycení hlavní desky / Mainboardu k hornímu šasi)
 - **Matice a podložky:**
   - 20× matice M2,5 + 30× podložka M2,5
   - 15× matice M3
@@ -109,13 +109,16 @@ Před zahájením montáže doporučujeme vybalit a zkontrolovat všechny souč�
    - Přišroubujte k vnitřní straně držáků motorů pomocí šroubů M2,5 × 10 mm a matic.
    - Zkontrolujte, že se perforovaný kotouček otáčí přesně uprostřed štěrbiny optozávory a nikde nedrhne.
 2. **Senzory sledování čáry (Line Tracking L, M, R):**
-   - Montují se ze **spodní strany základny** čelem k zemi.
-   - Použijte distanční sloupky M2,5 × 10 mm a šroubky M2,5 tak, aby senzory byly v přesné výšce cca 5–10 mm nad povrchem.
+   - Montují se ze **spodní strany základny (Base)** čelem k zemi **PŘÍMO BEZ DISTANČNÍCH SLOUPKŮ**.
+   - K montáži použijte šroubky **M2,5 × 10 mm**, **dvě ploché podložky M2,5 na každý šroubek** a matice **M2,5**.
+   - Senzor doléhá přímo na spodní akrylovou desku, čímž je optické reflexní čidlo drženo v optimální pracovní výšce (cca 5–8 mm nad dráhou). *(Pokud byste použili distanční sloupky, senzory by drhly o zem a podvozek by na nich visel).*
 3. **Senzory překážek (Obstacle Sensors):**
-   - Přišroubujte šikmo na přední boky základny šrouby M2,5 × 10 mm a maticemi.
-4. **LED světelné moduly (FL, FR, RL, RR):**
+   - Přišroubujte šikmo zespodu na boční křidélka horního šasi šrouby M2,5 × 10 mm, podložkami a maticemi M2,5.
+4. **Příprava horního šasi (sloupky pro základní desku):**
+   - Do 4 příslušných montážních otvorů v horní desce (Chassis) zašroubujte **4 malé distanční sloupky (M2,5 × 10 mm)** a zespodu je pevně dotáhněte maticemi M2,5. Na tyto sloupky bude později usazena základní deska robota.
+5. **LED světelné moduly (FL, FR, RL, RR):**
    - Zasuňte do zářezů v rozích podvozku a zajistěte šroubky M2,5 × 5 mm.
-5. **Ultrazvukový senzor se servomotorem (pro kurz ZSaPR je NUTNÁ montáž na servo!):**
+6. **Ultrazvukový senzor se servomotorem (pro kurz ZSaPR je NUTNÁ montáž na servo!):**
    > [!IMPORTANT]
    > **Pro náš kurz ZSaPR je montáž ultrazvuku na servomotor povinná!** Pevnou montáž na spodní základnu nepoužívejte – robot potřebuje mít možnost aktivně otáčet „hlavou“, skenovat prostor před sebou do stran a vyhledávat překážky pod různými úhly.
 

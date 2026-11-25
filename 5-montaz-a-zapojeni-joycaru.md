@@ -98,24 +98,28 @@ Před zahájením montáže doporučujeme vybalit a zkontrolovat všechny souč�
 2. **Nasazení perforovaných disků enkodérů:**
    - Na **vnitřní** osu každého motoru (směřující dovnitř robota) opatrně nasuňte černý děrovaný plastový kotouček enkodéru.
 3. **Uchycení motorů k základně:**
-   - Sestavené držáky motorů usaďte do zámků ve spodní základně a zespodu je přišroubujte šrouby **M3 × 8 mm**.
+   - Sestavené držáky motorů usaďte do zámků ve spodní základně.
+   - Do boční drážky v akrylovém držáku motoru nejprve zasuňte matici **M3** a zespodu základny držák pevně přišroubujte šroubem **M3 × 14 mm**.
 4. **Nasazení kol:**
    - Na **vnější** osu každého motoru pevně nasuňte pojezdová žlutá kola.
 
 ---
 
 ### Krok 3: Osazení senzorů a modulů
-1. **Snímače rychlosti (Speed Sensors):**
-   - Přišroubujte k vnitřní straně držáků motorů pomocí šroubů M2,5 × 10 mm a matic.
-   - Zkontrolujte, že se perforovaný kotouček otáčí přesně uprostřed štěrbiny optozávory a nikde nedrhne.
+1. **Snímače rychlosti (Speed Sensors / Enkodéry):**
+   - Vložte snímače rychlosti do spodní strany základny tak, aby U-profil optozávory procházel obdélníkovým výřezem vzhůru kolem perforovaného kotoučku motoru.
+   - Přišroubujte je šrouby **M2,5 × 10 mm** a maticemi **M2,5** (použijte **2 ploché podložky M2,5** na každý šroub).
+   - > [!WARNING]
+   - > **Vyrovnání optické štěrbiny vůči kotoučku:**  
+   - > Snímač rychlosti se musí pečlivě vyrovnat (případně mechanicky mírně podložit podložkou), aby perforovaný kotouček enkodéru procházel přesně středem štěrbiny optozávory a nikde nedrhnul o stěny senzoru. Jakmile je zapnuto napájení, při otáčení kola musí signální LED dioda zřetelně blikat (podrobněji viz sekce oživení níže).
 2. **Senzory sledování čáry (Line Tracking L, M, R):**
    - Montují se ze **spodní strany základny (Base)** čelem k zemi **PŘÍMO BEZ DISTANČNÍCH SLOUPKŮ**.
    - K montáži použijte šroubky **M2,5 × 10 mm**, **dvě ploché podložky M2,5 na každý šroubek** a matice **M2,5**.
-   - Senzor doléhá přímo na spodní akrylovou desku, čímž je optické reflexní čidlo drženo v optimální pracovní výšce (cca 5–8 mm nad dráhou). *(Pokud byste použili distanční sloupky, senzory by drhly o zem a podvozek by na nich visel).*
-3. **Senzory překážek (Obstacle Sensors):**
+   - Šroub se prostrčí zespodu skrz podložku, tělo senzoru a desku základny, shora se nasadí druhá podložka a matice M2,5. Senzor doléhá přímo na spodní akrylovou desku, čímž je optické reflexní čidlo drženo v optimální pracovní výšce (cca 5–8 mm nad dráhou). *(Pokud byste použili distanční sloupky, senzory by drhly o zem a podvozek by na nich visel).*
+3. **Příprava horního šasi (sloupky pro základní desku):**
+   - Do 4 příslušných montážních otvorů v horní desce (Chassis) zašroubujte **4 malé distanční sloupky (M2,5 × 10 mm)** a zespodu je pevně dotáhněte maticemi M2,5. *(Pozor na orientaci šasi: dva oválné výřezy se nacházejí na levé straně ve směru jízdy).* Na tyto sloupky bude později usazena základní deska robota.
+4. **Senzory překážek (Obstacle Sensors):**
    - Přišroubujte šikmo zespodu na boční křidélka horního šasi šrouby M2,5 × 10 mm, podložkami a maticemi M2,5.
-4. **Příprava horního šasi (sloupky pro základní desku):**
-   - Do 4 příslušných montážních otvorů v horní desce (Chassis) zašroubujte **4 malé distanční sloupky (M2,5 × 10 mm)** a zespodu je pevně dotáhněte maticemi M2,5. Na tyto sloupky bude později usazena základní deska robota.
 5. **LED světelné moduly (FL, FR, RL, RR):**
    - Zasuňte do zářezů v rozích podvozku a zajistěte šroubky M2,5 × 5 mm.
 6. **Ultrazvukový senzor se servomotorem (pro kurz ZSaPR je NUTNÁ montáž na servo!):**
@@ -287,7 +291,65 @@ Dvojice vodičů z battery packu se zapojuje do modré svorkovnice označené **
 
 ---
 
-## 5. Blokové schéma zapojení a architektura JoyCaru
+## 5. Oživení, kontrola a kalibrace senzorů (Poznatky z praxe)
+
+Jakmile je robot mechanicky sestaven a kabely propojeny se základní deskou, je před spuštěním programů jízdy naprosto nezbytné **zkontrolovat a zkalibrovat všechny optické senzory**. Všechny tyto senzory jsou vybaveny indikačními LED diodami přímo na svých deskách, které umožňují okamžité ověření správné funkce pouhým pohledem.
+
+Zapněte hlavní vypínač robota (přepínač ON/OFF vedle modré svorkovnice baterie).
+
+---
+
+### A. Snímače rychlosti (Speed Sensors) – kontrola vyrovnání a blikání LED
+Optické štěrbinové snímače odměřují ujetou vzdálenost a rychlost otáčení kol. 
+
+* **Dvojice LED diod na snímači rychlosti:**
+  1. **Napájecí LED:** Svítí trvale, jakmile je zapnuto napájení robota.
+  2. **Signální / detekční LED:** Reaguje na střídavé clonění paprsku štěrbinami v disku enkodéru.
+* **Ověření v praxi:**
+  - Zvedněte robota ze stolu a rukou pomalu otáčejte příslušným pojezdovým kolem.
+  - Sledujte signální LED diodu na snímači: **při otáčení kola musí tato LED zřetelně střídavě blikat** (rozsvěcet se v otvorech a zhasínat při zaclonění lamely, nebo naopak).
+  - Pokud LED dioda trvale svítí nebo trvale nesvítí, kotouček neprochází optickou osou, je křivý nebo drhne o stěnu snímače. Povolte upevňovací šroub snímače a polohu mechanicky dorovnejte (případně podložte podložkou), dokud při otáčení kola spolehlivě nebliká.
+
+---
+
+### B. Senzory sledování čáry (Line Tracking) – kalibrace citlivosti a vliv osvětlení
+Tři reflexní infračervené snímače na podvozku detekují kontrast mezi světlým povrchem dráhy a tmavou vodicí čarou. Každý snímač má na horní straně malý otočný trimr (potenciometr) pro jemné nastavení prahové hodnoty komparátoru.
+
+* **Dvojice LED diod na každém senzoru čáry:**
+  1. **Napájecí LED:** Svítí nepřetržitě při zapnutém podvozku.
+  2. **Detekční LED (reakce na odraz světla):**
+     - **Nad bílým papírem / světlou plochou:** Infračervené světlo se odrazí zpět do přijímače $\rightarrow$ **detekční LED se rozsvítí**.
+     - **Nad černou čarou:** Černý pigment pohltí infračervené záření, odraz zmizí $\rightarrow$ **detekční LED zhasne**.
+* **Postup kalibrace potenciometru:**
+  1. Položte robota na dráhu tak, aby všechny 3 senzory byly nad světlým podkladem dráhy (mimo čáru).
+  2. Malým plochým šroubovákem opatrně otáčejte potenciometrem příslušného senzoru, dokud se detekční LED spolehlivě nerozsvítí.
+  3. Následně robotem najeďte tak, aby byl daný senzor přímo nad černou čarou. Detekční LED musí **okamžitě a spolehlivě zhasnout**.
+  4. Postup zopakujte pro všechny 3 senzory (L, M, R), aby měly shodnou odezvu.
+
+> [!IMPORTANT]
+> ### ⚠️ Zásadní poznatek z praxe – vliv okolního světla a materiálu dráhy:
+> Infračervené reflexní senzory jsou velmi citlivé na úroveň okolního osvětlení a typ materiálu podkladu!
+> - **Změna světla v místnosti:** Pokud se během práce změní světelné podmínky v učebně (např. vyjde prudké slunce, zatáhnou se žaluzie, rozsvítí se zářivky či se zešeří), **je nutné provést kalibraci potenciometrů znovu!**
+> - **Změna podkladu:** Pokud přenesete robota z kancelářského papíru na velkoformátové linoleum, křídový papír nebo plotterový tisk, odrazivost povrchu je odlišná a prahy je nutné opětovně doladit. V opačném případě bude robot buď ztrácet stopu, nebo vyhodnotí celý povrch jako čáru.
+
+---
+
+### C. Senzory překážek (Obstacle Sensors) – dosah a reakce na přiblížení ruky
+Přední infračervené senzory detekují překážky před robotem. Na rozdíl od senzorů čáry mají tyto senzory **dva nezávislé potenciometry** – jeden reguluje výkon infračervené vysílací diody a druhý citlivost přijímače.
+
+* **Dvojice LED diod na senzoru překážek:**
+  1. **Napájecí LED:** Svítí trvale.
+  2. **Detekční LED (překážka v dosahu):**
+     - Pokud před senzorem nic není (volný prostor), detekční LED je **zhasnutá**.
+     - Jakmile před senzor přiblížíte ruku nebo překážku (v požadované vzdálenosti cca 5–20 cm), detekční LED se **okamžitě rozsvítí**.
+* **Nastavení potenciometrů:**
+  - Otáčením trimru **ve směru hodinových ručiček** citlivost a dosah senzoru **zvyšujete** (detekuje na větší vzdálenost).
+  - Otáčením **proti směru hodinových ručiček** citlivost a dosah **snižujete**.
+  - Nastavte trimry tak, aby senzor spolehlivě reagoval na ruku či stěnu před sebou, ale současně falešně nereagoval na podlahu nebo stůl před robotem.
+
+---
+
+## 6. Blokové schéma zapojení a architektura JoyCaru
 
 Pro porozumění tomu, jak mikrokontrolér s jednotlivými periferiemi komunikuje, slouží toto oficiální blokové schéma architektury:
 
@@ -321,7 +383,7 @@ Pro porozumění tomu, jak mikrokontrolér s jednotlivými periferiemi komunikuj
 
 ---
 
-## 6. Odkazy na oficiální manuály výrobce (PDF)
+## 7. Odkazy na oficiální manuály výrobce (PDF)
 
 Pokud si chcete prohlédnout originální výkresy a vícejazyčnou dokumentaci přímo od výrobce Joy-IT:
 - 📄 **[JoyCar - Český návod na stavbu (PDF)](https://1drv.ms/b/c/c957b235b7cc93a4/Eab-319kKGBIn5wD8yF1_7cBHh4y8a4HqV2_g_H2rLpG_Q?e=JoyCarCZ)**

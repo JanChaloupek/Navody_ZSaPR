@@ -89,6 +89,11 @@ Pokud nechcete přepínat mezi různými editory a chcete MicroPython používat
 4. **Typová nápověda Pylance (`pc/_stubs`):**
    - Ve složce `pc/_stubs` jsou připraveny soubory `machine.pyi` a `rp2.pyi`, takže Pylance ve VS Code nepodtrhává importy a nabízí plnohodnotné automatické doplňování kódu a parametrů pro mikrokontrolér RP2040.
 
+5. **Simulace a testy bez desky:**
+   - **`.\mpy sim`** (v panelu **▶ Simulace main.py**) spustí `main.py` na PC. Falešný modul `machine` simuluje Pico:ed v2 a konzole vypisuje, co by dělala LED, displej a bzučák. Klávesy `a` / `b` stisknou tlačítko A / B, `q` simulaci ukončí.
+   - **`.\mpy test`** (v panelu **✓ Testy main.py**) spustí unit testy ze složky `pc/tests_mpy`.
+   - Podrobnosti najdete v souboru **`docs/MicroPython.md`** (kapitola 8).
+
 ---
 
 ## 4. Shrnutí a přechod k hlavnímu robotovi JoyCar

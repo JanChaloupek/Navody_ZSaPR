@@ -86,7 +86,7 @@ Pokud zatím Git neovládáte a chcete si nejprve osahat hardware a psaní kódu
 
 > ⚠️ **Na Linuxu a macOS je `./setup.sh` povinný.** Nastavení v `.vscode/settings.json` je připravené pro Windows a nástroje spouští příkazem `python`. Na Linuxu a macOS se Python 3 obvykle jmenuje `python3` a příkaz `python` neexistuje – `./setup.sh` nastavení přepíše na `python3`. Bez něj **nefunguje nahrávání po `Ctrl+S`** ani tlačítka panelu (v okně *Output* → *Run On Save* uvidíte chybu `python: command not found`).
 >
-> Python 3 tam musí být nainstalovaný předem: Ubuntu/Debian `sudo apt install python3 python3-venv`, macOS `brew install python`.
+> Když Python 3 nebo balíček `python3-venv` chybí, `./setup.sh` vypíše příkaz, kterým je nainstaluje (Ubuntu/Debian `apt`, Fedora `dnf`, openSUSE `zypper`, Arch `pacman`, macOS `brew`), a zeptá se **„Nainstalovat teď? [a/N]“**. Po odpovědi `a` ho spustí přes `sudo` – zadejte svoje heslo (při psaní se nezobrazuje).
 
 ### Když `setup.bat` / `setup.sh` nejde: ruční postup
 

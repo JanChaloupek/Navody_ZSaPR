@@ -90,6 +90,8 @@ Rozšíření **MicroPython & CircuitPython Panel** (ikona čipu v levém svisl�
 | **⌨ Konzole (REPL)** | otevře sériovou konzoli desky (viz [kapitola 6](#6-sériová-konzole-repl)) | `.\cpy repl` |
 | **🗑 Smazat desku** | smaže obsah disku `CIRCUITPY` – VS Code se nejdřív zeptá | `.\cpy wipe` |
 
+Třetí blok **Na PC bez desky** má tlačítka **▶ Simulace code.py** (`cpy sim`) a **✓ Testy** (`cpy test`). Desku nepotřebuje, a proto se nikdy neztlumí. Viz [Simulace a testy bez robota](#-simulace-a-testy-bez-robota-cpy-sim-cpy-test).
+
 Na Linuxu a macOS se v terminálu píše `./cpy.sh` místo `.\cpy`. Přehled všech příkazů vypíše `.\cpy help`. Podrobný popis najdete v souboru **`docs/CircuitPython.md`** přímo v projektu.
 
 > [!NOTE]
@@ -102,8 +104,8 @@ Pokud zrovna nemáte desku Pico:ed u sebe (např. na cestách), můžete program
 
 | Příkaz | Co dělá |
 |---|---|
-| **`.\cpy sim`** | spustí `code.py` na PC; konzole vypisuje, co by dělala LED, displej a bzučák (`[ 1.00 s] LED: ZAPNUTO (*)`). Klávesy `a` / `b` stisknou tlačítko A / B, `q` simulaci ukončí. |
-| **`.\cpy test`** | spustí unit testy ze složky `pc/tests` – ověří, že program s hardwarem dělá, co má. |
+| **`.\cpy sim`** (tlačítko **▶ Simulace code.py**) | spustí `code.py` na PC; konzole vypisuje, co by dělala LED, displej a bzučák (`[ 1.00 s] LED: ZAPNUTO (*)`). Klávesy `a` / `b` stisknou tlačítko A / B, `q` simulaci ukončí. |
+| **`.\cpy test`** (tlačítko **✓ Testy**) | spustí unit testy ze složky `pc/tests` – ověří, že program s hardwarem dělá, co má. |
 
 Simulace i testy používají stejný falešný hardware. Všechno ve složce `pc/` běží jen na počítači a díky `.vscode/.ignoreCopy` se nikdy nenahraje na robota. Jak se testy píšou, popisuje [Jak se testuje embedded kód](https://github.com/JanChaloupek/pomucky/blob/main/testovani-embedded-kodu.md).
 

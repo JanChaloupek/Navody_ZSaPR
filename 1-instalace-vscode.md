@@ -1,6 +1,6 @@
 # 1. Instalace a nastavení Visual Studio Code
 
-Tento průvodce vás krok za krokem provede instalací editoru **Visual Studio Code (VS Code)**, výběrem správných rozšíření pro náš kurz a přípravou pracovního adresáře.
+Tento průvodce vás provede instalací editoru **Visual Studio Code (VS Code)**, stažením projektu kurzu a jeho přípravou. Většinu práce za vás udělá instalační skript projektu (`setup.bat` / `setup.sh`).
 
 ---
 
@@ -13,85 +13,27 @@ Tento průvodce vás krok za krokem provede instalací editoru **Visual Studio C
 
 ---
 
-## 2. Instalace potřebných rozšíření
+## 2. Rozšíření VS Code
 
-> [!TIP]
-> **Superrychlá automatická instalace pomocí `setup.bat` (Windows):**  
-> Pokud pracujete na Windows a stáhnete si připravenou výchozí strukturu projektu (viz [Krok 3](#3-získání-výchozí-struktury-projektu)), **nemusíte tato rozšíření instalovat ručně jedno po druhém**. Stačí ve složce projektu spustit skript **`setup.bat`**, který všechna potřebná i doporučená rozšíření, Python nástroje i konfiguraci `Run on Save` nainstaluje a nastaví plně automaticky!  
-> Následující seznam slouží jako přehled pro ruční kontrolu nebo pro uživatele jiných operačních systémů (macOS/Linux).
+Rozšíření potřebná pro kurz **nemusíte instalovat ručně** – nainstaluje je instalační skript projektu v [kroku 4](#4-otevření-projektu-ve-vs-code-a-rychlá-příprava-setupbat--setupsh) (Python, Pylance, CircuitPython, Run on Save, PlantUML, kontrola pravopisu s češtinou a další). Jejich seznam je v souboru `.vscode/extensions.json` projektu.
 
-Rozšíření ručně instalujete kliknutím na ikonu **Extensions** (čtverce na levé liště, případně zkratkou `Ctrl+Shift+X`) a vyhledáním podle názvu.
+> [!CAUTION]
+> **Pozor na záměnu rozšíření CircuitPython!**  
+> Kurz používá rozšíření **`CircuitPython v2 Cursor AI`** od autora `wmerkens` (verze **0.3.3**).  
+> **NEINSTALUJTE** obecné rozšíření „CircuitPython v2“ (od joedevivo ani jiné s vyšším číslem verze) – s naším prostředím a deskou Pico:ed **nefunguje**! Pokud ho již máte nainstalované, odinstalujte ho.
 
-### Povinná rozšíření:
+### Nepovinná rozšíření (skript je neinstaluje)
 
-1. **Python**
-   - Základní podpora pro jazyk Python (zvýrazňování syntaxe, linting, ladění).
-   - *Název:* `Python`
-   - *Autor:* `Microsoft` (součástí je i jazykový server `Pylance`)
+Hodí se při práci s Gitem a odevzdávání úkolů ([4. Práce s Git a GitHubem](4-prace-s-gitem.md)). Instalují se v panelu **Extensions** (`Ctrl+Shift+X`) vyhledáním podle názvu:
 
-2. ⚠️ **CircuitPython v2 Cursor AI** *(VELMI DŮLEŽITÉ!)*
-   - Rozšíření zajišťující práci s CircuitPythonem na desce Pico:ed a přístup ke knihovnám.
-   - *Název:* `CircuitPython v2 Cursor AI`
-   - *Autor:* `wmerkens` (vyžadována verze **0.3.3**)
-   - > [!CAUTION]
-     > **Pozor na záměnu rozšíření!**  
-     > Ujistěte se, že instalujete přesně rozšíření **`CircuitPython v2 Cursor AI`** od autora `wmerkens`.  
-     > **NEINSTALUJTE** obecné rozšíření „CircuitPython v2“ (od joedevivo ani jiné s vyšším číslem verze) – s naším prostředím a deskou Pico:ed **nefunguje**! Pokud ho již máte nainstalované, odinstalujte ho.
-
-3. **Run on Save**
-   - Automaticky spouští skript při každém stisku `Ctrl+S` (uložení souboru). Slouží k bleskovému zkopírování změněného souboru do Pico:edu.
-   - *Název:* `Run on Save`
-   - *Autor:* `EmeraldWalk`
-
-4. **PlantUML**
-   - Umožňuje přímo v editoru prohlížet a generovat UML diagramy tříd, které budeme v kurzu kreslit pro návrh architektury robota.
-   - *Název:* `PlantUML`
-   - *Autor:* `jebbs`
-
----
-
-### Doporučená rozšíření (usnadní vám práci):
-
-1. **GitLens – Git supercharged**
-   - Zobrazuje historii změn řádek po řádku přímo v editoru, porovnává commity a větve.
-   - *Autor:* `GitKraken` (bezplatná edice *Community* plně postačuje).
-
-2. **GitHub Pull Requests**
-   - Umožňuje kontrolovat a spravovat Pull Requesty přímo z postranního panelu VS Code.
-   - *Autor:* `GitHub`
-
-3. **Output Colorizer**
-   - Barevně zvýrazňuje text v okně OUTPUT a v terminálu, což pomáhá v rychlé orientaci při ladění chyb.
-   - *Autor:* `IBM`
-
-4. **MagicPython**
-   - Pokročilé gramatické zvýrazňování syntaxe Pythonu.
-   - *Autor:* `MagicStack Inc.`
-
-5. **CodeSnap-plus-fix**
-   - Vytváří elegantní obrázky (snapshoty) vybraného kódu se zachovaným barevným tématem a čísly řádků pro vkládání do odevzdávaných Pull Requestů na GitHubu. Oproti základnímu CodeSnapu umožňuje navíc kliknutím na číslo řádku stěžejní řádky barevně zvýraznit (režimy Focus, Git-Add a Git-Remove).
-   - *Název:* `CodeSnap-plus-fix`
-   - *Autor:* `eugenejeon`
+- **GitLens – Git supercharged** (`GitKraken`) – historie změn řádek po řádku přímo v editoru, porovnání commitů a větví. Bezplatná edice *Community* plně postačuje.
+- **GitHub Pull Requests** (`GitHub`) – kontrola a správa Pull Requestů přímo z postranního panelu VS Code.
 
 ---
 
 ## 3. Získání výchozí struktury projektu
 
-Celá připravená výchozí struktura projektu je součástí repozitáře kurzu na GitHubu. Nemusíte nic ručně konfigurovat – projekt už přímo obsahuje:
-- **`setup.bat`** – jednorázový instalační a konfigurační skript pro Windows (automaticky zkontroluje a nainstaluje Python, pip, mpremote, všechna potřebná i doporučená rozšíření z Marketplace, vestavěný balíček MicroPython Panelu a nakonfiguruje `Run on Save`).
-- **`.vscode/`** – připravená konfigurace editoru (`settings.json`), doporučená rozšíření (`extensions.json`), pravidla ignorování souborů (`.ignoreCopy`), instalační skript (`setup.ps1`), balíček `dist/micropython-panel.vsix` a nahrávací skripty:
-  - `copy.ps1` (autorský skript mentora kurzu Jana Chaloupka pro Windows pro bleskové nahrávání na disk `CIRCUITPY`)
-  - `copy.sh` (skript studenta Robina Bortlíka upravený Janem Chaloupkem pro macOS a Linux)
-  - pomocné skripty pro MicroPython (`upload.ps1`, `repl.ps1`, `list.ps1`, `wipe.ps1`, `mpy.ps1` atd.)
-- **`_fake/`** – mock moduly hardware (`board`, `picoed`, `pwmio`, `digitalio`, `neopixel`, `time`), které umožňují spouštět a testovat kód offline přímo na PC bez připojeného robota.
-- **`_stubs/`** – interní složka s typovými definicemi CircuitPythonu pro bezchybnou nápovědu (IntelliSense) ve VS Code.
-- **`lib/`** – složka pro ovladače a knihovny hardware JoyCaru (včetně `picoed_v2_lib` pro MicroPython).
-- **`pyrightconfig.json`** – konfigurace analyzátoru Pylance/Pyright pro přesné našeptávání a typovou kontrolu bez falešných chybových hlášení.
-- **`code.py`** – hlavní program pro CircuitPython na desce Pico:ed.
-- **`main.py`** – výchozí program pro MicroPython.
-- **`.gitignore`** – pravidla verzování zamezující nahrávání mezipaměti a dočasných souborů do Gitu.
-
----
+Celá připravená struktura projektu je v repozitáři kurzu na GitHubu: programy `code.py` (CircuitPython) a `main.py` (MicroPython), knihovny v `lib/`, nástroje `cpy` a `mpy`, instalační skript a podrobné návody ve složce `docs/`. Přehled všech souborů najdete v souboru **`README.md`** projektu.
 
 ### Jak projekt získat do počítače:
 
@@ -117,21 +59,87 @@ Pokud zatím Git neovládáte a chcete si nejprve osahat hardware a psaní kódu
 
 ---
 
-## 4. Otevření projektu ve VS Code a rychlá příprava (`setup.bat`)
+## 4. Otevření projektu ve VS Code a rychlá příprava (`setup.bat` / `setup.sh`)
 
-1. Spusťte VS Code.
-2. V horním menu zvolte **File** → **Open Folder...** (nebo stiskněte zkratku `Ctrl+K Ctrl+O`).
-3. Vyberte složku projektu (např. `joyCarProjekt`).
-4. **Automatická instalace a příprava prostředí (`setup.bat`):**  
-   V kořenu projektu poklepejte na soubor **`setup.bat`** (nebo jej spusťte v terminálu).  
-   Tento skript za vás plně automaticky:
-   - zkontroluje a případně nainstaluje Python a nástroj pip,
-   - nainstaluje nástroj `mpremote` pro MicroPython,
-   - nainstaluje vestavěné rozšíření **MicroPython Panel**,
-   - hromadně nainstaluje všechna potřebná rozšíření z Marketplace (včetně `CircuitPython v2 Cursor AI 0.3.3`, `Run on Save`, Pylance, cSpell s češtinou a Indent Rainbow),
-   - automaticky nakonfiguruje `Run on Save` pro okamžité odesílání kódu do robota při stisku `Ctrl+S`,
-   - zkontroluje připojenou desku (USB disk `CIRCUITPY` i COM porty).
-5. Zkontrolujte, zda v levém panelu Průzkumníka vidíte složky `.vscode`, `_stubs`, `_fake`, `lib` a soubory `pyrightconfig.json`, `code.py` i `main.py`.
+1. Ve VS Code zvolte **File** → **Open Folder...** (zkratka `Ctrl+K Ctrl+O`) a vyberte složku projektu (např. `joyCarProjekt`).
+2. Spusťte instalační skript:
+   - **Windows:** dvojklikem na **`setup.bat`** v kořeni projektu, nebo v terminálu VS Code (`Ctrl+~`) příkazem `.\setup.bat`.
+   - **Linux a macOS:** v terminálu VS Code příkazem **`./setup.sh`**. Když hlásí `Permission denied`, spusťte ho jako `bash setup.sh` (stává se, když se projekt rozbalil na Windows nebo leží na flashce či disku s FAT/NTFS).
+3. Skript vypisuje kroky `[1/8]` až `[8/8]`:
+
+   | Krok | Co dělá |
+   |---|---|
+   | 1 | zkontroluje Python 3 (na Windows ho v případě potřeby sám nainstaluje) |
+   | 2 | vytvoří ve složce projektu virtuální prostředí **`.venv`** (knihovny patří jen k tomuto projektu) |
+   | 3 | nainstaluje do `.venv` knihovny `mpremote` (komunikace s MicroPython deskou) a `matplotlib` (graf hodnot) |
+   | 4 | zapíše do `.vscode/settings.json` tlačítka panelu a `Run on Save` (nahrávání po `Ctrl+S`) |
+   | 5 | najde příkaz `code` (VS Code) |
+   | 6 | nainstaluje rozšíření **MicroPython & CircuitPython Panel** |
+   | 7 | nainstaluje rozšíření z Marketplace (viz [krok 2](#2-rozšíření-vs-code)) |
+   | 8 | vypíše připojené desky (USB disk `CIRCUITPY` i sériové porty) |
+
+4. Na konci musí být **`Instalace je KOMPLETNI!`**. Okno VS Code není potřeba znovu načítat.
+5. Pokud skript **právě nainstaloval Python**, zavřete VS Code a otevřete ho znovu – editor si seznam programů načítá jen při spuštění a nový Python by jinak nenašel (nefungovalo by `Ctrl+S` ani tlačítka panelu).
+6. Kontrola:
+   - v Průzkumníku vidíte složky `.vscode`, `docs`, `_stubs`, `_fake`, `lib` a soubory `code.py` i `main.py`,
+   - v levém svislém pruhu přibyla ikona čipu – postranní panel **MicroPython & CircuitPython Panel** s připojenými deskami a tlačítky pro nejčastější akce (nahrát projekt, spustit nebo restartovat program, konzole, smazat desku).
+
+> ⚠️ **Na Linuxu a macOS je `./setup.sh` povinný.** Nastavení v `.vscode/settings.json` je připravené pro Windows a nástroje spouští příkazem `python`. Na Linuxu a macOS se Python 3 obvykle jmenuje `python3` a příkaz `python` neexistuje – `./setup.sh` nastavení přepíše na `python3`. Bez něj **nefunguje nahrávání po `Ctrl+S`** ani tlačítka panelu (v okně *Output* → *Run On Save* uvidíte chybu `python: command not found`).
+>
+> Python 3 tam musí být nainstalovaný předem: Ubuntu/Debian `sudo apt install python3 python3-venv`, macOS `brew install python`.
+
+### Když `setup.bat` / `setup.sh` nejde: ruční postup
+
+U kroku, který selže, skript vypíše `ERROR`, `[CHYBA]` nebo `Upozorneni` s důvodem (při chybě v krocích 1–3 skončí, ostatní kroky doběhnou). Proveďte ručně jen to, co neprošlo, a pak skript spusťte znovu – hotové kroky jen zkontroluje.
+
+> [!TIP]
+> Příkazy pište do terminálu VS Code (`Ctrl+~`), který je otevřený ve složce projektu. Na Linuxu a macOS pište `python3` místo `python`.
+
+**A. Python 3 (krok 1)**
+- **Windows:** stáhněte instalátor z [python.org/downloads](https://www.python.org/downloads/) a při instalaci **zaškrtněte `Add python.exe to PATH`**. Pak zavřete a znovu otevřete VS Code a ověřte příkazem `python --version`.
+  - Když se místo verze otevře Microsoft Store nebo se nic nevypíše, vypněte zástupce: *Nastavení Windows → Aplikace → Upřesnit nastavení aplikací → Aliasy spouštění aplikací* → vypněte `python.exe` a `python3.exe`.
+- **Ubuntu / Debian:** `sudo apt install python3 python3-venv`
+- **macOS:** `brew install python`
+
+**B. Virtuální prostředí a knihovny (kroky 2 a 3)**
+```powershell
+# Windows
+python -m venv .venv
+.venv\Scripts\python -m pip install mpremote matplotlib
+```
+```bash
+# Linux a macOS
+python3 -m venv .venv
+.venv/bin/python -m pip install mpremote matplotlib
+```
+Když vytvoření `.venv` na Linuxu selže s hláškou o `ensurepip`, chybí balíček `python3-venv` (viz bod A). Nepovedenou složku `.venv` před dalším pokusem smažte.
+
+**C. Tlačítka panelu a `Run on Save` (krok 4)**
+```powershell
+python .vscode/deska.py vscode        # Linux a macOS: python3 .vscode/deska.py vscode
+```
+
+**D. Příkaz `code` (krok 5)**
+
+Když skript nenašel příkaz `code`, proveďte ručně body E a F. Na Linuxu a macOS můžete místo toho ve VS Code stisknout `F1` → *Shell Command: Install 'code' command in PATH* a `./setup.sh` spustit znovu.
+
+**E. Rozšíření MicroPython & CircuitPython Panel (krok 6)**
+1. Otevřete **Extensions** (`Ctrl+Shift+X`).
+2. Nahoře v panelu klikněte na **`…`** (*Views and More Actions*) → **Install from VSIX…** (totéž přes `F1` → *Extensions: Install from VSIX…*).
+3. Vyberte soubor **`.vscode/dist/micropython-panel.vsix`** ve složce projektu.
+
+**F. Rozšíření z Marketplace (krok 7)**
+1. Otevřete **Extensions** (`Ctrl+Shift+X`) a do vyhledávání napište **`@recommended`**.
+2. V části *Workspace Recommendations* klikněte na ikonu **Install Workspace Recommended Extensions** (mrak se šipkou), nebo instalujte jedno po druhém.
+3. ⚠️ Pozor na správné rozšíření CircuitPython – viz [krok 2](#2-rozšíření-vs-code).
+
+**G. Kontrola (krok 8)**
+```powershell
+.\cpy devices          # Linux a macOS: ./cpy.sh devices
+```
+Vypíše připojené desky s CircuitPythonem i MicroPythonem.
+
+---
 
 Nyní máte připravený editor i kompletní strukturu projektu. V dalším kroku připojíme desku Pico:ed:  
 👉 **Pokračujte na: [2. Práce s Pico:ed a CircuitPythonem](2-nastaveni-picoed.md)**

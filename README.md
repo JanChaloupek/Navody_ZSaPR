@@ -79,10 +79,10 @@ Postupujte podle jednotlivých kapitol v uvedeném pořadí:
 
 | Kapitola | Název návodu | Popis |
 |---|---|---|
-| **Krok 1** | [1. Instalace a nastavení Visual Studio Code](1-instalace-vscode.md) | Stažení VS Code, automatická instalace rozšíření i nástrojů skriptem `setup.bat` a příprava pracovní složky. |
-| **Krok 2** | [2. Práce s Pico:ed a CircuitPythonem](2-nastaveni-picoed.md) | Kontrola a upgrade firmware, automatické nahrávání kódu při uložení (`Run on Save` / `copy.ps1`), offline simulace (`_fake`), sériová konzole (REPL) a řešení potíží. |
-| **Doplněk** | [3. Úvodní práce s Micro:bitem a MicroPythonem](3-microbit-a-micropython.md) | Úvodní srovnání s MicroPythonem: jednoduchý Mu Editor nebo pokročilé prostředí přímo ve VS Code s rozšířením MicroPython Panel a knihovnou `picoed_v2_lib`. |
-| **Krok 3** | [4. Práce s Git a GitHubem (Odevzdávání úkolů)](4-prace-s-gitem.md) | Vytvoření forku, klonování, spuštění `setup.bat`, správa větví a **vytváření čistých Pull Requestů bez míchání starých úkolů**. |
+| **Krok 1** | [1. Instalace a nastavení Visual Studio Code](1-instalace-vscode.md) | Stažení VS Code, automatická instalace rozšíření i nástrojů skriptem `setup.bat` (Windows) nebo `./setup.sh` (Linux, macOS), ruční postup pro případ, že skript selže, a příprava pracovní složky. |
+| **Krok 2** | [2. Práce s Pico:ed a CircuitPythonem](2-nastaveni-picoed.md) | Kontrola a upgrade firmware, automatické nahrávání kódu při uložení (`Run on Save` / `cpy save`), tlačítka panelu, offline simulace (`_fake`), sériová konzole (REPL) a řešení potíží. |
+| **Doplněk** | [3. Úvodní práce s Micro:bitem a MicroPythonem](3-microbit-a-micropython.md) | Úvodní srovnání s MicroPythonem: jednoduchý Mu Editor nebo pokročilé prostředí přímo ve VS Code s rozšířením MicroPython & CircuitPython Panel, nástrojem `mpy` a knihovnou `picoed_v2_lib`. |
+| **Krok 3** | [4. Práce s Git a GitHubem (Odevzdávání úkolů)](4-prace-s-gitem.md) | Vytvoření forku, klonování, spuštění `setup.bat` / `setup.sh`, správa větví a **vytváření čistých Pull Requestů bez míchání starých úkolů**. |
 | **Krok 4** | [5. Mechanická montáž a zapojení robota JoyCar](5-montaz-a-zapojeni-joycaru.md) | Fyzické sestavení podvozku krok za krokem, zapojení senzorů a motorů, varování k barvám vodičů a celkové blokové schéma. |
 | **Krok 5** | [6. Ovládání motorů robota JoyCar](6-ovladani-motoru.md) | **Kriticky důležitá kapitola:** princip budiče PCA9633, bezpečný kód pro motory, prevence spálení můstku a náhradní řešení přes PCA9685. |
 | **Tipy (nepovinné)** | [7. Praktické tipy, mapy a vylepšení výbavy](7-tipy-vybaveni-a-mapy.md) | Magnetický USB kabel, tipy pro napájení, srolovatelná mapa na lino, hack I2C expandéru a rozšíření na 6 senzorů čáry. |

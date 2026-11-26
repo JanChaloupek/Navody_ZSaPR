@@ -2,6 +2,9 @@
 
 Tento návod popisuje připojení desky **Pico:ed**, kontrolu a aktualizaci verze **CircuitPythonu**, nastavení automatického nahrávání kódu při uložení (`Run on Save`) a řešení běžných problémů.
 
+> [!NOTE]
+> Předpokládá se, že máte projekt otevřený ve VS Code a proběhl instalační skript `setup.bat` / `setup.sh` – viz [1. Instalace a nastavení VS Code, krok 4](1-instalace-vscode.md#4-otevření-projektu-ve-vs-code-a-rychlá-příprava-setupbat--setupsh).
+
 ---
 
 ## 1. Zlaté pravidlo kurzu: Python na PC nespouštíme!
@@ -9,7 +12,8 @@ Tento návod popisuje připojení desky **Pico:ed**, kontrolu a aktualizaci verz
 > [!IMPORTANT]
 > **Kód běží v hardware, nikoliv na vašem počítači.**  
 > Kromě offline testů (které slouží pro ověřování čisté logiky bez robota, viz [JakSeTestuje.md](https://github.com/JanChaloupek/robot-programming3/blob/main/JakSeTestuje.md)) v tomto kurzu **nespouštíte žádný `python.exe` na svém PC**.  
-> Veškerý kód se automaticky odesílá do desky Pico:ed a spouští se přímo v jejím procesoru RP2040 pod systémem CircuitPython.
+> Veškerý kód se automaticky odesílá do desky Pico:ed a spouští se přímo v jejím procesoru RP2040 pod systémem CircuitPython.  
+> *(Python na PC sice nainstalovaný mít musíte, ale jen proto, že na něm běží nástroje projektu – nahrávání na desku, konzole, graf. Váš program pro robota na PC neběží.)*
 
 ---
 
@@ -44,94 +48,53 @@ Připojte desku Pico:ed k počítači pomocí microUSB kabelu. V Průzkumníku s
 
 ## 3. Konfigurace rozšíření CircuitPython ve VS Code
 
-1. Spusťte VS Code a otevřete váš pracovní adresář (např. `joyCarProjekt`).
-2. Vytvořte v kořenu složky soubor `code.py` (obsah může být zatím prázdný).
-3. Otevřením `code.py` se aktivuje rozšíření **CircuitPython v2 Cursor AI** (verze 0.3.3).
-4. Podívejte se do **dolní modré stavové lišty** (Status Bar). Měli byste vidět položku `<Choose a board>`.
-5. Klikněte na ni, do vyhledávacího políčka v horní části napište **`picoed`** a vyberte:  
+1. Otevřete v projektu soubor `code.py`. Tím se aktivuje rozšíření **CircuitPython v2 Cursor AI** (verze 0.3.3).
+2. Podívejte se do **dolní modré stavové lišty** (Status Bar). Pokud v ní místo desky vidíte `<Choose a board>`, klikněte na ni, do vyhledávacího políčka v horní části napište **`picoed`** a vyberte:  
    `ELECFREAKS:Pico:ed`
-6. Tím se stáhnou typové definice specifické pro Pico:ed a editor začne správně napovídat piny a moduly.
+3. Tím se stáhnou typové definice specifické pro Pico:ed a editor začne správně napovídat piny a moduly.
 
 | Aktivace rozšíření v dolní stavové liště | Pozor na příponu `code.py` ve Windows |
 | :---: | :---: |
 | <img src="images/vsc-circuitpython-aktivace.png" width="340" alt="Aktivace CircuitPython ve VS Code"> | <img src="images/vsc-code-py-pripona-spravne-spatne.png" width="340" alt="Pozor na skryté přípony souborů"> |
 | *Výběr desky Pico:ed na stavové liště* | *Vlevo špatně (`code.py.txt`), vpravo správně (`code.py`)* |
 
-### Kontrola konfigurace v `settings.json` a `pyrightconfig.json`:
-V novém uspořádání kurzu (vycházejícím z moderní architektury `3-SW_GIT`) jsou veškeré typové definice a fake moduly CircuitPythonu umístěny v interní složce **`_stubs/`** (nahrazující starší složku `lib_vsc_only/`).
-
-Otevřete soubor `.vscode/settings.json` a ujistěte se, že obsahuje nastavení pro `_stubs`:
-```jsonc
-"python.analysis.stubPath": "_stubs",
-"python.analysis.extraPaths": [
-    "./lib",
-    "./_stubs"
-]
-```
-
-V kořenu projektu se rovněž nachází konfigurační soubor **`pyrightconfig.json`**, který jazykovému serveru Pylance/Pyright říká, kde hledat knihovny a stuby:
-```json
-{
-  "include": ["."],
-  "stubPath": "_stubs",
-  "extraPaths": ["./lib", "./_stubs"],
-  "executionEnvironments": [
-    {
-      "root": ".",
-      "extraPaths": ["./lib", "./_stubs"],
-      "stubPath": "_stubs"
-    }
-  ]
-}
-```
-Díky tomu vám VS Code ihned nabízí bezchybnou nápovědu (IntelliSense) pro moduly desky Pico:ed (`board`, `busio`, `digitalio`, `picoed`, `neopixel` atd.) a nepodtrhává importy červeně jako chybu.
+Nápovědu (IntelliSense) navíc zajišťují typové definice ve složce `_stubs/` – nastavení pro ně v `.vscode/settings.json` je součástí projektu. VS Code proto nabízí bezchybnou nápovědu pro moduly desky Pico:ed (`board`, `busio`, `digitalio`, `picoed`, `neopixel` atd.) a nepodtrhává importy červeně jako chybu.
 
 ---
 
 ## 4. Automatické nahrávání kódu při uložení (`Run on Save`)
 
-Při každém stisku `Ctrl+S` ve VS Code rozšíření **Run on Save** automaticky spustí skript `copy.ps1` (pro Windows) nebo `copy.sh` (pro macOS/Linux). Skript zkontroluje soubor `.vscode/.ignoreCopy` a pokud soubor není ignorován, ihned jej nakopíruje na disk `CIRCUITPY`.
+Při každém stisku `Ctrl+S` ve VS Code rozšíření **Run on Save** automaticky spustí příkaz **`cpy save`** (nástroj `.vscode/deska.py`). Ten:
+1. zkontroluje v souboru `.vscode/.ignoreCopy`, jestli se uložený soubor na desku vůbec kopíruje,
+2. najde připojený disk `CIRCUITPY` (ve Windows písmeno disku, na macOS `/Volumes/CIRCUITPY`, na Linuxu `/media/$USER/CIRCUITPY` apod.),
+3. porovná soubor s tím, co už na desce je,
+4. a pokud se liší, zkopíruje ho. **CircuitPython pak sám spustí nový kód** (tzv. *autoreload*).
+
+Run on Save reaguje na soubory `.py`, `.toml`, `.json`, `.txt` a `.csv`. Příkaz je stejný ve Windows, Linuxu i macOS.
 
 > [!TIP]
-> **Pro uživatele Windows je vše již plně nastaveno!**  
-> Pokud jste po otevření projektu spustili skript **`setup.bat`**, rozšíření `Run on Save` je již nainstalováno a konfigurace v `.vscode/settings.json` je připravena. **Nemusíte nic ručně konfigurovat.** Stačí otevřít soubor `code.py`, stisknout `Ctrl+S` a kód se okamžitě odešle do desky Pico:ed.  
+> **Po spuštění `setup.bat` / `./setup.sh` je vše plně nastaveno!**  
+> Rozšíření `Run on Save` je nainstalované a konfigurace v `.vscode/settings.json` je připravená. **Nemusíte nic ručně konfigurovat.** Stačí otevřít soubor `code.py`, stisknout `Ctrl+S` a kód se okamžitě odešle do desky Pico:ed.  
 > V souboru `.vscode/.ignoreCopy` je navíc zapsán soubor `main.py`, takže automatické ukládání CircuitPythonu nijak nekoliduje s případnou prací v MicroPythonu.
 
-### Kontrola a případná změna konfigurace v `.vscode/settings.json`:
+Jak je `Run on Save` nastavené (příkaz v `.vscode/settings.json`), popisuje pro zvědavé soubor **`docs/Nastroje.md`** v projektu. Na Linuxu a macOS musí příkaz začínat `python3` – to zařídí `./setup.sh`.
 
-Pokud byste konfiguraci potřebovali ověřit nebo provozujete jiný operační systém:
+### Tlačítka v panelu (blok CircuitPython)
 
-#### Pro Windows (výchozí stav nastavený přes `setup.bat`):
-```json
-"emeraldwalk.runonsave": {
-    "commands": [
-        {
-            "match": ".*\\.py",
-            "isAsync": true,
-            "cmd": "powershell -ExecutionPolicy Bypass -NoProfile -File \"${workspaceFolder}\\.vscode\\copy.ps1\" \"${workspaceFolder}\" \"${relativeFile}\" \".vscode\\.ignoreCopy\""
-        }
-    ]
-}
-```
+Rozšíření **MicroPython & CircuitPython Panel** (ikona čipu v levém svislém pruhu) má blok **CircuitPython**. Ukazuje připojenou desku (port, disk, verzi firmwaru) a nabízí čtyři tlačítka:
 
-#### Pro macOS / Linux:
-Uživatelé macOS a Linuxu v souboru `.vscode/settings.json` pouze upraví příkaz na spouštění bash skriptu:
-```json
-"emeraldwalk.runonsave": {
-    "commands": [
-        {
-            "match": ".*\\.py",
-            "isAsync": true,
-            "cmd": "bash \"${workspaceFolder}/.vscode/copy.sh\" \"${workspaceFolder}\" \"${relativeFile}\" \".vscode/.ignoreCopy\""
-        }
-    ]
-}
-```
+| Tlačítko | Co udělá | Totéž v terminálu |
+|---|---|---|
+| **⬆ Nahrát projekt** | nahraje celý projekt na disk `CIRCUITPY` (jen změněné soubory, podle `.ignoreCopy`) | `.\cpy upload` |
+| **↻ Restartovat program** | znovu spustí `code.py` a ukáže jeho první výstup | `.\cpy reset` |
+| **⌨ Konzole (REPL)** | otevře sériovou konzoli desky (viz [kapitola 6](#6-sériová-konzole-repl)) | `.\cpy repl` |
+| **🗑 Smazat desku** | smaže obsah disku `CIRCUITPY` – VS Code se nejdřív zeptá | `.\cpy wipe` |
+
+Na Linuxu a macOS se v terminálu píše `./cpy.sh` místo `.\cpy`. Přehled všech příkazů vypíše `.\cpy help`. Podrobný popis najdete v souboru **`docs/CircuitPython.md`** přímo v projektu.
 
 > [!NOTE]
-> **Původ a autorství skriptů:**
-> - Skript **`copy.ps1`** pro Windows je autorský skript lektora a mentora kurzu (**Jan Chaloupek**) a je průběžně laděn a optimalizován pro spolehlivé nahrávání na disk `CIRCUITPY`.
-> - Skript **`copy.sh`** pro macOS a Linux původně vytvořil student kurzu **Robin Bortlík** (@Robin Bortlik) v předchozích ročnících a Jan Chaloupek jej následně upravil a začlenil do standardní výbavy kurzu.
+> **Původ a autorství:**
+> Automatické nahrávání dříve zajišťovaly samostatné skripty. Skript **`copy.ps1`** pro Windows napsal lektor a mentor kurzu **Jan Chaloupek**. Skript **`copy.sh`** pro macOS a Linux původně vytvořil student kurzu **Robin Bortlík** (@Robin Bortlik) v předchozích ročnících a Jan Chaloupek jej následně upravil a začlenil do standardní výbavy kurzu. Jejich postup dnes převzal společný nástroj `deska.py` (příkaz `cpy save`), který funguje stejně na všech systémech.
 
 ### 💡 Offline testování a simulace bez robota (`_fake/`)
 
@@ -148,10 +111,19 @@ Pokud po uložení (`Ctrl+S`) kód na robotovi nereaguje, postupujte podle této
 1. Ve VS Code otevřete okno **OUTPUT** pomocí zkratky `Ctrl+Shift+U` (nebo přes horní menu: *View → Output*).
 2. V pravé části okna OUTPUT přepněte rozbalovací filtr na **`Run On Save`**.
 3. Přepněte se zpět do `code.py` a stiskněte **`Ctrl+S`**.
-4. V okně OUTPUT se okamžitě zobrazí výpis skriptu:
-   - Zda našel disk `CIRCUITPY`.
-   - Který soubor kopíruje a kam.
-   - Případné červené chybové hlášení.
+4. V okně OUTPUT se okamžitě zobrazí výpis po očíslovaných krocích:
+   ```text
+   Run on Save: kopirovani ulozeneho souboru na desku CIRCUITPY (09:22:58)
+   1) Ulozeny soubor          - jaký soubor, jeho velikost a čas uložení
+   2) Pravidla                - jestli ho .ignoreCopy nevylučuje (a kterou maskou)
+   3) Disk desky CIRCUITPY    - kde je disk, volné místo, verze firmwaru
+   4) Cil na desce            - co tam teď je a jestli se obsah liší
+   5) Kopirovani              - výsledek zápisu
+   Hotovo: code.py -> F:\code.py. CircuitPython program sam restartuje (autoreload).
+   ```
+   Když se něco nepovede, výpis skončí červeným řádkem `ERROR: v kroku N - …` s radou, co dělat (např. `v kroku 3 - disk CIRCUITPY nenalezen`). Stejný výpis dostanete i ručně v terminálu příkazem `.\cpy save code.py`.
+5. **Okno OUTPUT pro *Run On Save* je prázdné?** Run on Save se vůbec nespustil. Zkontrolujte, že je nainstalované rozšíření *Run on Save* a že má soubor příponu `.py`, `.toml`, `.json`, `.txt` nebo `.csv`.
+6. **Linux / macOS – chyba `python: command not found`?** Nespustili jste `./setup.sh`, viz [kapitola 1, krok 4](1-instalace-vscode.md#4-otevření-projektu-ve-vs-code-a-rychlá-příprava-setupbat--setupsh).
 
 ### Krok 2: Zamčený disk (Read-only ve Windows)
 Velmi častou příčinou je, že operační systém Windows disk `CIRCUITPY` zamkne proti zápisu kvůli náhlému odpojení nebo přepětí:
@@ -174,6 +146,11 @@ REPL (Read-Eval-Print Loop) umožňuje sledovat textové výstupy `print()`, zpr
 4. **Ovládání:**
    - `Ctrl+C` : Zastaví právě běžící program v robotovi a přejde do příkazového řádku REPL.
    - `Ctrl+D` : Soft reset – znovu spustí program `code.py` od začátku.
+
+**Druhá možnost:** tlačítko **⌨ Konzole (REPL)** v bloku CircuitPython v panelu, nebo příkaz `.\cpy repl` v terminálu (Linux/macOS: `./cpy.sh repl`). Port najde sám a konzoli ukončíte klávesami `Ctrl+]`.
+
+> [!NOTE]
+> Sériový port může mít otevřený vždy jen **jeden program**. Pokud konzole hlásí, že port nelze otevřít, zavřete druhou konzoli (zástrčku v dolní liště, Serial Monitor, Thonny, Mu). Nahrávání po `Ctrl+S` a tlačítko **⬆ Nahrát projekt** sériový port nepoužívají, takže fungují i při otevřené konzoli.
 
 ---
 

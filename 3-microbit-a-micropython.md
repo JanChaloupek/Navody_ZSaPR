@@ -59,19 +59,23 @@ Pokud nechcete přepínat mezi různými editory a chcete MicroPython používat
 
 ### Co je v projektu pro MicroPython připraveno:
 
-1. **Jednorázová univerzální příprava prostředí (`setup.bat` / `.vscode/setup.ps1`):**
-   - Zkontroluje instalaci Pythonu a nástroje `pip`.
-   - Automaticky nainstaluje komunikační balíček **`mpremote`** (oficiální nástroj MicroPythonu pro správu zařízení přes sériový port).
-   - Nainstaluje do vašeho VS Code speciální rozšíření **MicroPython Panel** (`.vscode/dist/micropython-panel.vsix`).
-   - Připraví kompletní sadu rozšíření z Marketplace pro MicroPython i CircuitPython současně.
+1. **Příprava prostředí:** instalační skript `setup.bat` / `./setup.sh` z [1. Instalace a nastavení VS Code, krok 4](1-instalace-vscode.md#4-otevření-projektu-ve-vs-code-a-rychlá-příprava-setupbat--setupsh) nainstaluje i vše pro MicroPython – nástroj **`mpremote`** (komunikace s deskou přes sériový port) a panel s tlačítky.
 
-2. **Rozšíření MicroPython Panel:**
-   - V levém Activity Baru přidá ikonu mikrokontroleru s přehledným panelem tlačítek.
-   - Ve spodním stavovém řádku (Status Bar) přidá barevná tlačítka pro okamžité spuštění:
-     - 🟨 **⬆ Upload project** – spustí skript `.vscode/upload.ps1`, který podle konfigurace v `.vscode/upload_config.txt` přenese soubory (např. `main.py` a složku `lib`) na připojenou desku.
-     - 🟩 **▶ REPL** – spustí `.vscode/repl.ps1` a otevře interaktivní terminál MicroPythonu.
-     - 🟦 **📂 List files** – spustí `.vscode/list.ps1` a vypíše soubory uložené v paměti desky.
-     - 🟥 **🗑 Wipe device** – spustí `.vscode/wipe.ps1` a bezpečně vymaže paměť desky pro čistý začátek.
+2. **Rozšíření MicroPython & CircuitPython Panel:**
+   - V levém svislém pruhu přidá ikonu čipu. Postranní panel má blok **MicroPython** a blok **CircuitPython**. Každý blok ukazuje připojenou desku (obnovuje se sám) a nejčastější akce. Blok, pro který není připojená deska, je ztlumený.
+   - Tlačítka bloku **MicroPython**:
+
+     | Tlačítko | Co udělá | Totéž v terminálu |
+     |---|---|---|
+     | 🟨 **⬆ Nahrát projekt** | podle `.vscode/upload_config.txt` nahraje na desku soubory (např. `main.py` a složku `lib`); nezměněné soubory přeskočí | `.\mpy upload` |
+     | 🟩 **▶ Spustit main.py** | restartuje desku, spustí `main.py` a ukáže jeho první výstup | `.\mpy reset` |
+     | 🟦 **⌨ Konzole (REPL)** | otevře interaktivní konzoli MicroPythonu (konec: `Ctrl+]`) | `.\mpy repl` |
+     | 🟥 **🗑 Smazat desku** | po potvrzení smaže všechny soubory z desky pro čistý začátek | `.\mpy wipe` |
+
+   - **Nahrát projekt** a **Konzole** jsou i ve spodním stavovém řádku (`MPY Upload`, `MPY REPL`).
+   - Na rozdíl od CircuitPythonu MicroPython po nahrání program **sám nespustí** – po nahrání klikněte na **▶ Spustit main.py**.
+   - Všechno ostatní (výpis souborů na desce, graf hodnot, diagnostika) je v terminálu: `.\mpy help` (Linux/macOS: `./mpy.sh help`). Podrobný popis najdete v souboru **`docs/MicroPython.md`** přímo v projektu.
+   - Každý příkaz vypisuje průběh po očíslovaných krocích. Když se něco nepovede, skončí řádkem `ERROR: v kroku N - …` s radou, co dělat (např. že port drží jiný program).
    - Obě technologie (MicroPython a CircuitPython) v projektu harmonicky koexistují – automatické ukládání `Run on Save` pro CircuitPython soubor `main.py` ignoruje, takže se můžete kdykoli bez kolize přepnout mezi psaním pro CircuitPython (`code.py`) a MicroPython (`main.py`).
 
 3. **Knihovna hardware pro Pico:ed (`lib/picoed_v2_lib`):**

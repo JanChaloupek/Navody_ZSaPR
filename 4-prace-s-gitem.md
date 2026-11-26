@@ -60,9 +60,12 @@ Měli byste vidět:
 - `origin` ukazuje na vaše osobní URL.
 - `upstream` ukazuje na oficiální školní URL.
 
-### Krok 4: Rychlá příprava prostředí (`setup.bat`)
-Před začátkem psaní kódu spusťte ve složce projektu soubor **`setup.bat`** (ve Windows na něj stačí dvakrát kliknout v Průzkumníkovi nebo spustit `.\setup.bat` v terminálu).  
-Tento skript za vás plně automaticky nainstaluje všechna potřebná rozšíření do VS Code, nastaví komunikaci i automatické nahrávání kódu při stisku `Ctrl+S` (`Run on Save`).
+### Krok 4: Rychlá příprava prostředí (`setup.bat` / `setup.sh`)
+Před začátkem psaní kódu spusťte ve složce projektu instalační skript:
+- **Windows:** soubor **`setup.bat`** (stačí na něj dvakrát kliknout v Průzkumníkovi nebo spustit `.\setup.bat` v terminálu),
+- **Linux a macOS:** v terminálu příkaz **`./setup.sh`** – zde je **povinný**, bez něj nefunguje nahrávání po `Ctrl+S` (viz [1. Instalace, krok 4](1-instalace-vscode.md#4-otevření-projektu-ve-vs-code-a-rychlá-příprava-setupbat--setupsh)).
+
+Tento skript za vás plně automaticky nainstaluje všechna potřebná rozšíření do VS Code, nastaví komunikaci, tlačítka panelu i automatické nahrávání kódu při stisku `Ctrl+S` (`Run on Save`).
 
 ---
 

@@ -11,7 +11,7 @@ Tento návod popisuje připojení desky **Pico:ed**, kontrolu a aktualizaci verz
 
 > [!IMPORTANT]
 > **Kód běží v hardware, nikoliv na vašem počítači.**  
-> Kromě offline testů (které slouží pro ověřování čisté logiky bez robota, viz [JakSeTestuje.md](https://github.com/JanChaloupek/robot-programming3/blob/main/JakSeTestuje.md)) v tomto kurzu **nespouštíte žádný `python.exe` na svém PC**.  
+> Kromě simulace a testů na PC (`.\cpy sim`, `.\cpy test` – slouží k vyzkoušení a ověření logiky bez robota, viz [Jak se testuje embedded kód](https://github.com/JanChaloupek/pomucky/blob/main/testovani-embedded-kodu.md)) v tomto kurzu **nespouštíte žádný `python.exe` na svém PC**.  
 > Veškerý kód se automaticky odesílá do desky Pico:ed a spouští se přímo v jejím procesoru RP2040 pod systémem CircuitPython.  
 > *(Python na PC sice nainstalovaný mít musíte, ale jen proto, že na něm běží nástroje projektu – nahrávání na desku, konzole, graf. Váš program pro robota na PC neběží.)*
 
@@ -58,7 +58,7 @@ Připojte desku Pico:ed k počítači pomocí microUSB kabelu. V Průzkumníku s
 | <img src="images/vsc-circuitpython-aktivace.png" width="340" alt="Aktivace CircuitPython ve VS Code"> | <img src="images/vsc-code-py-pripona-spravne-spatne.png" width="340" alt="Pozor na skryté přípony souborů"> |
 | *Výběr desky Pico:ed na stavové liště* | *Vlevo špatně (`code.py.txt`), vpravo správně (`code.py`)* |
 
-Nápovědu (IntelliSense) navíc zajišťují typové definice ve složce `_stubs/` – nastavení pro ně v `.vscode/settings.json` je součástí projektu. VS Code proto nabízí bezchybnou nápovědu pro moduly desky Pico:ed (`board`, `busio`, `digitalio`, `picoed`, `neopixel` atd.) a nepodtrhává importy červeně jako chybu.
+Nápovědu (IntelliSense) navíc zajišťují typové definice ve složce `pc/_stubs` – nastavení pro ně v `.vscode/settings.json` je součástí projektu. VS Code proto nabízí bezchybnou nápovědu pro moduly desky Pico:ed (`board`, `busio`, `digitalio`, `picoed`, `neopixel` atd.) a nepodtrhává importy červeně jako chybu.
 
 ---
 
@@ -96,10 +96,16 @@ Na Linuxu a macOS se v terminálu píše `./cpy.sh` místo `.\cpy`. Přehled vš
 > **Původ a autorství:**
 > Automatické nahrávání dříve zajišťovaly samostatné skripty. Skript **`copy.ps1`** pro Windows napsal lektor a mentor kurzu **Jan Chaloupek**. Skript **`copy.sh`** pro macOS a Linux původně vytvořil student kurzu **Robin Bortlík** (@Robin Bortlik) v předchozích ročnících a Jan Chaloupek jej následně upravil a začlenil do standardní výbavy kurzu. Jejich postup dnes převzal společný nástroj `deska.py` (příkaz `cpy save`), který funguje stejně na všech systémech.
 
-### 💡 Offline testování a simulace bez robota (`_fake/`)
+### 💡 Simulace a testy bez robota (`cpy sim`, `cpy test`)
 
-Pokud zrovna nemáte desku Pico:ed u sebe (např. na cestách), můžete své algoritmy spouštět a testovat přímo v běžném Pythonu na PC. Projekt obsahuje interní složku **`_fake/`**, která simuluje hardware Pico:edu (`board`, `picoed`, `pwmio`, `digitalio`, `neopixel`, `time`).  
-Díky pravidlům v `.vscode/.ignoreCopy` se tyto testovací moduly nikdy nenahrají na reálného robota.
+Pokud zrovna nemáte desku Pico:ed u sebe (např. na cestách), můžete program vyzkoušet na PC. Projekt má ve složce **`pc/_fake`** falešné verze modulů desky (`board`, `picoed`, `digitalio`, `pwmio`, `neopixel`, `time`, …):
+
+| Příkaz | Co dělá |
+|---|---|
+| **`.\cpy sim`** | spustí `code.py` na PC; konzole vypisuje, co by dělala LED, displej a bzučák (`[ 1.00 s] LED: ZAPNUTO (*)`). Klávesy `a` / `b` stisknou tlačítko A / B, `q` simulaci ukončí. |
+| **`.\cpy test`** | spustí unit testy ze složky `pc/tests` – ověří, že program s hardwarem dělá, co má. |
+
+Simulace i testy používají stejný falešný hardware. Všechno ve složce `pc/` běží jen na počítači a díky `.vscode/.ignoreCopy` se nikdy nenahraje na robota. Jak se testy píšou, popisuje [Jak se testuje embedded kód](https://github.com/JanChaloupek/pomucky/blob/main/testovani-embedded-kodu.md).
 
 ---
 

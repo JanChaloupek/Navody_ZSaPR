@@ -86,8 +86,8 @@ Pokud nechcete přepínat mezi různými editory a chcete MicroPython používat
      - `music.py` pro neblokující bzučák,
      - `ultrasonic.py` pro měření vzdálenosti.
 
-4. **Typová nápověda Pylance (`_stubs/`):**
-   - Ve složce `_stubs/` jsou připraveny soubory `machine.pyi` a `rp2.pyi`, takže Pylance ve VS Code nepodtrhává importy a nabízí plnohodnotné automatické doplňování kódu a parametrů pro mikrokontrolér RP2040.
+4. **Typová nápověda Pylance (`pc/_stubs`):**
+   - Ve složce `pc/_stubs` jsou připraveny soubory `machine.pyi` a `rp2.pyi`, takže Pylance ve VS Code nepodtrhává importy a nabízí plnohodnotné automatické doplňování kódu a parametrů pro mikrokontrolér RP2040.
 
 ---
 

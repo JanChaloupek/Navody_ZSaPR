@@ -80,7 +80,7 @@ Postupujte podle jednotlivých kapitol v uvedeném pořadí:
 | Kapitola | Název návodu | Popis |
 |---|---|---|
 | **Krok 1** | [1. Instalace a nastavení Visual Studio Code](1-instalace-vscode.md) | Stažení VS Code, automatická instalace rozšíření i nástrojů skriptem `setup.bat` (Windows) nebo `./setup.sh` (Linux, macOS), ruční postup pro případ, že skript selže, a příprava pracovní složky. |
-| **Krok 2** | [2. Práce s Pico:ed a CircuitPythonem](2-nastaveni-picoed.md) | Kontrola a upgrade firmware, automatické nahrávání kódu při uložení (`Run on Save` / `cpy save`), tlačítka panelu, offline simulace (`_fake`), sériová konzole (REPL) a řešení potíží. |
+| **Krok 2** | [2. Práce s Pico:ed a CircuitPythonem](2-nastaveni-picoed.md) | Kontrola a upgrade firmware, automatické nahrávání kódu při uložení (`Run on Save` / `cpy save`), tlačítka panelu, simulace a testy na PC (`cpy sim`, `cpy test`), sériová konzole (REPL) a řešení potíží. |
 | **Doplněk** | [3. Úvodní práce s Micro:bitem a MicroPythonem](3-microbit-a-micropython.md) | Úvodní srovnání s MicroPythonem: jednoduchý Mu Editor nebo pokročilé prostředí přímo ve VS Code s rozšířením MicroPython & CircuitPython Panel, nástrojem `mpy` a knihovnou `picoed_v2_lib`. |
 | **Krok 3** | [4. Práce s Git a GitHubem (Odevzdávání úkolů)](4-prace-s-gitem.md) | Vytvoření forku, klonování, spuštění `setup.bat` / `setup.sh`, správa větví a **vytváření čistých Pull Requestů bez míchání starých úkolů**. |
 | **Krok 4** | [5. Mechanická montáž a zapojení robota JoyCar](5-montaz-a-zapojeni-joycaru.md) | Fyzické sestavení podvozku krok za krokem, zapojení senzorů a motorů, varování k barvám vodičů a celkové blokové schéma. |
@@ -92,7 +92,7 @@ Postupujte podle jednotlivých kapitol v uvedeném pořadí:
 ## ⚠️ Důležitá pravidla pro práci v kurzu
 
 1. **Kód robota nespouštíme na počítači!**  
-   Veškerý běžný kód pro robota běží přímo na mikrokontroléru Pico:ed (případně micro:bit). Na svém počítači nespouštíte kód přímo na fyzickém hardwaru (výjimkou je offline testování s využitím simulace `_fake/` a unit testy, které budeme probírat v pokročilejší části kurzu – viz metodický návod [Jak se testuje embedded kód](https://github.com/JanChaloupek/pomucky/blob/main/testovani-embedded-kodu.md)).
+   Veškerý běžný kód pro robota běží přímo na mikrokontroléru Pico:ed (případně micro:bit). Na svém počítači nespouštíte kód přímo na fyzickém hardwaru (výjimkou je simulace `cpy sim` a unit testy `cpy test` s falešným hardwarem ze složky `pc/`, které budeme probírat v pokročilejší části kurzu – viz metodický návod [Jak se testuje embedded kód](https://github.com/JanChaloupek/pomucky/blob/main/testovani-embedded-kodu.md)).
 2. **Přísný zákaz blokujícího `time.sleep()` v robotických úlohách!**  
    Autonomní robot musí neustále sledovat senzory čáry a reagovat na překážky. Pokud v programu použijete `time.sleep()`, robot „oslepne“ a havaruje. Všechny časové úlohy řešíme neblokujícími časovači `Timer` a `Period`.
 3. **Přísný zákaz okamžité změny směru motorů (zákaz oficiálních kódů výrobce)!**  

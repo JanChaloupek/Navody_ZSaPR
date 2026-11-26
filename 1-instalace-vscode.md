@@ -81,7 +81,7 @@ Pokud zatím Git neovládáte a chcete si nejprve osahat hardware a psaní kódu
 4. Na konci musí být **`Instalace je KOMPLETNI!`**. Okno VS Code není potřeba znovu načítat.
 5. Pokud skript **právě nainstaloval Python**, zavřete VS Code a otevřete ho znovu – editor si seznam programů načítá jen při spuštění a nový Python by jinak nenašel (nefungovalo by `Ctrl+S` ani tlačítka panelu).
 6. Kontrola:
-   - v Průzkumníku vidíte složky `.vscode`, `docs`, `_stubs`, `_fake`, `lib` a soubory `code.py` i `main.py`,
+   - v Průzkumníku vidíte složky `.vscode`, `docs`, `lib`, `pc` a soubory `code.py` i `main.py`,
    - v levém svislém pruhu přibyla ikona čipu – postranní panel **MicroPython & CircuitPython Panel** s připojenými deskami a tlačítky pro nejčastější akce (nahrát projekt, spustit nebo restartovat program, konzole, smazat desku).
 
 > ⚠️ **Na Linuxu a macOS je `./setup.sh` povinný.** Nastavení v `.vscode/settings.json` je připravené pro Windows a nástroje spouští příkazem `python`. Na Linuxu a macOS se Python 3 obvykle jmenuje `python3` a příkaz `python` neexistuje – `./setup.sh` nastavení přepíše na `python3`. Bez něj **nefunguje nahrávání po `Ctrl+S`** ani tlačítka panelu (v okně *Output* → *Run On Save* uvidíte chybu `python: command not found`).

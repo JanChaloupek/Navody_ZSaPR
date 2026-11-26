@@ -62,7 +62,7 @@ Pokud nechcete přepínat mezi různými editory a chcete MicroPython používat
 1. **Příprava prostředí:** instalační skript `setup.bat` / `./setup.sh` z [1. Instalace a nastavení VS Code, krok 4](1-instalace-vscode.md#4-otevření-projektu-ve-vs-code-a-rychlá-příprava-setupbat--setupsh) nainstaluje i vše pro MicroPython – nástroj **`mpremote`** (komunikace s deskou přes sériový port) a panel s tlačítky.
 
 2. **Rozšíření MicroPython & CircuitPython Panel:**
-   - V levém svislém pruhu přidá ikonu čipu. Postranní panel má blok **MicroPython** a blok **CircuitPython**. Každý blok ukazuje připojenou desku (obnovuje se sám) a nejčastější akce. Blok, pro který není připojená deska, je ztlumený.
+   - V levém svislém pruhu přidá ikonu čipu. Postranní panel má blok **MicroPython** a blok **CircuitPython**. Každý blok ukazuje připojenou desku (obnovuje se sám) a nejčastější akce. Blok, pro který není připojená deska, je ztlumený. Když je připojeno víc desek stejného druhu, panel je ukáže s kolečkem (● aktivní, ○ ostatní). Kliknutím na desku ji vyberete – tlačítka i příkazy v terminálu pak pracují s ní; dalším kliknutím na vybranou desku se vrátíte k automatickému výběru. V terminálu totéž udělá `mpy select`.
    - Tlačítka bloku **MicroPython**:
 
      | Tlačítko | Co udělá | Totéž v terminálu |

@@ -81,7 +81,9 @@ Jak je `Run on Save` nastavené (příkaz v `.vscode/settings.json`), popisuje p
 
 ### Tlačítka v panelu (blok CircuitPython)
 
-Rozšíření **MicroPython & CircuitPython Panel** (ikona čipu v levém svislém pruhu) má blok **CircuitPython**. Ukazuje připojenou desku (port, disk, verzi firmwaru) a nabízí čtyři tlačítka:
+Rozšíření **MicroPython & CircuitPython Panel** (ikona čipu v levém svislém pruhu) má blok **CircuitPython**. Ukazuje připojenou desku (port, disk, verzi firmwaru). Když je připojeno víc desek stejného druhu, panel je ukáže s kolečkem (● aktivní, ○ ostatní). Kliknutím na desku ji vyberete – tlačítka i příkazy v terminálu pak pracují s ní; dalším kliknutím na vybranou desku se vrátíte k automatickému výběru. V terminálu totéž udělá `cpy select`.
+
+Blok nabízí čtyři tlačítka:
 
 | Tlačítko | Co udělá | Totéž v terminálu |
 |---|---|---|

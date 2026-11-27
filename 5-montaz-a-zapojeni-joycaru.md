@@ -385,8 +385,8 @@ Pro porozumění tomu, jak mikrokontrolér s jednotlivými periferiemi komunikuj
 
 ## 7. Manuály k JoyCaru (PDF)
 
-- 📄 **[Oficiální manuál výrobce Joy-IT (PDF)](https://www.joycar.joy-it.net/en/garage/downloads)** – stránka ke stažení u výrobce. Manuál je v angličtině (`MB-Joy-Car_Manual_2021-04-30.pdf`) a v němčině (`MB-Joy-Car_Anleitung_2021-04-30.pdf`), česky ho výrobce nevydává.
-- 📄 **Český návod na stavbu** najdete v materiálech kurzu (soubor `JoyCar - Návod na stavbu.pdf` ve startovacím balíčku).
+- 📄 **[Oficiální manuál výrobce Joy-IT (PDF)](https://www.joycar.joy-it.net/en/garage/downloads)** – stránka ke stažení u výrobce. Manuál je v angličtině a v němčině, česky ho výrobce nevydává.
+- 📄 **Český návod na stavbu** najdete v materiálech kurzu.
 
 ---
 

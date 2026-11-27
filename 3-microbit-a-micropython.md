@@ -94,6 +94,12 @@ Pokud nechcete přepínat mezi různými editory a chcete MicroPython používat
    - **`.\mpy test`** (v panelu **✓ Testy main.py**) spustí unit testy ze složky `pc/tests_mpy`.
    - Podrobnosti najdete v souboru **`docs/MicroPython.md`** (kapitola 8).
 
+6. **BBC micro:bit má svá specifika:**
+   - Úložiště má jen asi **20 kB** a nemá složky – `mpy upload` nahraje soubory z `lib/` přímo do kořene desky.
+   - MicroPython na něm je starší a nezná f-řetězce (`f"..."`); texty skládejte pomocí `+`.
+   - Když dojde místo, zapněte zmenšení souborů při nahrávání: `.\mpy minify simple` (nebo `full`).
+   - Vše s naměřenými čísly popisuje soubor **`docs/MicroBit.md`** v projektu.
+
 ---
 
 ## 4. Shrnutí a přechod k hlavnímu robotovi JoyCar

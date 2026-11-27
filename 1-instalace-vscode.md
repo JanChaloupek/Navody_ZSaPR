@@ -71,7 +71,7 @@ Pokud zatím Git neovládáte a chcete si nejprve osahat hardware a psaní kódu
    |---|---|
    | 1 | zkontroluje Python 3 (na Windows ho v případě potřeby sám nainstaluje) |
    | 2 | vytvoří ve složce projektu virtuální prostředí **`.venv`** (knihovny patří jen k tomuto projektu) |
-   | 3 | nainstaluje do `.venv` knihovny `mpremote` (komunikace s MicroPython deskou) a `matplotlib` (graf hodnot) |
+   | 3 | nainstaluje do `.venv` knihovny `mpremote` (komunikace s MicroPython deskou), `python-minifier` (zmenšení souborů při nahrávání) a `matplotlib` (graf hodnot) |
    | 4 | zapíše do `.vscode/settings.json` tlačítka panelu a `Run on Save` (nahrávání po `Ctrl+S`) |
    | 5 | najde příkaz `code` (VS Code) |
    | 6 | nainstaluje rozšíření **MicroPython & CircuitPython Panel** |
@@ -105,12 +105,12 @@ U kroku, který selže, skript vypíše `ERROR`, `[CHYBA]` nebo `Upozorneni` s d
 ```powershell
 # Windows
 python -m venv .venv
-.venv\Scripts\python -m pip install mpremote matplotlib
+.venv\Scripts\python -m pip install mpremote python-minifier matplotlib
 ```
 ```bash
 # Linux a macOS
 python3 -m venv .venv
-.venv/bin/python -m pip install mpremote matplotlib
+.venv/bin/python -m pip install mpremote python-minifier matplotlib
 ```
 Když vytvoření `.venv` na Linuxu selže s hláškou o `ensurepip`, chybí balíček `python3-venv` (viz bod A). Nepovedenou složku `.venv` před dalším pokusem smažte.
 

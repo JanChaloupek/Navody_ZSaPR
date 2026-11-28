@@ -55,8 +55,8 @@ Připojte desku Pico:ed k počítači pomocí microUSB kabelu. V Průzkumníku s
 
 | Aktivace rozšíření v dolní stavové liště | Pozor na příponu `code.py` ve Windows |
 | :---: | :---: |
-| <img src="images/vsc-circuitpython-aktivace.png" width="340" alt="Aktivace CircuitPython ve VS Code"> | <img src="images/vsc-code-py-pripona-spravne-spatne.png" width="340" alt="Pozor na skryté přípony souborů"> |
-| *Výběr desky Pico:ed na stavové liště* | *Vlevo špatně (`code.py.txt`), vpravo správně (`code.py`)* |
+| <img src="images/vsc-circuitpython-aktivace.png" width="340" alt="Aktivace CircuitPython ve VS Code"> | <img src="images/vsc-code-py-pripona-spravne-spatne.png" width="340" alt="Soubor code.py musí mít příponu .py"> |
+| *Výběr desky Pico:ed na stavové liště* | *Vlevo správně (`code.py`), vpravo špatně (`code` bez přípony)* |
 
 Nápovědu (IntelliSense) navíc zajišťují typové definice ve složce `pc/_stubs` – nastavení pro ně v `.vscode/settings.json` je součástí projektu. VS Code proto nabízí bezchybnou nápovědu pro moduly desky Pico:ed (`board`, `busio`, `digitalio`, `picoed`, `neopixel` atd.) a nepodtrhává importy červeně jako chybu.
 

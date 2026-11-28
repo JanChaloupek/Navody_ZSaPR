@@ -67,7 +67,7 @@ Pokud nechcete přepínat mezi různými editory a chcete MicroPython používat
 
      | Tlačítko | Co udělá | Totéž v terminálu |
      |---|---|---|
-     | 🟨 **⬆ Nahrát projekt** | podle `.vscode/upload_config.txt` nahraje na desku soubory (např. `main.py` a složku `lib`); nezměněné soubory přeskočí | `.\mpy upload` |
+     | 🟨 **⬆ Nahrát projekt** | nahraje na desku soubory z kořene projektu (`main.py`, vaše moduly) a na Pico i knihovny z `lib/` a `lib_mpy/`; nezměněné soubory přeskočí. Co se nahraje, ukáže `.\mpy files`. | `.\mpy upload` |
      | 🟩 **▶ Spustit main.py** | restartuje desku, spustí `main.py` a ukáže jeho první výstup | `.\mpy reset` |
      | 🟦 **⌨ Konzole (REPL)** | otevře interaktivní konzoli MicroPythonu (konec: `Ctrl+]`) | `.\mpy repl` |
      | 🟥 **🗑 Smazat desku** | po potvrzení smaže všechny soubory z desky pro čistý začátek | `.\mpy wipe` |
@@ -78,8 +78,8 @@ Pokud nechcete přepínat mezi různými editory a chcete MicroPython používat
    - Každý příkaz vypisuje průběh po očíslovaných krocích. Když se něco nepovede, skončí řádkem `ERROR: v kroku N - …` s radou, co dělat (např. že port drží jiný program).
    - Obě technologie (MicroPython a CircuitPython) v projektu harmonicky koexistují – automatické ukládání `Run on Save` pro CircuitPython soubor `main.py` ignoruje, takže se můžete kdykoli bez kolize přepnout mezi psaním pro CircuitPython (`code.py`) a MicroPython (`main.py`).
 
-3. **Knihovna hardware pro Pico:ed (`lib/picoed_v2_lib`):**
-   - Pokud provozujete desku Pico:ed s MicroPython firmwarem, máte v adresáři `lib/picoed_v2_lib` k dispozici hotové ovladače:
+3. **Knihovna hardware pro Pico:ed (`lib_mpy/picoed_v2_lib`):**
+   - Pokud provozujete desku Pico:ed s MicroPython firmwarem, máte v adresáři `lib_mpy/picoed_v2_lib` k dispozici hotové ovladače (složka `lib_mpy/` = knihovny jen pro MicroPython, na desce skončí v `/lib`):
      - `display.py` a `is31fl3731.py` pro LED maticový displej 7×17,
      - `button.py` pro tlačítka A a B,
      - `led.py` pro stavové LED,
@@ -95,7 +95,7 @@ Pokud nechcete přepínat mezi různými editory a chcete MicroPython používat
    - Podrobnosti najdete v souboru **`docs/MicroPython.md`** (kapitola 8).
 
 6. **BBC micro:bit má svá specifika:**
-   - Úložiště má jen asi **20 kB** a nemá složky – `mpy upload` nahraje soubory z `lib/` přímo do kořene desky.
+   - Úložiště má jen asi **20 kB** a nemá složky – na micro:bit jdou jen soubory z kořene projektu, knihovny ze složek (`lib/`, `lib_mpy/`) ne. Vlastní moduly dávejte vedle `main.py`.
    - MicroPython na něm je starší a nezná f-řetězce (`f"..."`); texty skládejte pomocí `+`.
    - Když dojde místo, zapněte zmenšení souborů při nahrávání: `.\mpy minify simple` (nebo `full`).
    - Vše s naměřenými čísly popisuje soubor **`docs/MicroBit.md`** v projektu.

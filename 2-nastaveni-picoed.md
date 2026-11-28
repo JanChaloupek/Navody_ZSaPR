@@ -65,7 +65,7 @@ Nápovědu (IntelliSense) navíc zajišťují typové definice ve složce `pc/_s
 ## 4. Automatické nahrávání kódu při uložení (`Run on Save`)
 
 Při každém stisku `Ctrl+S` ve VS Code rozšíření **Run on Save** automaticky spustí příkaz **`cpy save`** (nástroj `.vscode/deska.py`). Ten:
-1. zkontroluje v souboru `.vscode/.ignoreCopy`, jestli se uložený soubor na desku vůbec kopíruje,
+1. zkontroluje podle pravidel v souboru `.vscode/upload.toml`, jestli se uložený soubor na desku vůbec kopíruje,
 2. najde připojený disk `CIRCUITPY` (ve Windows písmeno disku, na macOS `/Volumes/CIRCUITPY`, na Linuxu `/media/$USER/CIRCUITPY` apod.),
 3. porovná soubor s tím, co už na desce je,
 4. a pokud se liší, zkopíruje ho. **CircuitPython pak sám spustí nový kód** (tzv. *autoreload*).
@@ -75,7 +75,7 @@ Run on Save reaguje na soubory `.py`, `.toml`, `.json`, `.txt` a `.csv`. Příka
 > [!TIP]
 > **Po spuštění `setup.bat` / `./setup.sh` je vše plně nastaveno!**  
 > Rozšíření `Run on Save` je nainstalované a konfigurace v `.vscode/settings.json` je připravená. **Nemusíte nic ručně konfigurovat.** Stačí otevřít soubor `code.py`, stisknout `Ctrl+S` a kód se okamžitě odešle do desky Pico:ed.  
-> V souboru `.vscode/.ignoreCopy` je navíc zapsán soubor `main.py`, takže automatické ukládání CircuitPythonu nijak nekoliduje s případnou prací v MicroPythonu.
+> Pravidla v `.vscode/upload.toml` soubor `main.py` na CircuitPython nepouštějí, takže automatické ukládání CircuitPythonu nijak nekoliduje s případnou prací v MicroPythonu. Co se na desku nahraje, ukáže bez desky příkaz `.\cpy files`.
 
 Jak je `Run on Save` nastavené (příkaz v `.vscode/settings.json`), popisuje pro zvědavé soubor **`docs/Nastroje.md`** v projektu. Na Linuxu a macOS musí příkaz začínat `python3` – to zařídí `./setup.sh`.
 
@@ -87,7 +87,7 @@ Blok nabízí čtyři tlačítka:
 
 | Tlačítko | Co udělá | Totéž v terminálu |
 |---|---|---|
-| **⬆ Nahrát projekt** | nahraje celý projekt na disk `CIRCUITPY` (jen změněné soubory, podle `.ignoreCopy`) | `.\cpy upload` |
+| **⬆ Nahrát projekt** | nahraje celý projekt na disk `CIRCUITPY` (jen změněné soubory, podle `.vscode/upload.toml`) | `.\cpy upload` |
 | **↻ Restartovat program** | znovu spustí `code.py` a ukáže jeho první výstup | `.\cpy reset` |
 | **⌨ Konzole (REPL)** | otevře sériovou konzoli desky (viz [kapitola 6](#6-sériová-konzole-repl)) | `.\cpy repl` |
 | **🗑 Smazat desku** | smaže obsah disku `CIRCUITPY` – VS Code se nejdřív zeptá | `.\cpy wipe` |
@@ -111,7 +111,7 @@ Pokud zrovna nemáte desku Pico:ed u sebe (např. na cestách), můžete program
 
 Pro MicroPython (`main.py`) jsou stejné příkazy `.\mpy sim` a `.\mpy test` (tlačítka **▶ Simulace main.py** a **✓ Testy main.py**), viz [kapitola 3](3-microbit-a-micropython.md).
 
-Simulace i testy používají stejný falešný hardware. Všechno ve složce `pc/` běží jen na počítači a díky `.vscode/.ignoreCopy` se nikdy nenahraje na robota. Jak se testy píšou, popisuje [Jak se testuje embedded kód](https://github.com/JanChaloupek/pomucky/blob/main/testovani-embedded-kodu.md).
+Simulace i testy používají stejný falešný hardware. Všechno ve složce `pc/` běží jen na počítači a na robota se nikdy nenahraje (podsložky projektu kromě knihoven se nenahrávají). Jak se testy píšou, popisuje [Jak se testuje embedded kód](https://github.com/JanChaloupek/pomucky/blob/main/testovani-embedded-kodu.md).
 
 ---
 
@@ -127,7 +127,7 @@ Pokud po uložení (`Ctrl+S`) kód na robotovi nereaguje, postupujte podle této
    ```text
    Run on Save: kopirovani ulozeneho souboru na desku CIRCUITPY (09:22:58)
    1) Ulozeny soubor          - jaký soubor, jeho velikost a čas uložení
-   2) Pravidla                - jestli ho .ignoreCopy nevylučuje (a kterou maskou)
+   2) Pravidla                - jestli ho upload.toml povoluje (a kterou maskou)
    3) Disk desky CIRCUITPY    - kde je disk, volné místo, verze firmwaru
    4) Cil na desce            - co tam teď je a jestli se obsah liší
    5) Kopirovani              - výsledek zápisu
@@ -137,14 +137,20 @@ Pokud po uložení (`Ctrl+S`) kód na robotovi nereaguje, postupujte podle této
 5. **Okno OUTPUT pro *Run On Save* je prázdné?** Run on Save se vůbec nespustil. Zkontrolujte, že je nainstalované rozšíření *Run on Save* a že má soubor příponu `.py`, `.toml`, `.json`, `.txt` nebo `.csv`.
 6. **Linux / macOS – chyba `python: command not found`?** Nespustili jste `./setup.sh`, viz [kapitola 1, krok 4](1-instalace-vscode.md#4-otevření-projektu-ve-vs-code-a-rychlá-příprava-setupbat--setupsh).
 
-### Krok 2: Zamčený disk (Read-only ve Windows)
-Velmi častou příčinou je, že operační systém Windows disk `CIRCUITPY` zamkne proti zápisu kvůli náhlému odpojení nebo přepětí:
-- **První pomoc:** Odpojte USB kabel od počítače a po 3 sekundách jej znovu zapojte – disk se ve Windows znovu načte.
-- **Pokud to nepomůže – ÚPLNÝ RESTART ROBOTA (Power-Cycle):**
-  1. Odpojte USB kabel od počítače.
-  2. Vypněte hlavní napájecí přepínač na základní desce JoyCaru.
-  3. Znovu zapněte napájení JoyCaru.
-  4. Zapojte USB kabel zpět do počítače.
+### Krok 2: Zamčený disk (jen pro čtení)
+Disk `CIRCUITPY` se občas přepne do režimu **jen pro čtení** – deska ho počítači ohlásí jako chráněný proti zápisu (např. po náhlém odpojení nebo přepětí). Nahrávání pak skončí chybou `Permission denied` (`Errno 13`).
+
+`Ctrl+S` i `.\cpy upload` to nejdřív zkusí vyřešit **samy**: desku jednou restartují přes sériový port a zápis zopakují (ve výpisu řádky `restart:`). Nejde to, když je port obsazený (otevřený Serial Monitor nebo REPL) a když se deska restartovala před méně než 3 minutami. Pak postupujte ručně:
+
+1. **Nejdřív restart desky z terminálu:** `.\cpy reset --hard` (Linux/macOS: `./cpy.sh reset --hard`). Deska se restartuje celá – odpojí se z USB a znovu připojí – a disk bývá zase zapisovatelný. Pak soubor znovu uložte nebo nahrajte (`.\cpy upload`).
+2. **Pokud to nepomůže – ÚPLNÝ RESTART ROBOTA (Power-Cycle):**
+   1. Odpojte USB kabel od počítače.
+   2. Vypněte hlavní napájecí přepínač na základní desce JoyCaru.
+   3. Znovu zapněte napájení JoyCaru.
+   4. Zapojte USB kabel zpět do počítače.
+
+> [!NOTE]
+> Disk jen pro čtení může způsobit i soubor `boot.py` s příkazem `storage.remount(...)` – ten disk pro počítač zamkne natrvalo, dokud ho nesmažete nebo neupravíte.
 
 ---
 

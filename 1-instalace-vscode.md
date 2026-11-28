@@ -33,7 +33,7 @@ Hodí se při práci s Gitem a odevzdávání úkolů ([4. Práce s Git a GitHub
 
 ## 3. Získání výchozí struktury projektu
 
-Celá připravená struktura projektu je v repozitáři kurzu na GitHubu: programy `code.py` (CircuitPython) a `main.py` (MicroPython), knihovny v `lib/`, nástroje `cpy` a `mpy`, instalační skript a podrobné návody ve složce `docs/`. Přehled všech souborů najdete v souboru **`README.md`** projektu.
+Celá připravená struktura projektu je v repozitáři kurzu na GitHubu: programy `code.py` (CircuitPython) a `main.py` (MicroPython), knihovny v `lib/`, `lib_cpy/` a `lib_mpy/`, nástroje `cpy` a `mpy`, instalační skript a podrobné návody ve složce `docs/`. Přehled všech souborů najdete v souboru **`README.md`** projektu.
 
 ### Jak projekt získat do počítače:
 
